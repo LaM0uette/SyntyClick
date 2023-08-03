@@ -53,6 +53,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MouseRightClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""f554e029-8675-4ad7-b8dd-e5524dee40ee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -63,17 +72,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
-                    ""action"": ""ClickAction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""cb850077-0a1e-4dd0-9878-9b2d24e61183"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
                     ""action"": ""ClickAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -91,17 +89,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c8f64e6e-068a-43ff-81d7-6cea766920ef"",
-                    ""path"": ""<Gamepad>/rightStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""MousePosition"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""d98e9b3c-782e-44fc-9d1d-68839c9594b2"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
@@ -113,12 +100,12 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""59a30d68-7116-4328-8f18-c4e11dddcdfa"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""id"": ""b1dcf52b-394c-4f47-abe9-4703d5b09119"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""MouseLeftClick"",
+                    ""groups"": ""PC"",
+                    ""action"": ""MouseRightClick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -160,6 +147,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_ClickAction = m_PlayerActions.FindAction("ClickAction", throwIfNotFound: true);
         m_PlayerActions_MousePosition = m_PlayerActions.FindAction("MousePosition", throwIfNotFound: true);
         m_PlayerActions_MouseLeftClick = m_PlayerActions.FindAction("MouseLeftClick", throwIfNotFound: true);
+        m_PlayerActions_MouseRightClick = m_PlayerActions.FindAction("MouseRightClick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -224,6 +212,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_ClickAction;
     private readonly InputAction m_PlayerActions_MousePosition;
     private readonly InputAction m_PlayerActions_MouseLeftClick;
+    private readonly InputAction m_PlayerActions_MouseRightClick;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -231,6 +220,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @ClickAction => m_Wrapper.m_PlayerActions_ClickAction;
         public InputAction @MousePosition => m_Wrapper.m_PlayerActions_MousePosition;
         public InputAction @MouseLeftClick => m_Wrapper.m_PlayerActions_MouseLeftClick;
+        public InputAction @MouseRightClick => m_Wrapper.m_PlayerActions_MouseRightClick;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -249,6 +239,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseLeftClick.started += instance.OnMouseLeftClick;
             @MouseLeftClick.performed += instance.OnMouseLeftClick;
             @MouseLeftClick.canceled += instance.OnMouseLeftClick;
+            @MouseRightClick.started += instance.OnMouseRightClick;
+            @MouseRightClick.performed += instance.OnMouseRightClick;
+            @MouseRightClick.canceled += instance.OnMouseRightClick;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -262,6 +255,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseLeftClick.started -= instance.OnMouseLeftClick;
             @MouseLeftClick.performed -= instance.OnMouseLeftClick;
             @MouseLeftClick.canceled -= instance.OnMouseLeftClick;
+            @MouseRightClick.started -= instance.OnMouseRightClick;
+            @MouseRightClick.performed -= instance.OnMouseRightClick;
+            @MouseRightClick.canceled -= instance.OnMouseRightClick;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -302,5 +298,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnClickAction(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnMouseLeftClick(InputAction.CallbackContext context);
+        void OnMouseRightClick(InputAction.CallbackContext context);
     }
 }

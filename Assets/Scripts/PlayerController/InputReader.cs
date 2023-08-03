@@ -10,6 +10,7 @@ namespace PlayerController
         
         public Action ClickAction { get; set; }
         public Action MouseLeftClickAction { get; set; }
+        public Action MouseRightClickAction { get; set; }
 
         private void OnMousePosition(InputValue value)
         {
@@ -18,5 +19,6 @@ namespace PlayerController
         
         private void OnClickAction() => ClickAction?.Invoke();
         private void OnMouseLeftClick() => MouseLeftClickAction?.Invoke();
+        private void OnMouseRightClick() => MouseRightClickAction?.Invoke();
     }
 }

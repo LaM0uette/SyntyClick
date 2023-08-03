@@ -38,13 +38,13 @@ namespace Employee
         private void OnEnable()
         {
             _playerInputs.ClickAction += OnClickAction;
-            _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
+            _playerInputs.MouseRightClickAction += OnMouseRightClickAction;
         }
         
         private void OnDisable()
         {
             _playerInputs.ClickAction -= OnClickAction;
-            _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
+            _playerInputs.MouseRightClickAction -= OnMouseRightClickAction;
         }
 
         private void Update()
@@ -65,6 +65,20 @@ namespace Employee
         }
         
         private void OnMouseLeftClickAction()
+        {
+            var ray = _mainCamera.ScreenPointToRay(_playerInputs.MousePositionValue);
+
+            if (Physics.Raycast(ray, out var hit))
+            {
+                var employee = hit.transform.GetComponent<EmployeeWorker>();
+                if (employee is not null)
+                {
+                    Debug.Log("Employee");
+                }
+            }
+        }
+        
+        private void OnMouseRightClickAction()
         {
             var ray = _mainCamera.ScreenPointToRay(_playerInputs.MousePositionValue);
 

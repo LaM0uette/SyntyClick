@@ -31,6 +31,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MouseRightClick",
+                    "type": "Button",
+                    "id": "f554e029-8675-4ad7-b8dd-e5524dee40ee",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -41,17 +50,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
-                    "action": "ClickAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "cb850077-0a1e-4dd0-9878-9b2d24e61183",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
                     "action": "ClickAction",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -69,17 +67,6 @@
                 },
                 {
                     "name": "",
-                    "id": "c8f64e6e-068a-43ff-81d7-6cea766920ef",
-                    "path": "<Gamepad>/rightStick",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "MousePosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "d98e9b3c-782e-44fc-9d1d-68839c9594b2",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -91,12 +78,12 @@
                 },
                 {
                     "name": "",
-                    "id": "59a30d68-7116-4328-8f18-c4e11dddcdfa",
-                    "path": "<Gamepad>/buttonWest",
+                    "id": "b1dcf52b-394c-4f47-abe9-4703d5b09119",
+                    "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "MouseLeftClick",
+                    "groups": "PC",
+                    "action": "MouseRightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
