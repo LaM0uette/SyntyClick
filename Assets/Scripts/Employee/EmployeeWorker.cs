@@ -17,6 +17,8 @@ namespace Employee
         
         [Header("Animator")]
         private static readonly int Speed = Animator.StringToHash("Speed");
+        private static readonly int Pause = Animator.StringToHash("Pause");
+        private static readonly int Stop = Animator.StringToHash("Stop");
         [SerializeField] private Animator _employeeAnimator;
         
         [Header("EmployeeLevel")]
@@ -30,7 +32,8 @@ namespace Employee
         
         private Camera _mainCamera;
         private float _pieceInProgress;
-        private float _currentAssetsOnWorked;
+        private int _currentAssetsOnWorked;
+        private bool _isPaused;
 
         private void Awake()
         {
@@ -86,14 +89,14 @@ namespace Employee
                 if (employee is not null)
                 {
                     Debug.Log("Reset _currentAssetsOnWorked + add Fans ans Money");
-                    _spriteProgressStop.fillAmount = 0;
-                    _currentAssetsOnWorked = 0;
-                    _TmpMaxAssets.text = "0";
-                    
+                    _gameManager.IncrementAssets(_currentAssetsOnWorked);
+                    _employeeAnimator.SetTrigger(Stop);
                     _gameManager.Fans += 1;
                     _gameManager.Money += 50;
                     
-                    _gameManager.IncrementAssets();
+                    _spriteProgressStop.fillAmount = 0;
+                    _currentAssetsOnWorked = 0;
+                    _TmpMaxAssets.text = "0";
                 }
             }
         }
@@ -122,8 +125,20 @@ namespace Employee
             if (_currentAssetsOnWorked >= _currentEmployeeLevel.MaxAssets)
             {
                 _spriteProgressStop.fillAmount = 1;
-                _TmpMaxAssets.text = "Max";
+                _TmpMaxAssets.text = "MAX";
+            
+                if (!_isPaused)
+                {
+                    _employeeAnimator.SetTrigger(Pause);
+                    _isPaused = true;
+                }
+
                 return true;
+            }
+
+            if (_isPaused)
+            {
+                _isPaused = false;
             }
 
             return false;

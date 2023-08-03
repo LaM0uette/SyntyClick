@@ -15,3 +15,4 @@ MonoBehaviour:
   Level: 2
   IncrementAmount: 0.5
   IncrementClickAmount: 0.4
+  MaxAssets: 50

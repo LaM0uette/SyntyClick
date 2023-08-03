@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour
 
     #region Functions
 
-    public void IncrementAssets()
+    public void IncrementAssets(int amout)
     {
-        TotalAssets++;
-        CurrentAssets++;
+        TotalAssets += amout;
+        CurrentAssets += amout;
     }
 
     #endregion
