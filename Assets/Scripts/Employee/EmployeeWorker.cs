@@ -102,7 +102,7 @@ namespace Employee
             AnimatorSetSpeed(GameManager.SpeedNormal);
         }
 
-        public void LevelUp()
+        private void LevelUp()
         {
             if (_currentEmployeeLevel.Level >= _employeeLevels.Length)
             {
