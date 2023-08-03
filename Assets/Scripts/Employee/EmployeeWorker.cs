@@ -1,3 +1,4 @@
+using PlayerController;
 using UnityEngine;
 
 namespace Employee
@@ -7,6 +8,7 @@ namespace Employee
         #region Statements
 
         private static GameManager _gameManager => GameManager.instance;
+        private static InputReader _playerInputs;
         
         private const int _incrementDelay  = 1;
         private const float _incrementAmount = 0.1f;
@@ -14,9 +16,19 @@ namespace Employee
         
         public float _pieceInProgress;
 
+        private void Awake()
+        {
+            _playerInputs = GetComponent<InputReader>();
+        }
+
         #endregion
 
         #region Events
+
+        private void OnEnable()
+        {
+            _playerInputs.ClickAction += () => PieceIncrement(_incrementClickAmount);
+        }
 
         private void Update()
         {
