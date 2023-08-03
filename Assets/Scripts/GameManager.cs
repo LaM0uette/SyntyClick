@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int TotalAssets;
-    public int ActualAssets;
+    public int CurrentAssets;
     public int Fans;
     public int Money;
 
@@ -26,6 +26,6 @@ public class GameManager : MonoBehaviour
     public void IncrementAssets()
     {
         TotalAssets++;
-        ActualAssets++;
+        CurrentAssets++;
     }
 }
