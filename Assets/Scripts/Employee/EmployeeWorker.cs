@@ -1,7 +1,9 @@
 using System.Collections;
 using PlayerController;
 using ScriptableOject.EmployeeLevel;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Employee
 {
@@ -21,6 +23,11 @@ namespace Employee
         [SerializeField] private EmployeeLevel[] _employeeLevels;
         private EmployeeLevel _currentEmployeeLevel;
         
+        [Header("RadialSprite")]
+        [SerializeField] private Image _spriteProgress;
+        [SerializeField] private Image _spriteProgressStop;
+        [SerializeField] private TextMeshProUGUI _TmpMaxAssets;
+        
         private Camera _mainCamera;
         private float _pieceInProgress;
 
@@ -38,12 +45,14 @@ namespace Employee
         private void OnEnable()
         {
             _playerInputs.ClickAction += OnClickAction;
+            _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction += OnMouseRightClickAction;
         }
         
         private void OnDisable()
         {
             _playerInputs.ClickAction -= OnClickAction;
+            _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction -= OnMouseRightClickAction;
         }
 
@@ -100,6 +109,7 @@ namespace Employee
         private void PieceIncrement(float incrementAmount)
         {
             _pieceInProgress += incrementAmount;
+            _spriteProgress.fillAmount = _pieceInProgress / _objectiveManager.CurrentObjectives.IncrementDelay;
         }
         
         private void TryIncrementAssets()
@@ -107,6 +117,7 @@ namespace Employee
             if(_pieceInProgress >= _objectiveManager.CurrentObjectives.IncrementDelay)
             {
                 _pieceInProgress = 0;
+                _spriteProgress.fillAmount = 0;
                 _gameManager.IncrementAssets();
             }
         }
