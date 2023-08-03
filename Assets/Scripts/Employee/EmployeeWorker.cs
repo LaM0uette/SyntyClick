@@ -13,7 +13,7 @@ namespace Employee
         
         private static GameManager _gameManager => GameManager.instance;
         private static ObjectiveManager _objectiveManager => ObjectiveManager.instance;
-        private static InputReader _playerInputs;
+        private InputReader _playerInputs;
         
         [Header("Animator")]
         private static readonly int Speed = Animator.StringToHash("Speed");
@@ -34,10 +34,12 @@ namespace Employee
         private float _pieceInProgress;
         private int _currentAssetsOnWorked;
         private bool _isPaused;
+        private EmployeeWorker _employeeWorker;
 
         private void Awake()
         {
             _playerInputs = GetComponent<InputReader>();
+            _employeeWorker = GetComponent<EmployeeWorker>();
             _mainCamera = Camera.main;
             _currentEmployeeLevel = _employeeLevels[0];
         }
@@ -49,14 +51,14 @@ namespace Employee
         private void OnEnable()
         {
             _playerInputs.ClickAction += OnClickAction;
-            _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
+            _playerInputs.OnClickGameObject += OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction += OnMouseRightClickAction;
         }
         
         private void OnDisable()
         {
             _playerInputs.ClickAction -= OnClickAction;
-            _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
+            _playerInputs.OnClickGameObject -= OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction -= OnMouseRightClickAction;
         }
 
@@ -79,25 +81,19 @@ namespace Employee
             StartCoroutine(ResetSpeed());
         }
         
-        private void OnMouseLeftClickAction()
+        private void OnMouseLeftClickAction(GameObject clickedObject)
         {
-            var ray = _mainCamera.ScreenPointToRay(_playerInputs.MousePositionValue);
-
-            if (Physics.Raycast(ray, out var hit))
+            if (clickedObject == _employeeWorker.gameObject)
             {
-                var employee = hit.transform.GetComponent<EmployeeWorker>();
-                if (employee is not null)
-                {
-                    Debug.Log("Reset _currentAssetsOnWorked + add Fans ans Money");
-                    _gameManager.IncrementAssets(_currentAssetsOnWorked);
-                    _employeeAnimator.SetTrigger(Stop);
-                    _gameManager.Fans += 1;
-                    _gameManager.Money += 50;
+                Debug.Log("Reset _currentAssetsOnWorked + add Fans ans Money");
+                _gameManager.IncrementAssets(_currentAssetsOnWorked);
+                _employeeAnimator.SetTrigger(Stop);
+                _gameManager.Fans += 1;
+                _gameManager.Money += 50;
                     
-                    _spriteProgressStop.fillAmount = 0;
-                    _currentAssetsOnWorked = 0;
-                    _TmpMaxAssets.text = "0";
-                }
+                _spriteProgressStop.fillAmount = 0;
+                _currentAssetsOnWorked = 0;
+                _TmpMaxAssets.text = "0";
             }
         }
         

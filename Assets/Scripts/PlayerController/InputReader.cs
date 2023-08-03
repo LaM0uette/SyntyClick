@@ -11,6 +11,7 @@ namespace PlayerController
         public Action ClickAction { get; set; }
         public Action MouseLeftClickAction { get; set; }
         public Action MouseRightClickAction { get; set; }
+        public Action<GameObject> OnClickGameObject { get; set; }
 
         private void OnMousePosition(InputValue value)
         {
@@ -18,7 +19,20 @@ namespace PlayerController
         }
         
         private void OnClickAction() => ClickAction?.Invoke();
-        private void OnMouseLeftClick() => MouseLeftClickAction?.Invoke();
+
+        private void OnMouseLeftClick()
+        {
+            if (Camera.main is not null)
+            {
+                var ray = Camera.main.ScreenPointToRay(MousePositionValue);
+                if (Physics.Raycast(ray, out var hit))
+                {
+                    OnClickGameObject?.Invoke(hit.collider.gameObject);
+                }
+            }
+
+            MouseLeftClickAction?.Invoke();
+        }
         private void OnMouseRightClick() => MouseRightClickAction?.Invoke();
     }
 }
