@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb763347fd90a04ebee2354fa6b7d2c, type: 3}
   m_Name: PolygonPridePlushies
   m_EditorClassIdentifier: 
-  Name: PolygonPridePlushies
+  Id: 1
+  Name: Polygon Pride Plushies
   Image: {fileID: 21300000, guid: d35dc15fb9683e545b31b733f31ccc3e, type: 3}
   AssetCount: 10
+  IncrementDelay: 1
   isInfinite: 0

@@ -10,6 +10,7 @@ namespace Employee
         #region Statements
         
         private static GameManager _gameManager => GameManager.instance;
+        private static ObjectiveManager _objectiveManager => ObjectiveManager.instance;
         private static InputReader _playerInputs;
         
         [Header("Animator")]
@@ -89,7 +90,7 @@ namespace Employee
         
         private void TryIncrementAssets()
         {
-            if(_pieceInProgress >= GameManager.IncrementDelay)
+            if(_pieceInProgress >= _objectiveManager.CurrentObjectives.IncrementDelay)
             {
                 _pieceInProgress = 0;
                 _gameManager.IncrementAssets();

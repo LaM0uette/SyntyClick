@@ -9,7 +9,7 @@ public class ObjectiveManager : MonoBehaviour
     private static GameManager _gameManager => GameManager.instance;
     
     [SerializeField] private Objective[] _objectives;
-    private Objective _currentObjectives;
+    [HideInInspector] public Objective CurrentObjectives;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class ObjectiveManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         
-        _currentObjectives = _objectives[0];
+        CurrentObjectives = _objectives[0];
     }
 
     #endregion
@@ -42,18 +42,18 @@ public class ObjectiveManager : MonoBehaviour
 
     private void CheckObjectiveAvancement()
     {
-        if (_currentObjectives.isInfinite) return;
+        if (CurrentObjectives.isInfinite) return;
         
         TryIncrementAssets();
     }
     
     private void TryIncrementAssets()
     {
-        if (_gameManager.CurrentAssets < _currentObjectives.AssetCount) return;
+        if (_gameManager.CurrentAssets < CurrentObjectives.AssetCount) return;
         
         _gameManager.CurrentAssets = 0;
-        _currentObjectives = _objectives[_currentObjectives.Id];
-        Debug.Log($"New Objective : {_currentObjectives.Name}");
+        CurrentObjectives = _objectives[CurrentObjectives.Id];
+        Debug.Log($"New Objective : {CurrentObjectives.Name}");
     }
 
     #endregion

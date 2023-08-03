@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb763347fd90a04ebee2354fa6b7d2c, type: 3}
   m_Name: PolygonStreetRacer
   m_EditorClassIdentifier: 
-  Name: PolygonStreetRacer
+  Id: 3
+  Name: Polygon Street Racer
   Image: {fileID: 21300000, guid: 148ed55f1e8414b41b37d952d6ce44a4, type: 3}
   AssetCount: 0
+  IncrementDelay: 3
   isInfinite: 1

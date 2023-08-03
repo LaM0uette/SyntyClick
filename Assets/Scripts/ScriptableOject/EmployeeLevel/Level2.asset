@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   Level: 2
-  IncrementAmount: 0.2
+  IncrementAmount: 0.5
   IncrementClickAmount: 0.4
