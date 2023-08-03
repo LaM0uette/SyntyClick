@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ScriptableOject
+namespace ScriptableOject.Objective
 {
     [CreateAssetMenu(fileName = "New Objective", menuName = "Objective")]
     public class Objective : ScriptableObject

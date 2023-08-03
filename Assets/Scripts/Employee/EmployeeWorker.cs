@@ -1,4 +1,6 @@
+using System.Collections;
 using PlayerController;
+using ScriptableOject.EmployeeLevel;
 using UnityEngine;
 
 namespace Employee
@@ -6,19 +8,26 @@ namespace Employee
     public class EmployeeWorker : MonoBehaviour
     {
         #region Statements
-
+        
         private static GameManager _gameManager => GameManager.instance;
         private static InputReader _playerInputs;
         
-        private const int _incrementDelay  = 1;
-        private const float _incrementAmount = 0.1f;
-        private const float _incrementClickAmount = 0.2f;
+        [Header("Animator")]
+        private static readonly int Speed = Animator.StringToHash("Speed");
+        [SerializeField] private Animator _employeeAnimator;
         
-        public float _pieceInProgress;
+        [Header("EmployeeLevel")]
+        [SerializeField] private EmployeeLevel[] _employeeLevels;
+        private EmployeeLevel _currentEmployeeLevel;
+        
+        private Camera _mainCamera;
+        private float _pieceInProgress;
 
         private void Awake()
         {
             _playerInputs = GetComponent<InputReader>();
+            _mainCamera = Camera.main;
+            _currentEmployeeLevel = _employeeLevels[0];
         }
 
         #endregion
@@ -27,27 +36,86 @@ namespace Employee
 
         private void OnEnable()
         {
-            _playerInputs.ClickAction += () => PieceIncrement(_incrementClickAmount);
+            _playerInputs.ClickAction += OnClickAction;
+            _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
+        }
+        
+        private void OnDisable()
+        {
+            _playerInputs.ClickAction -= OnClickAction;
+            _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
         }
 
         private void Update()
         {
-            PieceIncrement(_incrementAmount * Time.deltaTime);
-            
-            if (_pieceInProgress >= _incrementDelay)
-            {
-                _pieceInProgress = 0;
-                _gameManager.IncrementAssets();
-            }
+            PieceIncrement(_currentEmployeeLevel.IncrementAmount * Time.deltaTime);
+            TryIncrementAssets();
+        }
+
+        private void OnMouseDown()
+        {
+            Debug.Log("Clicked");
         }
 
         #endregion
 
         #region Functions
 
+        private void OnClickAction()
+        {
+            AnimatorSetSpeed(GameManager.SpeedBoost);
+            PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
+            StartCoroutine(ResetSpeed());
+        }
+        
+        private void OnMouseLeftClickAction()
+        {
+            var ray = _mainCamera.ScreenPointToRay(_playerInputs.MousePositionValue);
+
+            if (Physics.Raycast(ray, out var hit))
+            {
+                var employee = hit.transform.GetComponent<EmployeeWorker>();
+                if (employee is not null)
+                {
+                    Debug.Log("Employee clicked");
+                }
+            }
+        }
+        
+        private void AnimatorSetSpeed(float speed)
+        {
+            _employeeAnimator.SetFloat(Speed, speed);
+        }
+
         private void PieceIncrement(float incrementAmount)
         {
             _pieceInProgress += incrementAmount;
+        }
+        
+        private void TryIncrementAssets()
+        {
+            if(_pieceInProgress >= GameManager.IncrementDelay)
+            {
+                _pieceInProgress = 0;
+                _gameManager.IncrementAssets();
+            }
+        }
+        
+        private IEnumerator ResetSpeed()
+        {
+            yield return new WaitForSeconds(.1f);
+            AnimatorSetSpeed(GameManager.SpeedNormal);
+        }
+
+        public void LevelUp()
+        {
+            if (_currentEmployeeLevel.Level >= _employeeLevels.Length)
+            {
+                Debug.Log("Max level reached.");
+                return;
+            }
+    
+            _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level + 1];
         }
 
         #endregion
