@@ -52,11 +52,6 @@ namespace Employee
             TryIncrementAssets();
         }
 
-        private void OnMouseDown()
-        {
-            Debug.Log("Clicked");
-        }
-
         #endregion
 
         #region Functions
@@ -77,7 +72,7 @@ namespace Employee
                 var employee = hit.transform.GetComponent<EmployeeWorker>();
                 if (employee is not null)
                 {
-                    Debug.Log("Employee clicked");
+                    LevelUp();
                 }
             }
         }
@@ -115,7 +110,8 @@ namespace Employee
                 return;
             }
     
-            _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level + 1];
+            _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
+            Debug.Log($"Level up to {_currentEmployeeLevel.Level}");
         }
 
         #endregion
