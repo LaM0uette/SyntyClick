@@ -8,5 +8,6 @@ namespace ScriptableOject.EmployeeLevel
         public int Level;
         public float IncrementAmount;
         public float IncrementClickAmount;
+        public int MaxAssets;
     }
 }

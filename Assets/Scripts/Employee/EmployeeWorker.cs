@@ -30,6 +30,7 @@ namespace Employee
         
         private Camera _mainCamera;
         private float _pieceInProgress;
+        private float _currentAssetsOnWorked;
 
         private void Awake()
         {
@@ -58,6 +59,8 @@ namespace Employee
 
         private void Update()
         {
+            if (CheckMaxAssets()) return;
+            
             PieceIncrement(_currentEmployeeLevel.IncrementAmount * Time.deltaTime);
             TryIncrementAssets();
         }
@@ -82,7 +85,15 @@ namespace Employee
                 var employee = hit.transform.GetComponent<EmployeeWorker>();
                 if (employee is not null)
                 {
-                    Debug.Log("Employee");
+                    Debug.Log("Reset _currentAssetsOnWorked + add Fans ans Money");
+                    _spriteProgressStop.fillAmount = 0;
+                    _currentAssetsOnWorked = 0;
+                    _TmpMaxAssets.text = "0";
+                    
+                    _gameManager.Fans += 1;
+                    _gameManager.Money += 50;
+                    
+                    _gameManager.IncrementAssets();
                 }
             }
         }
@@ -106,6 +117,18 @@ namespace Employee
             _employeeAnimator.SetFloat(Speed, speed);
         }
 
+        private bool CheckMaxAssets()
+        {
+            if (_currentAssetsOnWorked >= _currentEmployeeLevel.MaxAssets)
+            {
+                _spriteProgressStop.fillAmount = 1;
+                _TmpMaxAssets.text = "Max";
+                return true;
+            }
+
+            return false;
+        }
+        
         private void PieceIncrement(float incrementAmount)
         {
             _pieceInProgress += incrementAmount;
@@ -117,8 +140,11 @@ namespace Employee
             if(_pieceInProgress >= _objectiveManager.CurrentObjectives.IncrementDelay)
             {
                 _pieceInProgress = 0;
+                
+                _currentAssetsOnWorked++;
+                _TmpMaxAssets.text = $"{_currentAssetsOnWorked}";
+                
                 _spriteProgress.fillAmount = 0;
-                _gameManager.IncrementAssets();
             }
         }
         
