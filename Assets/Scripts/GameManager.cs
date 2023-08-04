@@ -1,3 +1,5 @@
+using System;
+using SaveData;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -29,6 +31,12 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        GamePreferences.ResetAll(); //TODO: Remove this line
+        SetValueFromPlayerPrefs();
+    }
+
     #endregion
 
     #region Functions
@@ -47,6 +55,22 @@ public class GameManager : MonoBehaviour
     public void IncrementMoney(int amout)
     {
         Money += amout;
+    }
+    
+    public void SetPlayerPrefs()
+    {
+        GamePreferences.TotalAssets = TotalAssets;
+        GamePreferences.CurrentAssets = CurrentAssets;
+        GamePreferences.Fans = Fans;
+        GamePreferences.Money = Money;
+    }
+    
+    private void SetValueFromPlayerPrefs()
+    {
+        TotalAssets = GamePreferences.TotalAssets;
+        CurrentAssets = GamePreferences.CurrentAssets;
+        Fans = GamePreferences.Fans;
+        Money = GamePreferences.Money;
     }
 
     #endregion

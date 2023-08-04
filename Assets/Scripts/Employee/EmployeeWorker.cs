@@ -169,6 +169,8 @@ namespace Employee
             SetRandomSpriteAssetOnWorked();
             IncrementFansAndMoney();
             ResetAll();
+
+            _gameManager.SetPlayerPrefs();
         }
 
         private void IncrementFansAndMoney()
