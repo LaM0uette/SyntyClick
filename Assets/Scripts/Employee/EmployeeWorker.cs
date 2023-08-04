@@ -233,7 +233,7 @@ namespace Employee
             _spriteAssetOnWorked.sprite = iconProps.Image;
         }
 
-        private IconProps GetRandomSpriteAssetOnWorked()
+        private static IconProps GetRandomSpriteAssetOnWorked()
         {
             var iconProps = _objectiveManager.CurrentObjectives.IconProps.Icons;
             var iconLenght = iconProps.Length - 1;
@@ -261,8 +261,6 @@ namespace Employee
             yield return new WaitForSeconds(.1f);
             AnimatorSetSpeed(GameManager.SpeedNormal);
         }
-
-        
 
         #endregion
     }
