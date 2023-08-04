@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using JetBrains.Annotations;
 using PlayerController;
 using ScriptableOject.EmployeeLevel;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Employee
@@ -29,9 +31,8 @@ namespace Employee
         [Header("RadialSprite")]
         [SerializeField] private Image _spriteProgress;
         [SerializeField] private Image _spriteProgressStop;
-        [SerializeField] private TextMeshProUGUI _TmpMaxAssets;
+        [FormerlySerializedAs("_TmpMaxAssets")] [SerializeField] private TextMeshProUGUI _tmpMaxAssets;
         
-        private Camera _mainCamera;
         private float _pieceInProgress;
         private int _currentAssetsOnWorked;
         private bool _isPaused;
@@ -42,8 +43,12 @@ namespace Employee
         {
             _playerInputs = GetComponent<InputReader>();
             _employeeWorker = GetComponent<EmployeeWorker>();
-            _mainCamera = Camera.main;
             _currentEmployeeLevel = _employeeLevels[0];
+        }
+
+        private void Start()
+        {
+            StartCoroutine(IncrementFansAndMoneyAllTime());
         }
 
         #endregion
@@ -77,55 +82,27 @@ namespace Employee
         #endregion
 
         #region Functions
-
-        private void OnClickAction()
+        
+        private IEnumerator IncrementFansAndMoneyAllTime()
         {
-            AnimatorSetSpeed(GameManager.SpeedBoost);
-            PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
-            StartCoroutine(ResetSpeed());
-        }
-
-        private void OnClickGameObject(GameObject clickedObject)
-        {
-            _employeeWorkerClicked = clickedObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
-                ? employeeWorker
-                : null;
-        }
-
-        private void OnMouseLeftClickAction()
-        {
-            if (_employeeWorkerClicked != _employeeWorker) return;
+            while (true)
+            {
+                yield return new WaitForSeconds(10f);
+                
+                var amountFans = (int)((float)_gameManager.TotalAssets / 100 * _currentEmployeeLevel.FansGainAmout);
+                var amountMoney = amountFans * _currentEmployeeLevel.MoneyGainAmout;
+                
+                IncrementFansAndMoney(amountFans, amountMoney);
+            }
             
-            _gameManager.IncrementAssets(_currentAssetsOnWorked);
-            _employeeAnimator.SetTrigger(Stop);
-            _gameManager.Fans += 1;
-            _gameManager.Money += 50;
-                    
-            _pieceInProgress = 0;
-            _spriteProgress.fillAmount = 0;
-            _spriteProgressStop.fillAmount = 0;
-            _currentAssetsOnWorked = 0;
-            _TmpMaxAssets.text = "0";
         }
         
-        private void OnMouseRightClickAction()
-        {
-            if (_employeeWorkerClicked != _employeeWorker) return;
-            
-            LevelUp();
-        }
-        
-        private void AnimatorSetSpeed(float speed)
-        {
-            _employeeAnimator.SetFloat(Speed, speed);
-        }
-
         private bool CheckMaxAssets()
         {
             if (_currentAssetsOnWorked >= _currentEmployeeLevel.MaxAssets)
             {
                 _spriteProgressStop.fillAmount = 1;
-                _TmpMaxAssets.text = "MAX";
+                _tmpMaxAssets.text = "MAX";
             
                 if (!_isPaused)
                 {
@@ -143,10 +120,80 @@ namespace Employee
 
             return false;
         }
+
+        private void OnClickAction()
+        {
+            AnimatorSetSpeed(GameManager.SpeedBoost);
+            PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
+            StartCoroutine(ResetSpeed());
+        }
+        
+        private void AnimatorSetSpeed(float speed)
+        {
+            _employeeAnimator.SetFloat(Speed, speed);
+        }
+
+        private void OnClickGameObject(GameObject clickedObject)
+        {
+            _employeeWorkerClicked = clickedObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
+                ? employeeWorker
+                : null;
+        }
+
+        private void OnMouseLeftClickAction()
+        {
+            if (_employeeWorkerClicked != _employeeWorker) return;
+            AddAssetsOnWorked();
+        }
+        
+        private void AddAssetsOnWorked()
+        {
+            _gameManager.IncrementAssets(_currentAssetsOnWorked);
+            _employeeAnimator.SetTrigger(Stop);
+            
+            IncrementFansAndMoney();
+            ResetAll();
+        }
+
+        private void IncrementFansAndMoney()
+        {
+            var amountFans = (int)((_currentAssetsOnWorked + (float)_gameManager.TotalAssets / 10) / 100 * _currentEmployeeLevel.FansGainAmout);
+            var amountMoney = amountFans * _currentEmployeeLevel.MoneyGainAmout;
+            
+            IncrementFansAndMoney(amountFans, amountMoney);
+        }
+        private static void IncrementFansAndMoney(int amountFans, int amountMoney)
+        {
+            _gameManager.IncrementFans(amountFans);
+            _gameManager.IncrementMoney(amountMoney);
+        }
+        
+        private void OnMouseRightClickAction()
+        {
+            if (_employeeWorkerClicked != _employeeWorker) return;
+            
+            LevelUp();
+        }
+        
+        private void LevelUp()
+        {
+            if (_currentEmployeeLevel.Level >= _employeeLevels.Length)
+            {
+                return;
+            }
+    
+            _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
+            AddAssetsOnWorked();
+        }
         
         private void PieceIncrement(float incrementAmount)
         {
             _pieceInProgress += incrementAmount;
+            SetSpriteProgress();
+        }
+        
+        private void SetSpriteProgress()
+        {
             _spriteProgress.fillAmount = _pieceInProgress / _objectiveManager.CurrentObjectives.IncrementDelay;
         }
         
@@ -154,14 +201,31 @@ namespace Employee
         {
             if(_pieceInProgress >= _objectiveManager.CurrentObjectives.IncrementDelay)
             {
-                _pieceInProgress = 0;
-                
-                _currentAssetsOnWorked++;
-                _TmpMaxAssets.text = $"{_currentAssetsOnWorked}";
-                
-                _spriteProgress.fillAmount = 0;
+                IncrementCurrentAssetsOnWorked();
+                ResetPieceInProgress();
+                ResetSpriteProgress();
             }
         }
+
+        private void IncrementCurrentAssetsOnWorked()
+        {
+            _tmpMaxAssets.text = $"{++_currentAssetsOnWorked}";
+        }
+
+        private void ResetAll()
+        {
+            
+            ResetPieceInProgress();
+            ResetSpriteProgress();
+            ResetSpriteProgressStop();
+            ResetCurrentAssetsOnWorked();
+            ResetTmpMaxAssets();
+        }
+        private void ResetPieceInProgress() => _pieceInProgress = 0;
+        private void ResetSpriteProgress() => _spriteProgress.fillAmount = 0;
+        private void ResetSpriteProgressStop() => _spriteProgressStop.fillAmount = 0;
+        private void ResetCurrentAssetsOnWorked() => _currentAssetsOnWorked = 0;
+        private void ResetTmpMaxAssets() => _tmpMaxAssets.text = "0";
         
         private IEnumerator ResetSpeed()
         {
@@ -169,17 +233,7 @@ namespace Employee
             AnimatorSetSpeed(GameManager.SpeedNormal);
         }
 
-        private void LevelUp()
-        {
-            if (_currentEmployeeLevel.Level >= _employeeLevels.Length)
-            {
-                Debug.Log("Max level reached.");
-                return;
-            }
-    
-            _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
-            Debug.Log($"Level up to {_currentEmployeeLevel.Level}");
-        }
+        
 
         #endregion
     }

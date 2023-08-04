@@ -9,5 +9,7 @@ namespace ScriptableOject.EmployeeLevel
         public float IncrementAmount;
         public float IncrementClickAmount;
         public int MaxAssets;
+        public int FansGainAmout;
+        public int MoneyGainAmout;
     }
 }

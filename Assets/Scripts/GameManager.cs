@@ -38,6 +38,16 @@ public class GameManager : MonoBehaviour
         TotalAssets += amout;
         CurrentAssets += amout;
     }
+    
+    public void IncrementFans(int amout)
+    {
+        Fans += amout;
+    }
+    
+    public void IncrementMoney(int amout)
+    {
+        Money += amout;
+    }
 
     #endregion
 }
