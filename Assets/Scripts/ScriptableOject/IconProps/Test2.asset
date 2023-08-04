@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f68c8dbce8321438f1b01b0073bee4, type: 3}
-  m_Name: Level4
+  m_Script: {fileID: 11500000, guid: 38f0a65f6c057e54c94e511e56faf7b5, type: 3}
+  m_Name: Test2
   m_EditorClassIdentifier: 
-  Level: 4
-  IncrementAmount: 1.8
-  IncrementClickAmount: 2
-  MaxAssets: 500
-  FansGainAmout: 8
-  MoneyGainAmout: 50
+  Id: 2
+  Image: {fileID: 21300000, guid: 1056ee495b7e34047a7cf9a8ae221f5f, type: 3}

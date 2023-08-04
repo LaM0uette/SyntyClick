@@ -1,8 +1,8 @@
-using System;
 using System.Collections;
 using JetBrains.Annotations;
 using PlayerController;
 using ScriptableOject.EmployeeLevel;
+using ScriptableOject.IconProps;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -32,6 +32,7 @@ namespace Employee
         [SerializeField] private Image _spriteProgress;
         [SerializeField] private Image _spriteProgressStop;
         [FormerlySerializedAs("_TmpMaxAssets")] [SerializeField] private TextMeshProUGUI _tmpMaxAssets;
+        [SerializeField] private Image _spriteAssetOnWorked;
         
         private float _pieceInProgress;
         private int _currentAssetsOnWorked;
@@ -94,7 +95,7 @@ namespace Employee
             {
                 yield return new WaitForSeconds(10f);
                 
-                var amountFans = (int)((float)_gameManager.TotalAssets / 100 * _currentEmployeeLevel.FansGainAmout);
+                var amountFans = (int)((float)_gameManager.TotalAssets / 100);
                 var amountMoney = amountFans * _currentEmployeeLevel.MoneyGainAmout;
                 
                 IncrementFansAndMoney(amountFans, amountMoney);
@@ -217,12 +218,27 @@ namespace Employee
                 IncrementCurrentAssetsOnWorked();
                 ResetPieceInProgress();
                 ResetSpriteProgress();
+                SetRandomSpriteAssetOnWorked();
             }
         }
 
         private void IncrementCurrentAssetsOnWorked()
         {
             _tmpMaxAssets.text = $"{++_currentAssetsOnWorked}";
+        }
+
+        private void SetRandomSpriteAssetOnWorked()
+        {
+            var iconProps = GetRandomSpriteAssetOnWorked();
+            _spriteAssetOnWorked.sprite = iconProps.Image;
+        }
+
+        private IconProps GetRandomSpriteAssetOnWorked()
+        {
+            var iconProps = _objectiveManager.CurrentObjectives.IconProps;
+            var iconLenght = iconProps.Length - 1;
+            
+            return iconProps[Random.Range(0, iconLenght)];
         }
 
         private void ResetAll()

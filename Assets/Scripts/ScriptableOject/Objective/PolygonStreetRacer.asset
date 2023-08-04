@@ -16,5 +16,11 @@ MonoBehaviour:
   Name: Polygon Street Racer
   Image: {fileID: 21300000, guid: 148ed55f1e8414b41b37d952d6ce44a4, type: 3}
   AssetCount: 0
-  IncrementDelay: 3
   isInfinite: 1
+  IncrementDelay: 3
+  FansGainAmout: 0
+  MoneyGainAmout: 0
+  IconProps:
+  - {fileID: 11400000, guid: 84b953a3d4f40ab47b20effafc063190, type: 2}
+  - {fileID: 11400000, guid: f0e7de2e1d8f7c447932dc0b55a3a123, type: 2}
+  - {fileID: 11400000, guid: e57640913b9490b409b9e46763495dad, type: 2}

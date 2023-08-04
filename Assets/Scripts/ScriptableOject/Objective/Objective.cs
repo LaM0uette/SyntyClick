@@ -13,5 +13,6 @@ namespace ScriptableOject.Objective
         public int IncrementDelay;
         public int FansGainAmout;
         public int MoneyGainAmout;
+        public IconProps.IconProps[] IconProps;
     }
 }
