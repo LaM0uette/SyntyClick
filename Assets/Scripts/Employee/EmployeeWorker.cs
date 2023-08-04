@@ -188,18 +188,20 @@ namespace Employee
         {
             if (_employeeWorkerClicked != _employeeWorker) return;
             
+            CheckLevelUp();
+        }
+        
+        private void CheckLevelUp()
+        {
+            if (_currentEmployeeLevel.Level >= _employeeLevels.Length) return;
             LevelUp();
         }
         
         private void LevelUp()
         {
-            if (_currentEmployeeLevel.Level >= _employeeLevels.Length)
-            {
-                return;
-            }
-    
             _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
-            AddAssetsOnWorked();
+            
+            if (_currentAssetsOnWorked >= 1) AddAssetsOnWorked();
         }
         
         private void PieceIncrement(float incrementAmount)

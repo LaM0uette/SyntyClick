@@ -18,7 +18,7 @@ namespace Ui
             ImgObjectives.sprite = _objectiveManager.CurrentObjectives.Image;
             TmpObjectivesName.text = _objectiveManager.CurrentObjectives.Name;
             
-            var total = _objectiveManager.CurrentObjectives.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets}/{_objectiveManager.CurrentObjectives.AssetCount}";
+            var total = _objectiveManager.CurrentObjectives.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjectives.AssetCount}";
             TmpObjectivesTotal.text = $"Assets : {total}";
         }
     }
