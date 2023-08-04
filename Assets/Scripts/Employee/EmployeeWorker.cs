@@ -91,6 +91,8 @@ namespace Employee
                 _gameManager.Fans += 1;
                 _gameManager.Money += 50;
                     
+                _pieceInProgress = 0;
+                _spriteProgress.fillAmount = 0;
                 _spriteProgressStop.fillAmount = 0;
                 _currentAssetsOnWorked = 0;
                 _TmpMaxAssets.text = "0";
