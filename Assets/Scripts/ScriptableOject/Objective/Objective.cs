@@ -9,7 +9,9 @@ namespace ScriptableOject.Objective
         public string Name;
         public Sprite Image;
         public int AssetCount;
-        public int IncrementDelay;
         public bool isInfinite;
+        public int IncrementDelay;
+        public int FansGainAmout;
+        public int MoneyGainAmout;
     }
 }

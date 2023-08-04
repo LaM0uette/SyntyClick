@@ -17,4 +17,4 @@ MonoBehaviour:
   IncrementClickAmount: 0.1
   MaxAssets: 10
   FansGainAmout: 1
-  MoneyGainAmout: 50
+  MoneyGainAmout: 5

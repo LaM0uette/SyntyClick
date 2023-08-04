@@ -53,7 +53,14 @@ public class ObjectiveManager : MonoBehaviour
         
         _gameManager.CurrentAssets = 0;
         CurrentObjectives = _objectives[CurrentObjectives.Id];
-        Debug.Log($"New Objective : {CurrentObjectives.Name}");
+        
+        IncrementFansAndMoney(CurrentObjectives.FansGainAmout, CurrentObjectives.MoneyGainAmout);
+    }
+    
+    private static void IncrementFansAndMoney(int amountFans, int amountMoney)
+    {
+        _gameManager.IncrementFans(amountFans);
+        _gameManager.IncrementMoney(amountMoney);
     }
 
     #endregion

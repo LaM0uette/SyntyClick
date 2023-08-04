@@ -16,5 +16,7 @@ MonoBehaviour:
   Name: Polygon Prototype
   Image: {fileID: 21300000, guid: 1056ee495b7e34047a7cf9a8ae221f5f, type: 3}
   AssetCount: 50
-  IncrementDelay: 2
   isInfinite: 0
+  IncrementDelay: 2
+  FansGainAmout: 30
+  MoneyGainAmout: 1000
