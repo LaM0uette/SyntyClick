@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,9 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public const float SpeedNormal = 1f;
     public const float SpeedBoost = 6f;
-    
-    private const float TimeToFan = 8f;
-    private const int MoneyFan = 50;
     
     public int TotalAssets;
     public int CurrentAssets;

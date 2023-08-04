@@ -1,4 +1,5 @@
 using System.Collections;
+using JetBrains.Annotations;
 using PlayerController;
 using ScriptableOject.EmployeeLevel;
 using TMPro;
@@ -35,6 +36,7 @@ namespace Employee
         private int _currentAssetsOnWorked;
         private bool _isPaused;
         private EmployeeWorker _employeeWorker;
+        [CanBeNull] private EmployeeWorker _employeeWorkerClicked;
 
         private void Awake()
         {
@@ -51,14 +53,16 @@ namespace Employee
         private void OnEnable()
         {
             _playerInputs.ClickAction += OnClickAction;
-            _playerInputs.OnClickGameObject += OnMouseLeftClickAction;
+            _playerInputs.ClickGameObject += OnClickGameObject;
+            _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction += OnMouseRightClickAction;
         }
         
         private void OnDisable()
         {
             _playerInputs.ClickAction -= OnClickAction;
-            _playerInputs.OnClickGameObject -= OnMouseLeftClickAction;
+            _playerInputs.ClickGameObject -= OnClickGameObject;
+            _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction -= OnMouseRightClickAction;
         }
 
@@ -80,37 +84,35 @@ namespace Employee
             PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
             StartCoroutine(ResetSpeed());
         }
-        
-        private void OnMouseLeftClickAction(GameObject clickedObject)
+
+        private void OnClickGameObject(GameObject clickedObject)
         {
-            if (clickedObject == _employeeWorker.gameObject)
-            {
-                Debug.Log("Reset _currentAssetsOnWorked + add Fans ans Money");
-                _gameManager.IncrementAssets(_currentAssetsOnWorked);
-                _employeeAnimator.SetTrigger(Stop);
-                _gameManager.Fans += 1;
-                _gameManager.Money += 50;
+            _employeeWorkerClicked = clickedObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
+                ? employeeWorker
+                : null;
+        }
+
+        private void OnMouseLeftClickAction()
+        {
+            if (_employeeWorkerClicked != _employeeWorker) return;
+            
+            _gameManager.IncrementAssets(_currentAssetsOnWorked);
+            _employeeAnimator.SetTrigger(Stop);
+            _gameManager.Fans += 1;
+            _gameManager.Money += 50;
                     
-                _pieceInProgress = 0;
-                _spriteProgress.fillAmount = 0;
-                _spriteProgressStop.fillAmount = 0;
-                _currentAssetsOnWorked = 0;
-                _TmpMaxAssets.text = "0";
-            }
+            _pieceInProgress = 0;
+            _spriteProgress.fillAmount = 0;
+            _spriteProgressStop.fillAmount = 0;
+            _currentAssetsOnWorked = 0;
+            _TmpMaxAssets.text = "0";
         }
         
         private void OnMouseRightClickAction()
         {
-            var ray = _mainCamera.ScreenPointToRay(_playerInputs.MousePositionValue);
-
-            if (Physics.Raycast(ray, out var hit))
-            {
-                var employee = hit.transform.GetComponent<EmployeeWorker>();
-                if (employee is not null)
-                {
-                    LevelUp();
-                }
-            }
+            if (_employeeWorkerClicked != _employeeWorker) return;
+            
+            LevelUp();
         }
         
         private void AnimatorSetSpeed(float speed)
