@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level2
   m_EditorClassIdentifier: 
   Level: 2
-  IncrementAmount: 0.5
-  IncrementClickAmount: 0.4
+  IncrementAmount: 0.4
+  IncrementClickAmount: 0.3
   MaxAssets: 50
   FansGainAmout: 2
   MoneyGainAmout: 10

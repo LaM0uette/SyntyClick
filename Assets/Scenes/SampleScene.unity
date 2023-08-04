@@ -654,6 +654,14 @@ MonoBehaviour:
   _objectives:
   - {fileID: 11400000, guid: eec2227b7fe298244824122caaa6ea0e, type: 2}
   - {fileID: 11400000, guid: d5a16b6e32cf976499992ea7334d411c, type: 2}
+  - {fileID: 11400000, guid: 74b9c4f1a9a98d54ea968ea576e3b120, type: 2}
+  - {fileID: 11400000, guid: fa0e63c507fcce54b9452485ca12a442, type: 2}
+  - {fileID: 11400000, guid: 0698d7d83aa1b8d41ad07f5f8efee9c1, type: 2}
+  - {fileID: 11400000, guid: 5cde8ffcd193cdc4a9c1d1d25c695d00, type: 2}
+  - {fileID: 11400000, guid: 8651dba795db20f4f8f1fee0662e39c2, type: 2}
+  - {fileID: 11400000, guid: 951990aee8b276f4ab5508fc1d9bd163, type: 2}
+  - {fileID: 11400000, guid: 8def19cca289db84584be26bebe7d9d2, type: 2}
+  - {fileID: 11400000, guid: 356475bd3090c4d42a0a379c64799c5f, type: 2}
   - {fileID: 11400000, guid: 54141291c5a02ec479c60a677a66c322, type: 2}
   CurrentObjectives: {fileID: 0}
 --- !u!114 &133181689

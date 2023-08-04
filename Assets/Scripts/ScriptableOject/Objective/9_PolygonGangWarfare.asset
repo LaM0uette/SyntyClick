@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdb763347fd90a04ebee2354fa6b7d2c, type: 3}
-  m_Name: 2_PolygonPrototype
+  m_Name: 9_PolygonGangWarfare
   m_EditorClassIdentifier: 
-  Id: 2
-  Name: Polygon Prototype
-  Image: {fileID: 21300000, guid: 1056ee495b7e34047a7cf9a8ae221f5f, type: 3}
+  Id: 9
+  Name: Polygon Gang Warfare
+  Image: {fileID: 21300000, guid: 8b6504f417206454a98d5b563c2da390, type: 3}
   AssetCount: 2
   isInfinite: 0
-  IncrementDelay: 2
-  FansGainAmout: 30
-  MoneyGainAmout: 1000
-  IconProps: {fileID: 11400000, guid: f18281be300e7814fa5af8373e1c4a3d, type: 2}
+  IncrementDelay: 6
+  FansGainAmout: 3000
+  MoneyGainAmout: 50000
+  IconProps: {fileID: 11400000, guid: 18b81f6e5066ab0498efcefcc26081d5, type: 2}
