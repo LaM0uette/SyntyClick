@@ -1,3 +1,4 @@
+using ScriptableOject.IconProps.IconPropsArray;
 using UnityEngine;
 
 namespace ScriptableOject.Objective
@@ -13,6 +14,6 @@ namespace ScriptableOject.Objective
         public int IncrementDelay;
         public int FansGainAmout;
         public int MoneyGainAmout;
-        public IconProps.IconProps[] IconProps;
+        public IconPropsArray IconProps;
     }
 }

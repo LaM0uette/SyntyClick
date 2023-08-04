@@ -235,7 +235,7 @@ namespace Employee
 
         private IconProps GetRandomSpriteAssetOnWorked()
         {
-            var iconProps = _objectiveManager.CurrentObjectives.IconProps;
+            var iconProps = _objectiveManager.CurrentObjectives.IconProps.Icons;
             var iconLenght = iconProps.Length - 1;
             
             return iconProps[Random.Range(0, iconLenght)];

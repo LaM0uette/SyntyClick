@@ -20,7 +20,4 @@ MonoBehaviour:
   IncrementDelay: 2
   FansGainAmout: 30
   MoneyGainAmout: 1000
-  IconProps:
-  - {fileID: 11400000, guid: 84b953a3d4f40ab47b20effafc063190, type: 2}
-  - {fileID: 11400000, guid: f0e7de2e1d8f7c447932dc0b55a3a123, type: 2}
-  - {fileID: 11400000, guid: e57640913b9490b409b9e46763495dad, type: 2}
+  IconProps: {fileID: 11400000, guid: 983aeeb6e4463c64a9b6703f04111f9f, type: 2}
