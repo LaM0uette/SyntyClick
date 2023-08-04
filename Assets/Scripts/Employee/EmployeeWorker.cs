@@ -50,6 +50,7 @@ namespace Employee
         private void Start()
         {
             StartCoroutine(IncrementFansAndMoneyAllTime());
+            SetRandomSpriteAssetOnWorked();
         }
 
         #endregion
@@ -165,6 +166,7 @@ namespace Employee
         {
             _gameManager.IncrementAssets(_currentAssetsOnWorked);
             
+            SetRandomSpriteAssetOnWorked();
             IncrementFansAndMoney();
             ResetAll();
         }
@@ -229,11 +231,11 @@ namespace Employee
 
         private void SetRandomSpriteAssetOnWorked()
         {
-            var iconProps = GetRandomSpriteAssetOnWorked();
-            _spriteAssetOnWorked.sprite = iconProps.Image;
+            var sprite = GetRandomSpriteAssetOnWorked();
+            _spriteAssetOnWorked.sprite = sprite;
         }
 
-        private static IconProps GetRandomSpriteAssetOnWorked()
+        private static Sprite GetRandomSpriteAssetOnWorked()
         {
             var iconProps = _objectiveManager.CurrentObjectives.IconProps.Icons;
             var iconLenght = iconProps.Length - 1;

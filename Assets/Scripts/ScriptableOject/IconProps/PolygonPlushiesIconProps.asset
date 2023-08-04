@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f0a65f6c057e54c94e511e56faf7b5, type: 3}
+  m_Name: PolygonPlushiesIconProps
+  m_EditorClassIdentifier: 
+  Icons:
+  - {fileID: 21300000, guid: ff36eb2a61228b044b89a0b60d995397, type: 3}
+  - {fileID: 21300000, guid: 7ff6294fb20a35a4ebbee09d04e98c5c, type: 3}
+  - {fileID: 21300000, guid: ca192e5e66583dc429edb33994f4c19e, type: 3}
+  - {fileID: 21300000, guid: 1357fb7c1295cdd41bbd14332366b12e, type: 3}
+  - {fileID: 21300000, guid: b04ad4fb2d9b6584f99df5d1e33405a4, type: 3}
+  - {fileID: 21300000, guid: 1e3c0c8062c6fe14e818726fd1147582, type: 3}
+  - {fileID: 21300000, guid: 398fcd1502b38fa4eb6cbbdc04ccb178, type: 3}
+  - {fileID: 21300000, guid: 16534d52074551142b3f07dda3134e16, type: 3}
+  - {fileID: 21300000, guid: 73042a1b065d05c45a5ad52ea3044767, type: 3}
+  - {fileID: 21300000, guid: 13b9dc97ef389f6418bce6eec84b9a20, type: 3}
+  - {fileID: 21300000, guid: 9e84b130aaa63e04192747e858cb8ba5, type: 3}
+  - {fileID: 21300000, guid: 2554dca5f2671344ea4dca12c9003e88, type: 3}

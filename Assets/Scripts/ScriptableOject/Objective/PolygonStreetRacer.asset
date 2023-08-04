@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb763347fd90a04ebee2354fa6b7d2c, type: 3}
   m_Name: PolygonStreetRacer
   m_EditorClassIdentifier: 
-  Id: 3
+  Id: 10
   Name: Polygon Street Racer
   Image: {fileID: 21300000, guid: 148ed55f1e8414b41b37d952d6ce44a4, type: 3}
   AssetCount: 0
@@ -20,4 +20,4 @@ MonoBehaviour:
   IncrementDelay: 3
   FansGainAmout: 0
   MoneyGainAmout: 0
-  IconProps: {fileID: 11400000, guid: 983aeeb6e4463c64a9b6703f04111f9f, type: 2}
+  IconProps: {fileID: 11400000, guid: 895781498efe5b742801e319fac39368, type: 2}
