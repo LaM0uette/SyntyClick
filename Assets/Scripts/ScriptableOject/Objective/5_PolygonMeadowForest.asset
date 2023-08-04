@@ -15,9 +15,9 @@ MonoBehaviour:
   Id: 5
   Name: Polygon Meadow Forest
   Image: {fileID: 21300000, guid: d1e32ffeaea39954484446197bbc6b33, type: 3}
-  AssetCount: 2
+  AssetCount: 5
   isInfinite: 0
-  IncrementDelay: 4
+  IncrementDelay: 5
   FansGainAmout: 200
   MoneyGainAmout: 5000
   IconProps: {fileID: 11400000, guid: 9be6556b0fae11c4e81b575cfeeab3e1, type: 2}

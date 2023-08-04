@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f68c8dbce8321438f1b01b0073bee4, type: 3}
-  m_Name: Level3
+  m_Name: Level6
   m_EditorClassIdentifier: 
-  Level: 3
-  IncrementAmount: 1.2
-  IncrementClickAmount: 0.4
-  MaxAssets: 100
-  FansGainAmout: 4
-  MoneyGainAmout: 30
+  Level: 6
+  IncrementAmount: 8
+  IncrementClickAmount: 3
+  MaxAssets: 999
+  FansGainAmout: 50
+  MoneyGainAmout: 500

@@ -17,7 +17,7 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: c9dec4dc17610d8468c0765706b314f8, type: 3}
   AssetCount: 0
   isInfinite: 1
-  IncrementDelay: 8
+  IncrementDelay: 15
   FansGainAmout: 0
   MoneyGainAmout: 0
   IconProps: {fileID: 11400000, guid: 00f421d8f59f11a40a1f3dd13ff56f43, type: 2}

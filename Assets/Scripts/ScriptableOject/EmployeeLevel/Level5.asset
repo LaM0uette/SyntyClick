@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 5
   IncrementAmount: 3
-  IncrementClickAmount: 3
+  IncrementClickAmount: 1
   MaxAssets: 999
   FansGainAmout: 10
   MoneyGainAmout: 100
