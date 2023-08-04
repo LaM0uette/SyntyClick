@@ -171,6 +171,7 @@ namespace Employee
             ResetAll();
 
             _gameManager.SetPlayerPrefs();
+            _objectiveManager.SetPlayerPrefs();
         }
 
         private void IncrementFansAndMoney()
@@ -214,12 +215,12 @@ namespace Employee
         
         private void SetSpriteProgress()
         {
-            _spriteProgress.fillAmount = _pieceInProgress / _objectiveManager.CurrentObjectives.IncrementDelay;
+            _spriteProgress.fillAmount = _pieceInProgress / _objectiveManager.CurrentObjective.IncrementDelay;
         }
         
         private void TryIncrementAssets()
         {
-            if(_pieceInProgress >= _objectiveManager.CurrentObjectives.IncrementDelay)
+            if(_pieceInProgress >= _objectiveManager.CurrentObjective.IncrementDelay)
             {
                 IncrementCurrentAssetsOnWorked();
                 ResetPieceInProgress();
@@ -241,7 +242,7 @@ namespace Employee
 
         private static Sprite GetRandomSpriteAssetOnWorked()
         {
-            var iconProps = _objectiveManager.CurrentObjectives.IconProps.Icons;
+            var iconProps = _objectiveManager.CurrentObjective.IconProps.Icons;
             var iconLenght = iconProps.Length - 1;
             
             return iconProps[Random.Range(0, iconLenght)];

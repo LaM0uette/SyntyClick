@@ -7,7 +7,6 @@ namespace SaveData
         #region Statements
 
         private const string TotalAssetsKey = "TotalAssets";
-        public static bool HasTotalAssets => PlayerPrefs.HasKey(TotalAssetsKey);
         public static int TotalAssets
         {
             get => PlayerPrefs.GetInt(TotalAssetsKey, 0);
@@ -15,7 +14,6 @@ namespace SaveData
         }
         
         private const string CurrentAssetsKey = "CurrentAssets";
-        public static bool HasCurrentAssets => PlayerPrefs.HasKey(CurrentAssetsKey);
         public static int CurrentAssets
         {
             get => PlayerPrefs.GetInt(CurrentAssetsKey, 0);
@@ -23,7 +21,6 @@ namespace SaveData
         }
         
         private const string FansKey = "Fans";
-        public static bool HasFans => PlayerPrefs.HasKey(FansKey);
         public static int Fans
         {
             get => PlayerPrefs.GetInt(FansKey, 0);
@@ -31,11 +28,17 @@ namespace SaveData
         }
         
         private const string MoneyKey = "Money";
-        public static bool HasMoney => PlayerPrefs.HasKey(MoneyKey);
         public static int Money
         {
             get => PlayerPrefs.GetInt(MoneyKey, 0);
             set => PlayerPrefs.SetInt(MoneyKey, value);
+        }
+        
+        private const string CurrentObjectiveIdKey = "CurrentObjectiveId";
+        public static int CurrentObjectiveId
+        {
+            get => PlayerPrefs.GetInt(CurrentObjectiveIdKey, 0);
+            set => PlayerPrefs.SetInt(CurrentObjectiveIdKey, value);
         }
 
         #endregion
@@ -48,6 +51,7 @@ namespace SaveData
             CurrentAssets = 0;
             Fans = 0;
             Money = 0;
+            CurrentObjectiveId = 0;
         }
 
         #endregion

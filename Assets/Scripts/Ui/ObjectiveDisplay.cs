@@ -15,10 +15,10 @@ namespace Ui
         
         private void FixedUpdate()
         {
-            ImgObjectives.sprite = _objectiveManager.CurrentObjectives.Image;
-            TmpObjectivesName.text = _objectiveManager.CurrentObjectives.Name;
+            ImgObjectives.sprite = _objectiveManager.CurrentObjective.Image;
+            TmpObjectivesName.text = _objectiveManager.CurrentObjective.Name;
             
-            var total = _objectiveManager.CurrentObjectives.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjectives.AssetCount}";
+            var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
             TmpObjectivesTotal.text = $"Assets : {total}";
         }
     }

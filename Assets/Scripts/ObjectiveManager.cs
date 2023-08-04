@@ -1,3 +1,4 @@
+using SaveData;
 using ScriptableOject.Objective;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class ObjectiveManager : MonoBehaviour
     private static GameManager _gameManager => GameManager.instance;
     
     [SerializeField] private Objective[] _objectives;
-    [HideInInspector] public Objective CurrentObjectives;
+    [HideInInspector] public Objective CurrentObjective;
 
     private void Awake()
     {
@@ -24,7 +25,12 @@ public class ObjectiveManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         
-        CurrentObjectives = _objectives[0];
+        CurrentObjective = _objectives[0];
+    }
+    
+    private void Start()
+    {
+        SetValueFromPlayerPrefs();
     }
 
     #endregion
@@ -42,25 +48,35 @@ public class ObjectiveManager : MonoBehaviour
 
     private void CheckObjectiveAvancement()
     {
-        if (CurrentObjectives.isInfinite) return;
+        if (CurrentObjective.isInfinite) return;
         
         TryIncrementAssets();
     }
     
     private void TryIncrementAssets()
     {
-        if (_gameManager.CurrentAssets < CurrentObjectives.AssetCount) return;
+        if (_gameManager.CurrentAssets < CurrentObjective.AssetCount) return;
         
         _gameManager.CurrentAssets = 0;
-        CurrentObjectives = _objectives[CurrentObjectives.Id];
+        CurrentObjective = _objectives[CurrentObjective.Id];
         
-        IncrementFansAndMoney(CurrentObjectives.FansGainAmout, CurrentObjectives.MoneyGainAmout);
+        IncrementFansAndMoney(CurrentObjective.FansGainAmout, CurrentObjective.MoneyGainAmout);
     }
     
     private static void IncrementFansAndMoney(int amountFans, int amountMoney)
     {
         _gameManager.IncrementFans(amountFans);
         _gameManager.IncrementMoney(amountMoney);
+    }
+    
+    public void SetPlayerPrefs()
+    {
+        GamePreferences.CurrentObjectiveId = CurrentObjective.Id - 1;
+    }
+    
+    private void SetValueFromPlayerPrefs()
+    {
+        CurrentObjective = _objectives[GamePreferences.CurrentObjectiveId];
     }
 
     #endregion
