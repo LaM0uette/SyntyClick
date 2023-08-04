@@ -73,10 +73,15 @@ namespace Employee
 
         private void Update()
         {
-            if (CheckMaxAssets()) return;
+            if (_isPaused) return;
             
             PieceIncrement(_currentEmployeeLevel.IncrementAmount * Time.deltaTime);
             TryIncrementAssets();
+        }
+
+        private void FixedUpdate()
+        {
+            CheckMaxAssets();
         }
 
         #endregion
@@ -97,28 +102,37 @@ namespace Employee
             
         }
         
-        private bool CheckMaxAssets()
+        private void CheckMaxAssets()
         {
+            if (!_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                _employeeAnimator.SetTrigger(Stop);
+            }
+            
             if (_currentAssetsOnWorked >= _currentEmployeeLevel.MaxAssets)
             {
-                _spriteProgressStop.fillAmount = 1;
-                _tmpMaxAssets.text = "MAX";
-            
-                if (!_isPaused)
+                if (_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Pause"))
                 {
                     _employeeAnimator.SetTrigger(Pause);
-                    _isPaused = true;
                 }
-
-                return true;
+                
+                if (!_isPaused)
+                {
+                    _isPaused = true;
+                    _employeeAnimator.SetTrigger(Pause);
+                    
+                    _spriteProgressStop.fillAmount = 1;
+                    _tmpMaxAssets.text = "MAX";
+                }
+                
+                return;
             }
-
+            
             if (_isPaused)
             {
                 _isPaused = false;
+                _employeeAnimator.SetTrigger(Stop);
             }
-
-            return false;
         }
 
         private void OnClickAction()
@@ -149,7 +163,6 @@ namespace Employee
         private void AddAssetsOnWorked()
         {
             _gameManager.IncrementAssets(_currentAssetsOnWorked);
-            _employeeAnimator.SetTrigger(Stop);
             
             IncrementFansAndMoney();
             ResetAll();
