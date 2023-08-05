@@ -50,6 +50,7 @@ namespace Employee
         {
             if (_buttonEmployeeLevelUpClicked != _buttonEmployeeLevelUp) return;
             _employeeWorker.CheckLevelUp();
+            _buttonEmployeeLevelUpClicked = null;
         }
 
         #endregion

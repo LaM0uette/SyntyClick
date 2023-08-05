@@ -202,6 +202,8 @@ namespace Employee
         public void CheckLevelUp()
         {
             if (_currentEmployeeLevel.Level >= _employeeLevels.Length) return;
+            if (_gameManager.Money < _employeeLevels[_currentEmployeeLevel.Level].CostLevel) return;
+            
             LevelUp();
         }
         
@@ -209,6 +211,7 @@ namespace Employee
         {
             _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
             _desktopRenderer.material = _currentEmployeeLevel.Material;
+            _gameManager.Money -= _currentEmployeeLevel.CostLevel;
             
             SetTmpCostLvlUp();
 

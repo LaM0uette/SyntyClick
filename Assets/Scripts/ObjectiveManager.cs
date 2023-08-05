@@ -30,6 +30,7 @@ public class ObjectiveManager : MonoBehaviour
     
     private void Start()
     {
+        GamePreferences.ResetAll();
         SetValueFromPlayerPrefs();
     }
 

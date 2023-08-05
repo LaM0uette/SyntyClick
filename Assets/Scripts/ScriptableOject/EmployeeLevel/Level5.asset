@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level5
   m_EditorClassIdentifier: 
   Level: 5
-  CostLevel: 10000
+  CostLevel: 50000
   Material: {fileID: 2100000, guid: c2d06e9b5fb55d14c82a247de7be630f, type: 2}
   IncrementAmount: 3
   IncrementClickAmount: 1
