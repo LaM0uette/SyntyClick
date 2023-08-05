@@ -6,12 +6,21 @@ namespace PlayerController
 {
     public class InputReader : MonoBehaviour
     {
+        #region Statements
+
         public Vector2 MousePositionValue { get; private set; }
         
         public Action ClickAction { get; set; }
+        public static Action PdgClickAction { get; set; }
+        
         public Action MouseLeftClickAction { get; set; }
         public Action MouseRightClickAction { get; set; }
+        
         public Action<GameObject> ClickGameObject { get; set; }
+
+        #endregion
+
+        #region Events
 
         private void OnMousePosition(InputValue value)
         {
@@ -19,6 +28,7 @@ namespace PlayerController
         }
         
         private void OnClickAction() => ClickAction?.Invoke();
+        public static void OnPdgClickAction() => PdgClickAction?.Invoke();
 
         private void OnMouseLeftClick()
         {
@@ -30,6 +40,11 @@ namespace PlayerController
             OnClickGameObject();
             MouseRightClickAction?.Invoke();
         }
+
+        #endregion
+
+        #region Functions
+
         private void OnClickGameObject()
         {
             if (Camera.main is null) return;
@@ -40,5 +55,7 @@ namespace PlayerController
                 ClickGameObject?.Invoke(hit.collider.gameObject);
             }
         }
+
+        #endregion
     }
 }

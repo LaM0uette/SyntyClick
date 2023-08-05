@@ -37,6 +37,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""PdgClickAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""b9646a50-1db2-45d0-80f7-a853e1bf9fe1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""MousePosition"",
                     ""type"": ""Value"",
                     ""id"": ""fe138d91-deae-4001-87c7-280cadfc5dce"",
@@ -78,17 +87,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""2c3679f7-8052-45df-be0a-1b3b7dcadaa2"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""ClickAction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""5134e529-39d8-4871-8cd8-6d6dcfd25c52"",
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
@@ -117,6 +115,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""MouseRightClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2661afbf-488c-4a1e-ad7c-8b6c08e3f183"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""PdgClickAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -156,6 +165,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         // PlayerActions
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
         m_PlayerActions_ClickAction = m_PlayerActions.FindAction("ClickAction", throwIfNotFound: true);
+        m_PlayerActions_PdgClickAction = m_PlayerActions.FindAction("PdgClickAction", throwIfNotFound: true);
         m_PlayerActions_MousePosition = m_PlayerActions.FindAction("MousePosition", throwIfNotFound: true);
         m_PlayerActions_MouseLeftClick = m_PlayerActions.FindAction("MouseLeftClick", throwIfNotFound: true);
         m_PlayerActions_MouseRightClick = m_PlayerActions.FindAction("MouseRightClick", throwIfNotFound: true);
@@ -221,6 +231,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_PlayerActions;
     private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
     private readonly InputAction m_PlayerActions_ClickAction;
+    private readonly InputAction m_PlayerActions_PdgClickAction;
     private readonly InputAction m_PlayerActions_MousePosition;
     private readonly InputAction m_PlayerActions_MouseLeftClick;
     private readonly InputAction m_PlayerActions_MouseRightClick;
@@ -229,6 +240,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         private @PlayerInputs m_Wrapper;
         public PlayerActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @ClickAction => m_Wrapper.m_PlayerActions_ClickAction;
+        public InputAction @PdgClickAction => m_Wrapper.m_PlayerActions_PdgClickAction;
         public InputAction @MousePosition => m_Wrapper.m_PlayerActions_MousePosition;
         public InputAction @MouseLeftClick => m_Wrapper.m_PlayerActions_MouseLeftClick;
         public InputAction @MouseRightClick => m_Wrapper.m_PlayerActions_MouseRightClick;
@@ -244,6 +256,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @ClickAction.started += instance.OnClickAction;
             @ClickAction.performed += instance.OnClickAction;
             @ClickAction.canceled += instance.OnClickAction;
+            @PdgClickAction.started += instance.OnPdgClickAction;
+            @PdgClickAction.performed += instance.OnPdgClickAction;
+            @PdgClickAction.canceled += instance.OnPdgClickAction;
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
@@ -260,6 +275,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @ClickAction.started -= instance.OnClickAction;
             @ClickAction.performed -= instance.OnClickAction;
             @ClickAction.canceled -= instance.OnClickAction;
+            @PdgClickAction.started -= instance.OnPdgClickAction;
+            @PdgClickAction.performed -= instance.OnPdgClickAction;
+            @PdgClickAction.canceled -= instance.OnPdgClickAction;
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
@@ -307,6 +325,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public interface IPlayerActionsActions
     {
         void OnClickAction(InputAction.CallbackContext context);
+        void OnPdgClickAction(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnMouseLeftClick(InputAction.CallbackContext context);
         void OnMouseRightClick(InputAction.CallbackContext context);

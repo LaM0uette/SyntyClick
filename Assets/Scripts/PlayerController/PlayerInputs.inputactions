@@ -15,6 +15,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "PdgClickAction",
+                    "type": "Button",
+                    "id": "b9646a50-1db2-45d0-80f7-a853e1bf9fe1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "MousePosition",
                     "type": "Value",
                     "id": "fe138d91-deae-4001-87c7-280cadfc5dce",
@@ -56,17 +65,6 @@
                 },
                 {
                     "name": "",
-                    "id": "2c3679f7-8052-45df-be0a-1b3b7dcadaa2",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "ClickAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "5134e529-39d8-4871-8cd8-6d6dcfd25c52",
                     "path": "<Mouse>/position",
                     "interactions": "",
@@ -95,6 +93,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "MouseRightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2661afbf-488c-4a1e-ad7c-8b6c08e3f183",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "PdgClickAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

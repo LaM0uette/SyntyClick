@@ -2,7 +2,6 @@ using System.Collections;
 using JetBrains.Annotations;
 using PlayerController;
 using ScriptableOject.EmployeeLevel;
-using ScriptableOject.IconProps;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -60,6 +59,7 @@ namespace Employee
         private void OnEnable()
         {
             _playerInputs.ClickAction += OnClickAction;
+            InputReader.PdgClickAction += OnPdgClickAction;
             _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction += OnMouseRightClickAction;
@@ -68,6 +68,7 @@ namespace Employee
         private void OnDisable()
         {
             _playerInputs.ClickAction -= OnClickAction;
+            InputReader.PdgClickAction -= OnPdgClickAction;
             _playerInputs.ClickGameObject -= OnClickGameObject;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
             _playerInputs.MouseRightClickAction -= OnMouseRightClickAction;
@@ -142,6 +143,11 @@ namespace Employee
             AnimatorSetSpeed(GameManager.SpeedBoost);
             PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
             StartCoroutine(ResetSpeed());
+        }
+        
+        private void OnPdgClickAction()
+        {
+            AddAssetsOnWorked();
         }
         
         private void AnimatorSetSpeed(float speed)

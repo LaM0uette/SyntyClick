@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        //GamePreferences.ResetAll(); //TODO: Remove this line
+        GamePreferences.ResetAll(); //TODO: Remove this line
         SetValueFromPlayerPrefs();
     }
 
