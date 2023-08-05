@@ -1,4 +1,5 @@
 using SaveData;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,6 +14,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int CurrentAssets;
     [HideInInspector] public int Fans;
     [HideInInspector] public int Money;
+    
+    [SerializeField] private TextMeshProUGUI[] _tmpPriceNewEmployee;
     
     private float _fanInProgress;
 
@@ -70,6 +73,14 @@ public class GameManager : MonoBehaviour
         CurrentAssets = GamePreferences.CurrentAssets;
         Fans = GamePreferences.Fans;
         Money = GamePreferences.Money;
+    }
+
+    public void UpdateTextPriceNewEmployee(string newPrice)
+    {
+        foreach (var tmpPriceNewEmployee in _tmpPriceNewEmployee)
+        {
+            tmpPriceNewEmployee.text = newPrice;
+        }
     }
 
     #endregion

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Employee
@@ -8,9 +9,9 @@ namespace Employee
 
         private static GameManager _gameManager => GameManager.instance;
         
-        [SerializeField] private static int _newEmployeePrice = 5000;
+        private static int _newEmployeePrice = 5000;
         [SerializeField] private GameObject _buttonNewEmployee;
-        [SerializeField] private GameObject _employee; 
+        [SerializeField] private GameObject _employee;
 
         private void Start()
         {
@@ -42,9 +43,10 @@ namespace Employee
             IncrementNewEmployeePrice();
         }
 
-        private void IncrementNewEmployeePrice()
+        private static void IncrementNewEmployeePrice()
         {
             _newEmployeePrice += _newEmployeePrice;
+            _gameManager.UpdateTextPriceNewEmployee(_newEmployeePrice.ToString());
         }
 
         #endregion
