@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level6
   m_EditorClassIdentifier: 
   Level: 6
+  CostLevel: 50000
   Material: {fileID: 2100000, guid: bb9180f0818a31b459d93f6388b9d08c, type: 2}
   IncrementAmount: 8
   IncrementClickAmount: 3

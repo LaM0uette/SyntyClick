@@ -494,7 +494,7 @@ MonoBehaviour:
       serializedProperties:
       - PropertyName: _PublicColor
         Property:
-          ColorValue: {r: 0.3813261, g: 0.3813261, b: 0.3813261, a: 0.4392157}
+          ColorValue: {r: 0.3813261, g: 0.3813261, b: 0.3813261, a: 0.19607843}
           FloatValue: 0
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 0

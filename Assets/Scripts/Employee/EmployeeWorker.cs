@@ -35,6 +35,8 @@ namespace Employee
         [SerializeField] private TextMeshProUGUI _tmpMaxAssets;
         [SerializeField] private Image _spriteAssetOnWorked;
         [SerializeField] private TextMeshProUGUI _tmpCostLvlUp;
+        [SerializeField] private GameObject _prefabButtonLvlUp;
+        [SerializeField] private LevelButtonManager _levelButtonManager;
         
         private float _pieceInProgress;
         private int _currentAssetsOnWorked;
@@ -51,6 +53,7 @@ namespace Employee
 
         private void Start()
         {
+            SetTmpCostLvlUp();
             StartCoroutine(IncrementFansAndMoneyAllTime());
             SetRandomSpriteAssetOnWorked();
         }
@@ -216,7 +219,25 @@ namespace Employee
             _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
             _desktopRenderer.material = _currentEmployeeLevel.Material;
             
-            if (_currentAssetsOnWorked >= 1) AddAssetsOnWorked();
+            SetTmpCostLvlUp();
+
+            if (_currentAssetsOnWorked >= 1) 
+                AddAssetsOnWorked();
+        }
+
+        private void SetTmpCostLvlUp()
+        {
+            _levelButtonManager.SetButtonLvl(_currentEmployeeLevel);
+            
+            if (_currentEmployeeLevel.Level >= _employeeLevels.Length)
+            {
+                _tmpCostLvlUp.text = "MAX";
+                _prefabButtonLvlUp.SetActive(false);
+                return;
+            }
+            
+            var id = _currentEmployeeLevel.Level;
+            _tmpCostLvlUp.text = $"{_employeeLevels[id].CostLevel}";
         }
         
         private void PieceIncrement(float incrementAmount)
