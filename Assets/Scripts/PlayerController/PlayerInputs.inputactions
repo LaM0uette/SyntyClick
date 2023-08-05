@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DevEarnMoney",
+                    "type": "Button",
+                    "id": "88a99349-d056-475f-9d10-389c48a1a2d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap(tapCount=3)",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -104,6 +113,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "PdgClickAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16279bb0-0510-4c9d-b1e8-63edd99ac80c",
+                    "path": "<Keyboard>/semicolon",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "DevEarnMoney",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

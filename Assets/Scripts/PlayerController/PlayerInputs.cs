@@ -71,6 +71,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DevEarnMoney"",
+                    ""type"": ""Button"",
+                    ""id"": ""88a99349-d056-475f-9d10-389c48a1a2d2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""MultiTap(tapCount=3)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -128,6 +137,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""PdgClickAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""16279bb0-0510-4c9d-b1e8-63edd99ac80c"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""DevEarnMoney"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -169,6 +189,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_MousePosition = m_PlayerActions.FindAction("MousePosition", throwIfNotFound: true);
         m_PlayerActions_MouseLeftClick = m_PlayerActions.FindAction("MouseLeftClick", throwIfNotFound: true);
         m_PlayerActions_MouseRightClick = m_PlayerActions.FindAction("MouseRightClick", throwIfNotFound: true);
+        m_PlayerActions_DevEarnMoney = m_PlayerActions.FindAction("DevEarnMoney", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -235,6 +256,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_MousePosition;
     private readonly InputAction m_PlayerActions_MouseLeftClick;
     private readonly InputAction m_PlayerActions_MouseRightClick;
+    private readonly InputAction m_PlayerActions_DevEarnMoney;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -244,6 +266,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @MousePosition => m_Wrapper.m_PlayerActions_MousePosition;
         public InputAction @MouseLeftClick => m_Wrapper.m_PlayerActions_MouseLeftClick;
         public InputAction @MouseRightClick => m_Wrapper.m_PlayerActions_MouseRightClick;
+        public InputAction @DevEarnMoney => m_Wrapper.m_PlayerActions_DevEarnMoney;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -268,6 +291,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseRightClick.started += instance.OnMouseRightClick;
             @MouseRightClick.performed += instance.OnMouseRightClick;
             @MouseRightClick.canceled += instance.OnMouseRightClick;
+            @DevEarnMoney.started += instance.OnDevEarnMoney;
+            @DevEarnMoney.performed += instance.OnDevEarnMoney;
+            @DevEarnMoney.canceled += instance.OnDevEarnMoney;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -287,6 +313,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseRightClick.started -= instance.OnMouseRightClick;
             @MouseRightClick.performed -= instance.OnMouseRightClick;
             @MouseRightClick.canceled -= instance.OnMouseRightClick;
+            @DevEarnMoney.started -= instance.OnDevEarnMoney;
+            @DevEarnMoney.performed -= instance.OnDevEarnMoney;
+            @DevEarnMoney.canceled -= instance.OnDevEarnMoney;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -329,5 +358,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMousePosition(InputAction.CallbackContext context);
         void OnMouseLeftClick(InputAction.CallbackContext context);
         void OnMouseRightClick(InputAction.CallbackContext context);
+        void OnDevEarnMoney(InputAction.CallbackContext context);
     }
 }

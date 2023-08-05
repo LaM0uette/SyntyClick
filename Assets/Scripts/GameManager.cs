@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     #region Statements
 
     public static GameManager instance;
-    public const float SpeedNormal = 1f;
     public const float SpeedBoost = 6f;
     
     [HideInInspector] public int TotalAssets;

@@ -57,5 +57,13 @@ namespace PlayerController
         }
 
         #endregion
+
+        #region Dev
+
+        
+        public Action DevEarnMoneyAction { get; set; }
+        private void OnDevEarnMoney() => DevEarnMoneyAction?.Invoke();
+
+        #endregion
     }
 }

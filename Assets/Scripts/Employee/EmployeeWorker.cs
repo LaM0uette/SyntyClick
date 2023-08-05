@@ -21,6 +21,7 @@ namespace Employee
         private static readonly int Pause = Animator.StringToHash("Pause");
         private static readonly int Stop = Animator.StringToHash("Stop");
         [SerializeField] private Animator _employeeAnimator;
+        [SerializeField, Range(0.6f, 1.4f)] private float _speedNormal = 1f;
         
         [Header("EmployeeLevel")]
         [SerializeField] private EmployeeLevel[] _employeeLevels;
@@ -68,6 +69,7 @@ namespace Employee
             InputReader.PdgClickAction += OnPdgClickAction;
             _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
+            _playerInputs.DevEarnMoneyAction += OnDevEarnMoneyAction;
         }
         
         private void OnDisable()
@@ -76,6 +78,7 @@ namespace Employee
             InputReader.PdgClickAction -= OnPdgClickAction;
             _playerInputs.ClickGameObject -= OnClickGameObject;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
+            _playerInputs.DevEarnMoneyAction -= OnDevEarnMoneyAction;
         }
 
         private void Update()
@@ -293,7 +296,16 @@ namespace Employee
         private IEnumerator ResetSpeed()
         {
             yield return new WaitForSeconds(.1f);
-            AnimatorSetSpeed(GameManager.SpeedNormal);
+            AnimatorSetSpeed(_speedNormal);
+        }
+
+        #endregion
+
+        #region Dev
+
+        private static void OnDevEarnMoneyAction()
+        {
+            _gameManager.IncrementMoney(100000);
         }
 
         #endregion
