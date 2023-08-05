@@ -27,6 +27,9 @@ namespace Employee
         [SerializeField] private EmployeeLevel[] _employeeLevels;
         private EmployeeLevel _currentEmployeeLevel;
         
+        [Header("EmployeeAssets")]
+        [SerializeField] private Renderer _desktopRenderer;
+        
         [Header("RadialSprite")]
         [SerializeField] private Image _spriteProgress;
         [SerializeField] private Image _spriteProgressStop;
