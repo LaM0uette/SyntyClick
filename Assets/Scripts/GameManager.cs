@@ -10,10 +10,10 @@ public class GameManager : MonoBehaviour
     public const float SpeedNormal = 1f;
     public const float SpeedBoost = 6f;
     
-    public int TotalAssets;
-    public int CurrentAssets;
-    public int Fans;
-    public int Money;
+    [HideInInspector] public int TotalAssets;
+    [HideInInspector] public int CurrentAssets;
+    [HideInInspector] public int Fans;
+    [HideInInspector] public int Money;
     
     private float _fanInProgress;
 
