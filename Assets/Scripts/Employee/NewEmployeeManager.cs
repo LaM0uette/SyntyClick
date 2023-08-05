@@ -1,3 +1,4 @@
+using SaveData;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ namespace Employee
 
         private static GameManager _gameManager => GameManager.instance;
         
-        private static int _newEmployeePrice = 5000;
         [SerializeField] private GameObject _buttonNewEmployee;
         [SerializeField] private GameObject _employee;
 
@@ -29,24 +29,25 @@ namespace Employee
 
         private void CheckCostNewEmployee()
         {
-            if (_gameManager.Money < _newEmployeePrice) return;
+            if (_gameManager.Money < _gameManager.NewEmployeePrice) return;
 
             BuyNewEmployee();
         }
         
         private void BuyNewEmployee()
         {
-            _gameManager.Money -= _newEmployeePrice;
+            _gameManager.Money -= _gameManager.NewEmployeePrice;
             _buttonNewEmployee.SetActive(false);
             _employee.SetActive(true);
 
             IncrementNewEmployeePrice();
+            SaveLoadData.Save();
         }
 
         private static void IncrementNewEmployeePrice()
         {
-            _newEmployeePrice += _newEmployeePrice;
-            _gameManager.UpdateTextPriceNewEmployee(_newEmployeePrice.ToString());
+            _gameManager.NewEmployeePrice *= 2;
+            _gameManager.UpdateTextPriceNewEmployee();
         }
 
         #endregion

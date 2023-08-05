@@ -34,6 +34,13 @@ namespace SaveData
             set => PlayerPrefs.SetInt(MoneyKey, value);
         }
         
+        private const string NewEmployeePriceKey = "NewEmployeePrice";
+        public static int NewEmployeePrice
+        {
+            get => PlayerPrefs.GetInt(NewEmployeePriceKey, 0);
+            set => PlayerPrefs.SetInt(NewEmployeePriceKey, value);
+        }
+        
         private const string CurrentObjectiveIdKey = "CurrentObjectiveId";
         public static int CurrentObjectiveId
         {
@@ -51,6 +58,7 @@ namespace SaveData
             CurrentAssets = 0;
             Fans = 0;
             Money = 0;
+            NewEmployeePrice = 5000;
             CurrentObjectiveId = 0;
         }
 

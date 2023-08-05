@@ -1,6 +1,7 @@
 using System.Collections;
 using JetBrains.Annotations;
 using PlayerController;
+using SaveData;
 using ScriptableOject.EmployeeLevel;
 using TMPro;
 using UnityEngine;
@@ -185,8 +186,7 @@ namespace Employee
             IncrementFansAndMoney();
             ResetAll();
 
-            _gameManager.SetPlayerPrefs();
-            _objectiveManager.SetPlayerPrefs();
+            SaveLoadData.Save();
         }
 
         private void IncrementFansAndMoney()

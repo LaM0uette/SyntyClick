@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int CurrentAssets;
     [HideInInspector] public int Fans;
     [HideInInspector] public int Money;
+    [HideInInspector] public int NewEmployeePrice = 5000;
     
     [SerializeField] private TextMeshProUGUI[] _tmpPriceNewEmployee;
     
@@ -34,8 +35,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        GamePreferences.ResetAll(); //TODO: Remove this line
-        SetValueFromPlayerPrefs();
+        SaveLoadData.Load();
+        UpdateTextPriceNewEmployee();
     }
 
     #endregion
@@ -57,28 +58,14 @@ public class GameManager : MonoBehaviour
     {
         Money += amout;
     }
-    
-    public void SetPlayerPrefs()
-    {
-        GamePreferences.TotalAssets = TotalAssets;
-        GamePreferences.CurrentAssets = CurrentAssets;
-        GamePreferences.Fans = Fans;
-        GamePreferences.Money = Money;
-    }
-    
-    private void SetValueFromPlayerPrefs()
-    {
-        TotalAssets = GamePreferences.TotalAssets;
-        CurrentAssets = GamePreferences.CurrentAssets;
-        Fans = GamePreferences.Fans;
-        Money = GamePreferences.Money;
-    }
 
-    public void UpdateTextPriceNewEmployee(string newPrice)
+    public void UpdateTextPriceNewEmployee()
     {
+        if (NewEmployeePrice <= 0) NewEmployeePrice = 5000;
+        
         foreach (var tmpPriceNewEmployee in _tmpPriceNewEmployee)
         {
-            tmpPriceNewEmployee.text = newPrice;
+            tmpPriceNewEmployee.text = NewEmployeePrice.ToString();
         }
     }
 

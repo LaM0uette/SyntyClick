@@ -9,7 +9,7 @@ public class ObjectiveManager : MonoBehaviour
     public static ObjectiveManager instance;
     private static GameManager _gameManager => GameManager.instance;
     
-    [SerializeField] private Objective[] _objectives;
+    public Objective[] Objectives;
     [HideInInspector] public Objective CurrentObjective;
 
     private void Awake()
@@ -25,13 +25,12 @@ public class ObjectiveManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         
-        CurrentObjective = _objectives[0];
+        CurrentObjective = Objectives[0];
     }
     
     private void Start()
     {
-        GamePreferences.ResetAll();
-        SetValueFromPlayerPrefs();
+        SaveLoadData.Load();
     }
 
     #endregion
@@ -59,7 +58,7 @@ public class ObjectiveManager : MonoBehaviour
         if (_gameManager.CurrentAssets < CurrentObjective.AssetCount) return;
         
         _gameManager.CurrentAssets = 0;
-        CurrentObjective = _objectives[CurrentObjective.Id];
+        CurrentObjective = Objectives[CurrentObjective.Id];
         
         IncrementFansAndMoney(CurrentObjective.FansGainAmout, CurrentObjective.MoneyGainAmout);
     }
@@ -68,16 +67,6 @@ public class ObjectiveManager : MonoBehaviour
     {
         _gameManager.IncrementFans(amountFans);
         _gameManager.IncrementMoney(amountMoney);
-    }
-    
-    public void SetPlayerPrefs()
-    {
-        GamePreferences.CurrentObjectiveId = CurrentObjective.Id - 1;
-    }
-    
-    private void SetValueFromPlayerPrefs()
-    {
-        CurrentObjective = _objectives[GamePreferences.CurrentObjectiveId];
     }
 
     #endregion
