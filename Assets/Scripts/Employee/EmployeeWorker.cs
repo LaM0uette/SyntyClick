@@ -212,6 +212,7 @@ namespace Employee
         private void LevelUp()
         {
             _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
+            _desktopRenderer.material = _currentEmployeeLevel.Material;
             
             if (_currentAssetsOnWorked >= 1) AddAssetsOnWorked();
         }

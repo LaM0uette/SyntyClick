@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level4
   m_EditorClassIdentifier: 
   Level: 4
+  Material: {fileID: 2100000, guid: 3ed4b861c9abbeb4692c2d762062bfe1, type: 2}
   IncrementAmount: 2
   IncrementClickAmount: 0.6
   MaxAssets: 500

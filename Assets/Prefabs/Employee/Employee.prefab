@@ -260,6 +260,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dd0717566bee9fa49a2fb8ae8cf3f32d, type: 2}
   - {fileID: 11400000, guid: 8d8c19e2ef09c0946b0a0afb6e3d6f5e, type: 2}
   - {fileID: 11400000, guid: 23fbc6650a8a8c04c8b9f49c11c833a8, type: 2}
+  - {fileID: 11400000, guid: d34c52155097a0b489b9aaea4f75fd01, type: 2}
+  _desktopRenderer: {fileID: 6237231041726358083}
   _spriteProgress: {fileID: 1754573750949759773}
   _spriteProgressStop: {fileID: 3010222703306471004}
   _tmpMaxAssets: {fileID: 2149933208928458827}
@@ -1302,6 +1304,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d32f89611c5289c498c49885d9e7cd91, type: 3}
+--- !u!23 &6237231041726358083 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 23197080268440066, guid: d32f89611c5289c498c49885d9e7cd91,
+    type: 3}
+  m_PrefabInstance: {fileID: 6259283341407264833}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6254802189880018339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4772408699119074, guid: d32f89611c5289c498c49885d9e7cd91,

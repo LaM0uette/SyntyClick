@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level3
   m_EditorClassIdentifier: 
   Level: 3
+  Material: {fileID: 2100000, guid: 6987183fd231322439c07191418e120a, type: 2}
   IncrementAmount: 1.2
   IncrementClickAmount: 0.4
   MaxAssets: 100

@@ -6,6 +6,7 @@ namespace ScriptableOject.EmployeeLevel
     public class EmployeeLevel : ScriptableObject
     {
         public int Level;
+        public Material Material;
         public float IncrementAmount;
         public float IncrementClickAmount;
         public int MaxAssets;

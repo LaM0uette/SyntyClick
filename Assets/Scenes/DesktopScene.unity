@@ -960,7 +960,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -5
+  near clip plane: 0.01
   far clip plane: 15
   field of view: 60
   orthographic: 1
@@ -1292,7 +1292,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9622642, g: 0.9556522, b: 0.9123354, a: 1}
-  m_Intensity: 5.56
+  m_Intensity: 6
   m_Range: 7.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1715,7 +1715,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9622642, g: 0.9556522, b: 0.9123354, a: 1}
-  m_Intensity: 7
+  m_Intensity: 6
   m_Range: 7.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4679,7 +4679,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9622642, g: 0.9556522, b: 0.9123354, a: 1}
-  m_Intensity: 7
+  m_Intensity: 6
   m_Range: 7.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4803,7 +4803,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9622642, g: 0.9556522, b: 0.9123354, a: 1}
-  m_Intensity: 2.25
+  m_Intensity: 6
   m_Range: 7.5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5087,6 +5087,71 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1320904202}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1327780960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1327780961}
+  - component: {fileID: 1327780962}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1327780961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327780960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.84, y: 0, z: 8.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2140101217}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!215 &1327780962
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327780960}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 14.801754, y: 3.1388617, z: 14.820011}
+  m_BoxOffset: {x: 0.14122772, y: 1.5694308, z: -1.4214096}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1.04
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
 --- !u!1 &1429295907
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,6 +7140,7 @@ Transform:
   - {fileID: 1267542271}
   - {fileID: 419851827}
   - {fileID: 460417742}
+  - {fileID: 1327780961}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &266889265192448574
@@ -7195,7 +7261,7 @@ MonoBehaviour:
   objectReference: {fileID: 0}
   errorWrongRP: 0
   showTexturePreview: 0
-  textureRef: {fileID: 2800000, guid: 5dfdaef94313d6f4b9071f07a716e28d, type: 3}
+  textureRef: {fileID: 2800000, guid: 6854842ff974c1147843c4e3b2355672, type: 3}
   meshFilterRef: {fileID: 0}
   skinnedMeshRendererRef: {fileID: 0}
   containsPatterns: 0
@@ -8083,19 +8149,19 @@ MonoBehaviour:
   groupSimilarColors: 1
   materialReferenceMode: 0
   specifyMaterialOfInterest: {fileID: 0}
-  currentObjectMaterial: {fileID: 2100000, guid: b288dbd2aaeb9564a8b4408e7be7a905,
+  currentObjectMaterial: {fileID: 2100000, guid: bb9180f0818a31b459d93f6388b9d08c,
     type: 2}
-  previousObjectMaterial: {fileID: 2100000, guid: b288dbd2aaeb9564a8b4408e7be7a905,
+  previousObjectMaterial: {fileID: 2100000, guid: bb9180f0818a31b459d93f6388b9d08c,
     type: 2}
-  originalMaterialRef: {fileID: 2100000, guid: b288dbd2aaeb9564a8b4408e7be7a905, type: 2}
+  originalMaterialRef: {fileID: 2100000, guid: bb9180f0818a31b459d93f6388b9d08c, type: 2}
   materialToCopyFrom: {fileID: 2100000, guid: c7813c2037004064a897898d3fb8a415, type: 2}
   setupMetallicSmoothness: 0
   wasMetallicSmoothnessSetup: 0
-  overrideMetallicTexture: 0
-  metallicTextureRef: {fileID: 0}
-  universalMetallicStrength: 0
-  universalSmoothnessStrength: 0
-  metallicAndSmoothnessMode: 0
+  overrideMetallicTexture: 1
+  metallicTextureRef: {fileID: 2800000, guid: ffeaa1da6d67b584c9361dc50352f0bf, type: 3}
+  universalMetallicStrength: 1
+  universalSmoothnessStrength: 0.487
+  metallicAndSmoothnessMode: 1
   emissionTextureColorMode: 0
   emissionManualTextureColor: {r: 0, g: 0, b: 0, a: 0}
   emissionHDROverlayColor: {r: 0, g: 0, b: 0, a: 0}
@@ -8225,7 +8291,7 @@ MonoBehaviour:
   lastGroupIndexHighlighted: -1
   unFocusedCounter: 0
   highLighting: 0
-  paintBuildAssignMode: 0
+  paintBuildAssignMode: 1
   preventExactColorsFromMerging: 0
   suffix: EmployeeDesktopLevel6
   didWeBuildLastSession: 0
