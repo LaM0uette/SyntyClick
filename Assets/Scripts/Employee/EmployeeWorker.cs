@@ -4,7 +4,6 @@ using PlayerController;
 using ScriptableOject.EmployeeLevel;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Employee
@@ -33,8 +32,9 @@ namespace Employee
         [Header("RadialSprite")]
         [SerializeField] private Image _spriteProgress;
         [SerializeField] private Image _spriteProgressStop;
-        [FormerlySerializedAs("_TmpMaxAssets")] [SerializeField] private TextMeshProUGUI _tmpMaxAssets;
+        [SerializeField] private TextMeshProUGUI _tmpMaxAssets;
         [SerializeField] private Image _spriteAssetOnWorked;
+        [SerializeField] private TextMeshProUGUI _tmpCostLvlUp;
         
         private float _pieceInProgress;
         private int _currentAssetsOnWorked;
@@ -173,6 +173,8 @@ namespace Employee
         
         private void AddAssetsOnWorked()
         {
+            if (_currentAssetsOnWorked < 1) return;
+            
             _gameManager.IncrementAssets(_currentAssetsOnWorked);
             
             SetRandomSpriteAssetOnWorked();
@@ -203,7 +205,7 @@ namespace Employee
             CheckLevelUp();
         }
         
-        private void CheckLevelUp()
+        public void CheckLevelUp()
         {
             if (_currentEmployeeLevel.Level >= _employeeLevels.Length) return;
             LevelUp();
