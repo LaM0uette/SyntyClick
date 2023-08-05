@@ -68,7 +68,6 @@ namespace Employee
             InputReader.PdgClickAction += OnPdgClickAction;
             _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
-            _playerInputs.MouseRightClickAction += OnMouseRightClickAction;
         }
         
         private void OnDisable()
@@ -77,7 +76,6 @@ namespace Employee
             InputReader.PdgClickAction -= OnPdgClickAction;
             _playerInputs.ClickGameObject -= OnClickGameObject;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
-            _playerInputs.MouseRightClickAction -= OnMouseRightClickAction;
         }
 
         private void Update()
@@ -199,13 +197,6 @@ namespace Employee
         {
             _gameManager.IncrementFans(amountFans);
             _gameManager.IncrementMoney(amountMoney);
-        }
-        
-        private void OnMouseRightClickAction()
-        {
-            if (_employeeWorkerClicked != _employeeWorker) return;
-            
-            CheckLevelUp();
         }
         
         public void CheckLevelUp()
