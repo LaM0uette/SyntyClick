@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Employee;
+using UnityEngine;
 
 namespace SaveData
 {
@@ -41,6 +42,18 @@ namespace SaveData
             set => PlayerPrefs.SetInt(NewEmployeePriceKey, value);
         }
         
+        private const string NewEmployeeJsonDataKey = "NewEmployeeData";
+        public static void SaveNewEmployeeJson(int id, bool isBought)
+        {
+            var isBoughtString = isBought ? "1" : "0";
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{id}", isBoughtString);
+        }
+        public static bool GetNewEmployeeJson(int id)
+        {
+            var newEmployeeData = PlayerPrefs.GetString($"{NewEmployeeJsonDataKey}_{id}", "0");
+            return newEmployeeData == "1";
+        }
+        
         private const string CurrentObjectiveIdKey = "CurrentObjectiveId";
         public static int CurrentObjectiveId
         {
@@ -60,6 +73,23 @@ namespace SaveData
             Money = 0;
             NewEmployeePrice = 5000;
             CurrentObjectiveId = 0;
+
+            ResetNewEmployee();
+        }
+
+        private static void ResetNewEmployee()
+        {
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-10460}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-9664}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-8888}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-8092}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-7322}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-6556}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-5760}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-4954}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-4158}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-2436}", "0");
+            PlayerPrefs.SetString($"{NewEmployeeJsonDataKey}_{-1640}", "0");
         }
 
         #endregion

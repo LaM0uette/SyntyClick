@@ -1,3 +1,6 @@
+using Employee;
+using UnityEngine;
+
 namespace SaveData
 {
     public static class SaveLoadData
@@ -14,7 +17,6 @@ namespace SaveData
         public static void Save()
         {
             SaveVariables();
-            SaveJsonData();
         }
         
         private static void SaveVariables()
@@ -27,16 +29,15 @@ namespace SaveData
             GamePreferences.CurrentObjectiveId = _objectiveManager.CurrentObjective.Id - 1;
         }
 
-        private static void SaveJsonData()
+        public static void SaveNewEmployeeData(int id, bool isBought)
         {
+            GamePreferences.SaveNewEmployeeJson(id, isBought);
         }
         
         public static void Load()
         {
             GamePreferences.ResetAll(); //TODO: Remove this line
-            
             LoadVariables();
-            LoadJsonData();
         }
         
         private static void LoadVariables()
@@ -49,8 +50,9 @@ namespace SaveData
             _objectiveManager.CurrentObjective = _objectiveManager.Objectives[GamePreferences.CurrentObjectiveId];
         }
         
-        private static void LoadJsonData()
+        public static bool LoadNewEmployeeData(int id)
         {
+            return GamePreferences.GetNewEmployeeJson(id);
         }
 
         #endregion

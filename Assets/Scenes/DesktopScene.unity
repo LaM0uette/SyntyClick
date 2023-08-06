@@ -583,7 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e44227e4fd5ca84d8ebfc9dc93a3a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectives:
+  Objectives:
   - {fileID: 11400000, guid: eec2227b7fe298244824122caaa6ea0e, type: 2}
   - {fileID: 11400000, guid: d5a16b6e32cf976499992ea7334d411c, type: 2}
   - {fileID: 11400000, guid: 74b9c4f1a9a98d54ea968ea576e3b120, type: 2}
@@ -612,6 +612,7 @@ MonoBehaviour:
   CurrentAssets: 0
   Fans: 0
   Money: 0
+  NewEmployeePrice: 5000
   _tmpPriceNewEmployee:
   - {fileID: 897331455}
   - {fileID: 22551544}
