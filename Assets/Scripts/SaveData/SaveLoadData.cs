@@ -44,6 +44,11 @@ namespace SaveData
             GamePreferences.SaveCurrentAssetsOnWorked(id, currentAssetsOnWorkedKey);
         }
         
+        public static void SaveCurrentIsBug(int id, bool isBug)
+        {
+            GamePreferences.SaveCurrentIsBug(id, isBug);
+        }
+        
         public static void Load()
         {
             LoadVariables();
@@ -69,9 +74,14 @@ namespace SaveData
             return GamePreferences.GetEmployeeWorker(id);
         }
         
-        public static int LoadCurrentAssetsOnWorkedKey(int currentAssetsOnWorkedKey)
+        public static int LoadCurrentAssetsOnWorkedKey(int id)
         {
-            return GamePreferences.GetCurrentAssetsOnWorked(currentAssetsOnWorkedKey);
+            return GamePreferences.GetCurrentAssetsOnWorked(id);
+        }
+        
+        public static bool LoadCurrentIsBug(int id)
+        {
+            return GamePreferences.GetCurrentIsBug(id);
         }
 
         #endregion

@@ -82,6 +82,9 @@ namespace Employee
             
             _currentAssetsOnWorked = SaveLoadData.LoadCurrentAssetsOnWorkedKey(_id);
             _tmpMaxAssets.text = $"{_currentAssetsOnWorked}";
+            
+            var isBug = SaveLoadData.LoadCurrentIsBug(_id);
+            if (isBug) SetBugActions();
         }
 
         #endregion
@@ -277,6 +280,8 @@ namespace Employee
             _employeeAnimator.SetTrigger(Pause);
             _spriteProgressStop.fillAmount = 1;
             _tmpMaxAssets.text = "BUG";
+            
+            SaveLoadData.SaveCurrentIsBug(_id, true);
         }
 
         private void SetCorrectionBug()
@@ -290,6 +295,8 @@ namespace Employee
             _employeeAnimator.SetTrigger(Stop);
             _spriteProgressStop.fillAmount = 0;
             _tmpMaxAssets.text = _currentAssetsOnWorked.ToString();
+            
+            SaveLoadData.SaveCurrentIsBug(_id, false);
         }
         
         private void AddAssetsOnWorked()

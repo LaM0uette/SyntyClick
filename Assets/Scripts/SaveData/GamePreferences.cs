@@ -82,6 +82,18 @@ namespace SaveData
             var currentAssetsOnWorked = PlayerPrefs.GetString($"{CurrentAssetsOnWorkedKey}_{id}", "0");
             return int.Parse(currentAssetsOnWorked);
         }
+        
+        private const string CurrentIsBugKey = "CurrentIsBug";
+        public static void SaveCurrentIsBug(int id, bool isBug)
+        {
+            var isBugString = isBug ? "1" : "0";
+            PlayerPrefs.SetString($"{CurrentIsBugKey}_{id}", isBugString);
+        }
+        public static bool GetCurrentIsBug(int id)
+        {
+            var currentIsBug = PlayerPrefs.GetString($"{CurrentIsBugKey}_{id}", "0");
+            return currentIsBug == "1";
+        }
 
         #endregion
 
