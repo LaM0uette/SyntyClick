@@ -15,6 +15,8 @@ namespace Ui
         
         private void FixedUpdate()
         {
+            if (_objectiveManager is null) return;
+            
             ImgObjectives.sprite = _objectiveManager.CurrentObjective.Image;
             TmpObjectivesName.text = _objectiveManager.CurrentObjective.Name;
             

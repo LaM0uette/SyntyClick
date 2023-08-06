@@ -6,7 +6,8 @@ using SaveData;
 using ScriptableOject.EmployeeLevel;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 namespace Employee
 {
@@ -31,6 +32,7 @@ namespace Employee
         
         [Header("EmployeeAssets")]
         [SerializeField] private Renderer _desktopRenderer;
+        [SerializeField] private string _employeeName;
         
         [Header("RadialSprite")]
         [SerializeField] private Image _spriteProgress;
@@ -250,6 +252,7 @@ namespace Employee
             _prefabBug.SetActive(true);
 
             SetOutlinableBugColor();
+            
             _employeeAnimator.SetTrigger(Pause);
             _spriteProgressStop.fillAmount = 1;
             _tmpMaxAssets.text = "BUG";

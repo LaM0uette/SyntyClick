@@ -843,6 +843,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23fbc6650a8a8c04c8b9f49c11c833a8, type: 2}
   - {fileID: 11400000, guid: d34c52155097a0b489b9aaea4f75fd01, type: 2}
   _desktopRenderer: {fileID: 6237231041726358083}
+  _employeeName: 
+  _uiDocumentMiniGames:
+  - {fileID: 0}
   _spriteProgress: {fileID: 1754573750949759773}
   _spriteProgressStop: {fileID: 3010222703306471004}
   _tmpMaxAssets: {fileID: 2149933208928458827}
