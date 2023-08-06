@@ -9,7 +9,7 @@ namespace Employee
 
         private void OnMouseDown()
         {
-            GeneralInputReader.OnClickAction();
+            GeneralInputReader.OnStaticClickAction();
         }
 
         #endregion

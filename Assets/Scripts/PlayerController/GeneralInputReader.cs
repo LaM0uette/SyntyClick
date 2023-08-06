@@ -11,15 +11,16 @@ namespace PlayerController
         public static bool MenuValue { get; set; }
         public static Action MenuAction { get; set; }
         
-        public static void OnClickAction() => ClickAction?.Invoke();
-        public static void OnPdgClickAction() => PdgClickAction?.Invoke();
+        public void OnClickAction() => ClickAction?.Invoke();
+        public static void OnStaticClickAction() => ClickAction?.Invoke();
+        public void OnPdgClickAction() => PdgClickAction?.Invoke();
+        public static void OnStaticPdgClickAction() => PdgClickAction?.Invoke();
         
         public void OnMenu()
         {
             MenuValue = !MenuValue;
             MenuAction?.Invoke();
         }
-        
         public static void OnStaticMenu()
         {
             MenuValue = !MenuValue;
