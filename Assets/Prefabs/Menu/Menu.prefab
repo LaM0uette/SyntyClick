@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 1735370860261525084}
   - component: {fileID: 8777770542845024481}
   - component: {fileID: 7222055440207154901}
-  - component: {fileID: 6605086444971118052}
   m_Layer: 5
   m_Name: CanvasObjectives
   m_TagString: Untagged
@@ -179,21 +178,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6605086444971118052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6301348578639381238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4333395cad00c984aa2bc3a099f84518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImgObjectives: {fileID: 5881075644655782169}
-  TmpObjectivesName: {fileID: 0}
-  TmpObjectivesTotal: {fileID: 0}
 --- !u!1 &6643048444537798785
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +204,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643048444537798785}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.00000058114523}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: -0.077, y: -0.462, z: 3.4}
   m_LocalScale: {x: 0.99999994, y: 0.9130821, z: 0.8887309}
   m_ConstrainProportionsScale: 1

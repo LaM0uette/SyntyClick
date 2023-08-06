@@ -1,4 +1,3 @@
-using PlayerController;
 using SaveData;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ namespace Menu
         {
             SaveLoadData.Save();
             _parentMenu.SetActive(false);
-            GeneralInputReader.OnStaticMenu();
+            Time.timeScale = 1f;
         }
     }
 }

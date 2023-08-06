@@ -1,3 +1,4 @@
+using System;
 using PlayerController;
 using SaveData;
 using UnityEngine;
@@ -7,24 +8,27 @@ namespace Menu
 {
     public class NewGame : MonoBehaviour
     {
-        private static GameManager _gameManager => GameManager.instance;
-        private static ObjectiveManager _objectiveManager => ObjectiveManager.instance;
-        
         [SerializeField] private GameObject _parentMenu;
         
         private void OnMouseDown()
         {
             GamePreferences.ResetAll();
             
-            SceneManager.LoadScene("DesktopScene");
             _parentMenu.SetActive(false);
-            GeneralInputReader.OnStaticMenu();
+            Time.timeScale = 1f;
 
-            _gameManager.NewEmployeePrice = 1000;
             GamePreferences.NewEmployeePrice = 1000;
+
+            try
+            {
+                GeneralInputReader.OnSaticMenu();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
             
-            _gameManager.Initialize();
-            _objectiveManager.Initialize();
+            SceneManager.LoadScene("DesktopScene");
         }
     }
 }

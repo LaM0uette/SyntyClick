@@ -1,4 +1,3 @@
-using PlayerController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,9 +9,10 @@ namespace Menu
         
         private void OnMouseDown()
         {
-            SceneManager.LoadScene("DesktopScene");
             _parentMenu.SetActive(false);
-            GeneralInputReader.OnStaticMenu();
+            Time.timeScale = 1f;
+            
+            SceneManager.LoadScene("DesktopScene");
         }
     }
 }
