@@ -67,10 +67,13 @@ namespace Employee
             
             SetTmpCostLvlUp();
             
+            SetRandomSpriteAssetOnWorked();
+        }
+
+        public void StartCoroutines()
+        {
             StartCoroutine(IncrementFansAndMoneyAllTime());
             StartCoroutine(InfiniteCoroutine());
-            
-            SetRandomSpriteAssetOnWorked();
         }
         
         private void SetCurrentLevel()
@@ -95,6 +98,8 @@ namespace Employee
             _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
             _playerInputs.DevEarnMoneyAction += OnDevEarnMoneyAction;
+            
+            StartCoroutines();
         }
         
         private void OnDisable()
