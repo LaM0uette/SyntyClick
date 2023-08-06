@@ -30,6 +30,11 @@ public class ObjectiveManager : MonoBehaviour
     
     private void Start()
     {
+        Initialize();
+    }
+    
+    public void Initialize()
+    {
         SaveLoadData.Load();
     }
 

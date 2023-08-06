@@ -26,10 +26,9 @@ namespace Ui
                 var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
                 TmpObjectivesTotal.text = $"Assets : {total}";
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 // ignored
-                Debug.LogError(e.Message);
             }
         }
     }

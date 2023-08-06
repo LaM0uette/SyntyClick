@@ -20,6 +20,12 @@ namespace PlayerController
             MenuAction?.Invoke();
         }
         
+        public static void OnStaticMenu()
+        {
+            MenuValue = !MenuValue;
+            MenuAction?.Invoke();
+        }
+        
         #region Dev
         
         public static Action DevEarnMoneyAction { get; set; }

@@ -1,3 +1,4 @@
+using System;
 using SaveData;
 using TMPro;
 using UnityEngine;
@@ -9,12 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public const float SpeedBoost = 6f;
     
-    [HideInInspector] public int TotalAssets;
-    [HideInInspector] public int CurrentAssets;
-    [HideInInspector] public int Fans;
-    [HideInInspector] public int Money;
-    private const int _newEmployeePrice = 1000;
-    [HideInInspector] public int NewEmployeePrice = _newEmployeePrice;
+    [NonSerialized] public int TotalAssets;
+    [NonSerialized] public int CurrentAssets;
+    [NonSerialized] public int Fans;
+    [NonSerialized] public int Money;
+    [NonSerialized] public int NewEmployeePrice;
     
     [SerializeField] private TextMeshProUGUI[] _tmpPriceNewEmployee;
     
@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
     }
 
     private void Start()
+    {
+        Initialize();
+    }
+    
+    public void Initialize()
     {
         SaveLoadData.Load();
         UpdateTextPriceNewEmployee();
