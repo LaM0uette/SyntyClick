@@ -21,3 +21,5 @@ MonoBehaviour:
   FansGainAmout: 5
   MoneyGainAmout: 500
   IconProps: {fileID: 11400000, guid: 895781498efe5b742801e319fac39368, type: 2}
+  MinTimeToBug: 10
+  MaxTimeToBug: 20

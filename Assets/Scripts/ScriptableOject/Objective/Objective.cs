@@ -14,5 +14,7 @@ namespace ScriptableOject.Objective
         public int FansGainAmout;
         public int MoneyGainAmout;
         public IconProps.IconProps IconProps;
+        [Range(0, 100)] public int MinTimeToBug;
+        [Range(0, 100)] public int MaxTimeToBug;
     }
 }

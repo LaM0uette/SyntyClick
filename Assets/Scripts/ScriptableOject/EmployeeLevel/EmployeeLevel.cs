@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ScriptableOject.EmployeeLevel
 {
@@ -13,5 +14,6 @@ namespace ScriptableOject.EmployeeLevel
         public int MaxAssets;
         public int FansGainAmout;
         public int MoneyGainAmout;
+        [FormerlySerializedAs("ChanceGetBug")] [Range(0, 1)] public float ChanceBug;
     }
 }

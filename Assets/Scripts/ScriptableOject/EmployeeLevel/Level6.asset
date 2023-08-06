@@ -20,3 +20,4 @@ MonoBehaviour:
   MaxAssets: 999
   FansGainAmout: 50
   MoneyGainAmout: 300
+  ChanceBug: 0.2

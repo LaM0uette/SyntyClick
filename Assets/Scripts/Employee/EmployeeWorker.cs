@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using EPOOutline;
 using JetBrains.Annotations;
@@ -7,6 +8,7 @@ using ScriptableOject.EmployeeLevel;
 using TMPro;
 using UnityEngine;
 using Image = UnityEngine.UI.Image;
+using Random = UnityEngine.Random;
 
 namespace Employee
 {
@@ -145,9 +147,22 @@ namespace Employee
         
         private IEnumerator InfiniteCoroutine()
         {
+            var minTimeToBug = 15;
+            var maxTimeToBug = 30;
+                
+            try
+            {
+                minTimeToBug = _objectiveManager.CurrentObjective.MinTimeToBug;
+                maxTimeToBug = _objectiveManager.CurrentObjective.MaxTimeToBug;
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+
             while (true)
             {
-                yield return new WaitForSeconds(Random.Range(3, 6));
+                yield return new WaitForSeconds(Random.Range(minTimeToBug, maxTimeToBug));
                 
                 if (_isBug) continue;
                 
@@ -239,7 +254,7 @@ namespace Employee
         {
             if (_isPaused) return false;
             
-            return Random.value <= 0.3f;
+            return Random.value <= _currentEmployeeLevel.ChanceBug;
         }
 
         private void CheckIsBugAnimation()
