@@ -50,14 +50,24 @@ namespace Employee
         {
             _playerInputs = GetComponent<InputReader>();
             _employeeWorker = GetComponent<EmployeeWorker>();
-            _currentEmployeeLevel = _employeeLevels[0];
         }
 
         private void Start()
         {
+            SaveLoadData.Load();
+            SetCurrentLevel();
+            
             SetTmpCostLvlUp();
             StartCoroutine(IncrementFansAndMoneyAllTime());
             SetRandomSpriteAssetOnWorked();
+        }
+        
+        private void SetCurrentLevel()
+        {
+            var levelId = SaveLoadData.LoadEmployeeWorker(GetInstanceID());
+            _currentEmployeeLevel = _employeeLevels[levelId];
+            _desktopRenderer.material = _currentEmployeeLevel.Material;
+            SetTmpCostLvlUp();
         }
 
         #endregion
@@ -217,6 +227,8 @@ namespace Employee
             _gameManager.Money -= _currentEmployeeLevel.CostLevel;
             
             SetTmpCostLvlUp();
+            SaveLoadData.Save();
+            SaveLoadData.SaveEmployeeWorker(GetInstanceID(), _currentEmployeeLevel.Level);
 
             if (_currentAssetsOnWorked >= 1) 
                 AddAssetsOnWorked();

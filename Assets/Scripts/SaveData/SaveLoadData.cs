@@ -31,12 +31,17 @@ namespace SaveData
 
         public static void SaveNewEmployeeData(int id, bool isBought)
         {
-            GamePreferences.SaveNewEmployeeJson(id, isBought);
+            GamePreferences.SaveNewEmployeeData(id, isBought);
+        }
+        
+        public static void SaveEmployeeWorker(int id, int level)
+        {
+            GamePreferences.SaveEmployeeWorker(id, level);
         }
         
         public static void Load()
         {
-            GamePreferences.ResetAll(); //TODO: Remove this line
+            //GamePreferences.ResetAll(); //TODO: Remove this line
             LoadVariables();
         }
         
@@ -52,7 +57,12 @@ namespace SaveData
         
         public static bool LoadNewEmployeeData(int id)
         {
-            return GamePreferences.GetNewEmployeeJson(id);
+            return GamePreferences.GetNewEmployeeData(id);
+        }
+        
+        public static int LoadEmployeeWorker(int id)
+        {
+            return GamePreferences.GetEmployeeWorker(id);
         }
 
         #endregion
