@@ -39,6 +39,11 @@ namespace SaveData
             GamePreferences.SaveEmployeeWorker(id, level);
         }
         
+        public static void SaveCurrentAssetsOnWorkedKey(int id, int currentAssetsOnWorkedKey)
+        {
+            GamePreferences.SaveCurrentAssetsOnWorked(id, currentAssetsOnWorkedKey);
+        }
+        
         public static void Load()
         {
             //GamePreferences.ResetAll(); //TODO: Remove this line
@@ -63,6 +68,11 @@ namespace SaveData
         public static int LoadEmployeeWorker(int id)
         {
             return GamePreferences.GetEmployeeWorker(id);
+        }
+        
+        public static int LoadCurrentAssetsOnWorkedKey(int currentAssetsOnWorkedKey)
+        {
+            return GamePreferences.GetCurrentAssetsOnWorked(currentAssetsOnWorkedKey);
         }
 
         #endregion

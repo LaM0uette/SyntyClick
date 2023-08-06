@@ -68,6 +68,9 @@ namespace Employee
             _currentEmployeeLevel = _employeeLevels[levelId];
             _desktopRenderer.material = _currentEmployeeLevel.Material;
             SetTmpCostLvlUp();
+            
+            _currentAssetsOnWorked = SaveLoadData.LoadCurrentAssetsOnWorkedKey(GetInstanceID());
+            _tmpMaxAssets.text = $"{_currentAssetsOnWorked}";
         }
 
         #endregion
@@ -274,6 +277,7 @@ namespace Employee
         private void IncrementCurrentAssetsOnWorked()
         {
             _tmpMaxAssets.text = $"{++_currentAssetsOnWorked}";
+            SaveLoadData.SaveCurrentAssetsOnWorkedKey(GetInstanceID(), _currentAssetsOnWorked);
         }
 
         private void SetRandomSpriteAssetOnWorked()

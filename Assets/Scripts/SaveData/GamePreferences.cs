@@ -72,6 +72,17 @@ namespace SaveData
             return employeeWorker == "0" ? 0 : int.Parse(employeeWorker);
         }
 
+        private const string CurrentAssetsOnWorkedKey = "CurrentAssetsOnWorked";
+        public static void SaveCurrentAssetsOnWorked(int id, int currentAssetsOnWorked)
+        {
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{id}", currentAssetsOnWorked.ToString());
+        }
+        public static int GetCurrentAssetsOnWorked(int id)
+        {
+            var currentAssetsOnWorked = PlayerPrefs.GetString($"{CurrentAssetsOnWorkedKey}_{id}", "0");
+            return int.Parse(currentAssetsOnWorked);
+        }
+
         #endregion
 
         #region Functions
@@ -106,18 +117,30 @@ namespace SaveData
         
         private static void ResetEmployeeWorker()
         {
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-10522}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-9726}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-8950}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-8154}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-7384}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-6618}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-5822}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-5016}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-4220}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-3288}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-2498}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-1702}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-10522}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-10522}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-9726}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-9726}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-8950}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-8950}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-8154}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-8154}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-7384}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-7384}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-6618}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-6618}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-5822}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-5822}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-5016}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-5016}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-4220}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-4220}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-3288}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-3288}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-2498}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-2498}", "0");
+            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-1702}", "0");
+            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-1702}", "0");
         }
 
         #endregion
