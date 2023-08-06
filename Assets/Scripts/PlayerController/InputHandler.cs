@@ -6,13 +6,7 @@ namespace PlayerController
     {
         #region Statements
 
-        private InputReader _playerInputs;
         [SerializeField] private GameObject _menu;
-        
-        private void Awake()
-        {
-            _playerInputs = GetComponent<InputReader>();
-        }
 
         #endregion
         
@@ -20,12 +14,12 @@ namespace PlayerController
 
         private void OnEnable()
         {
-            _playerInputs.MenuAction += OnMenuAction;
+            GeneralInputReader.MenuAction += OnMenuAction;
         }
         
         private void OnDisable()
         {
-            _playerInputs.MenuAction -= OnMenuAction;
+            GeneralInputReader.MenuAction -= OnMenuAction;
         }
 
         #endregion
@@ -34,7 +28,7 @@ namespace PlayerController
 
         private void OnMenuAction()
         {
-            var menuValue = InputReader.MenuValue;
+            var menuValue = GeneralInputReader.MenuValue;
             
             _menu.SetActive(menuValue);
             Time.timeScale = menuValue ? 0 : 1;

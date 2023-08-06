@@ -93,22 +93,22 @@ namespace Employee
 
         private void OnEnable()
         {
-            InputReader.ClickAction += OnClickAction;
-            InputReader.PdgClickAction += OnPdgClickAction;
+            GeneralInputReader.ClickAction += OnClickAction;
+            GeneralInputReader.PdgClickAction += OnPdgClickAction;
             _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
-            _playerInputs.DevEarnMoneyAction += OnDevEarnMoneyAction;
+            GeneralInputReader.DevEarnMoneyAction += OnDevEarnMoneyAction;
             
             StartCoroutines();
         }
         
         private void OnDisable()
         {
-            InputReader.ClickAction -= OnClickAction;
-            InputReader.PdgClickAction -= OnPdgClickAction;
+            GeneralInputReader.ClickAction -= OnClickAction;
+            GeneralInputReader.PdgClickAction -= OnPdgClickAction;
             _playerInputs.ClickGameObject -= OnClickGameObject;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
-            _playerInputs.DevEarnMoneyAction -= OnDevEarnMoneyAction;
+            GeneralInputReader.DevEarnMoneyAction -= OnDevEarnMoneyAction;
         }
 
         private void Update()
@@ -117,10 +117,7 @@ namespace Employee
             
             PieceIncrement(_currentEmployeeLevel.IncrementAmount * Time.deltaTime);
             TryIncrementAssets();
-        }
-
-        private void FixedUpdate()
-        {
+            
             CheckMaxAssets();
             CheckIsBugAnimation();
         }
@@ -216,7 +213,7 @@ namespace Employee
 
         private void OnClickAction()
         {
-            if (_isBug || InputReader.MenuValue) return;
+            if (_isBug || GeneralInputReader.MenuValue) return;
             
             AnimatorSetSpeed(GameManager.SpeedBoost);
             PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
@@ -225,7 +222,7 @@ namespace Employee
         
         private void OnPdgClickAction()
         {
-            if (_isBug || InputReader.MenuValue) return;
+            if (_isBug || GeneralInputReader.MenuValue) return;
             
             AddAssetsOnWorked();
         }
@@ -433,7 +430,7 @@ namespace Employee
 
         private static void OnDevEarnMoneyAction()
         {
-            _gameManager.IncrementMoney(10000);
+            _gameManager.IncrementMoney(100000);
         }
 
         #endregion

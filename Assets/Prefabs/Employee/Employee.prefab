@@ -230,11 +230,11 @@ GameObject:
   - component: {fileID: 30220735693518573}
   - component: {fileID: 1527106276271958263}
   - component: {fileID: 1657003870389800130}
+  - component: {fileID: 3167517689990384701}
   - component: {fileID: 4538749733912621428}
   - component: {fileID: 1378513930443524102}
   - component: {fileID: 8007448909302659546}
   - component: {fileID: 7807791465755850108}
-  - component: {fileID: 3167517689990384701}
   m_Layer: 0
   m_Name: Employee
   m_TagString: Untagged
@@ -779,96 +779,6 @@ MonoBehaviour:
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
---- !u!114 &4538749733912621428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711007938576514625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: c36ea1500ff5db243828477eb310b86a,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerActions
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
---- !u!114 &1378513930443524102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711007938576514625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca33d17c20ac64643a6b3f6e23b1c5a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8007448909302659546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711007938576514625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c18ce30f2b992c46aa4c3ea66949c29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _employeeAnimator: {fileID: 1797730750236774306}
-  _speedNormal: 1
-  _employeeLevels:
-  - {fileID: 11400000, guid: c4896518d58fe2446bb3509a9c1d928c, type: 2}
-  - {fileID: 11400000, guid: 8dca5ea312caadb4c8bc9141a8719ae2, type: 2}
-  - {fileID: 11400000, guid: dd0717566bee9fa49a2fb8ae8cf3f32d, type: 2}
-  - {fileID: 11400000, guid: 8d8c19e2ef09c0946b0a0afb6e3d6f5e, type: 2}
-  - {fileID: 11400000, guid: 23fbc6650a8a8c04c8b9f49c11c833a8, type: 2}
-  - {fileID: 11400000, guid: d34c52155097a0b489b9aaea4f75fd01, type: 2}
-  _desktopRenderer: {fileID: 6237231041726358083}
-  _employeeName: 
-  _spriteProgress: {fileID: 1754573750949759773}
-  _spriteProgressStop: {fileID: 3010222703306471004}
-  _tmpMaxAssets: {fileID: 2149933208928458827}
-  _spriteAssetOnWorked: {fileID: 4206978297557158613}
-  _tmpCostLvlUp: {fileID: 2614799491172671266}
-  _prefabButtonLvlUp: {fileID: 4729703808530303910}
-  _levelButtonManager: {fileID: 4687744045227959712}
-  _id: 0
-  _prefabBug: {fileID: 442309139473579384}
-  _prefabBugButtonLvl: {fileID: 4729703808530303910}
-  _outlinable: {fileID: 1657003870389800130}
-  _outlinableBug: {fileID: 3167517689990384701}
---- !u!114 &7807791465755850108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711007938576514625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24863717f66a7c3468fbb1a7183d52c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3167517689990384701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,10 +1451,10 @@ MonoBehaviour:
     cutoutTextureName: 
     DilateRenderingMode: 0
     cutoutTextureIndex: 0
-  renderStyle: 1
+  renderStyle: 2
   outlineParameters:
     enabled: 1
-    color: {r: 0.2924528, g: 0.0026347102, b: 0, a: 1}
+    color: {r: 0.2924528, g: 0.0026347102, b: 0, a: 0}
     dilateShift: 1
     blurShift: 0
     fillPass:
@@ -1671,8 +1581,8 @@ MonoBehaviour:
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 2
   backParameters:
-    enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    enabled: 0
+    color: {r: 0.5377358, g: 0.5367253, b: 0.5250534, a: 1}
     dilateShift: 1
     blurShift: 1
     fillPass:
@@ -1680,12 +1590,108 @@ MonoBehaviour:
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    color: {r: 0, g: 0.29411766, b: 0.6745098, a: 0}
     dilateShift: 1
     blurShift: 1
     fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
+      shader: {fileID: 4800000, guid: 213090e563021044c92d1c27258b93f0, type: 3}
+      serializedProperties:
+      - PropertyName: _PublicColor
+        Property:
+          ColorValue: {r: 0.7921569, g: 0, b: 0.006941611, a: 0.7254902}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 0
+--- !u!114 &4538749733912621428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711007938576514625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: c36ea1500ff5db243828477eb310b86a,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerActions
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1378513930443524102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711007938576514625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca33d17c20ac64643a6b3f6e23b1c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8007448909302659546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711007938576514625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c18ce30f2b992c46aa4c3ea66949c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _employeeAnimator: {fileID: 1797730750236774306}
+  _speedNormal: 1
+  _employeeLevels:
+  - {fileID: 11400000, guid: c4896518d58fe2446bb3509a9c1d928c, type: 2}
+  - {fileID: 11400000, guid: 8dca5ea312caadb4c8bc9141a8719ae2, type: 2}
+  - {fileID: 11400000, guid: dd0717566bee9fa49a2fb8ae8cf3f32d, type: 2}
+  - {fileID: 11400000, guid: 8d8c19e2ef09c0946b0a0afb6e3d6f5e, type: 2}
+  - {fileID: 11400000, guid: 23fbc6650a8a8c04c8b9f49c11c833a8, type: 2}
+  - {fileID: 11400000, guid: d34c52155097a0b489b9aaea4f75fd01, type: 2}
+  _desktopRenderer: {fileID: 6237231041726358083}
+  _employeeName: 
+  _spriteProgress: {fileID: 1754573750949759773}
+  _spriteProgressStop: {fileID: 3010222703306471004}
+  _tmpMaxAssets: {fileID: 2149933208928458827}
+  _spriteAssetOnWorked: {fileID: 4206978297557158613}
+  _tmpCostLvlUp: {fileID: 2614799491172671266}
+  _prefabButtonLvlUp: {fileID: 4729703808530303910}
+  _levelButtonManager: {fileID: 4687744045227959712}
+  _id: 0
+  _prefabBug: {fileID: 442309139473579384}
+  _prefabBugButtonLvl: {fileID: 4729703808530303910}
+  _outlinable: {fileID: 1657003870389800130}
+  _outlinableBug: {fileID: 3167517689990384701}
+--- !u!114 &7807791465755850108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711007938576514625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24863717f66a7c3468fbb1a7183d52c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1861782849704375648
 GameObject:
   m_ObjectHideFlags: 0

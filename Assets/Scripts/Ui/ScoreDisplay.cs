@@ -12,7 +12,7 @@ namespace Ui
         public TextMeshProUGUI TmpFans;
         public TextMeshProUGUI TmpMoney;
 
-        private void FixedUpdate()
+        private void Update()
         {
             TmpTotalAssets.text = _gameManager.TotalAssets.ToString();
             TmpCurrentAssets.text = _gameManager.CurrentAssets.ToString();

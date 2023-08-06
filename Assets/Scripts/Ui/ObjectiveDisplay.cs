@@ -14,8 +14,10 @@ namespace Ui
         private static GameManager _gameManager => GameManager.instance;
         private static ObjectiveManager _objectiveManager => ObjectiveManager.instance;
         
-        private void FixedUpdate()
+        private void Update()
         {
+            if (_objectiveManager.CurrentObjective is null) return;
+            
             try
             {
                 ImgObjectives.sprite = _objectiveManager.CurrentObjective.Image;
@@ -24,9 +26,10 @@ namespace Ui
                 var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
                 TmpObjectivesTotal.text = $"Assets : {total}";
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 // ignored
+                Debug.LogError(e.Message);
             }
         }
     }

@@ -50,7 +50,7 @@ namespace Pdg
         {
             if (_pdgWorkerClicked != _pdgWorker) return;
             
-            InputReader.OnPdgClickAction();
+            GeneralInputReader.OnPdgClickAction();
         }
 
         #endregion
