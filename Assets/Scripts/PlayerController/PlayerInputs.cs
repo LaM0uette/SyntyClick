@@ -80,6 +80,15 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""MultiTap(tapCount=3)"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""4fdd83b8-2d0f-4a14-ac67-1dd7c2d2d1c1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +157,17 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""DevEarnMoney"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6da69097-c40d-4f8d-ae69-17b7bceda9d5"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -190,6 +210,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_MouseLeftClick = m_PlayerActions.FindAction("MouseLeftClick", throwIfNotFound: true);
         m_PlayerActions_MouseRightClick = m_PlayerActions.FindAction("MouseRightClick", throwIfNotFound: true);
         m_PlayerActions_DevEarnMoney = m_PlayerActions.FindAction("DevEarnMoney", throwIfNotFound: true);
+        m_PlayerActions_Menu = m_PlayerActions.FindAction("Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -257,6 +278,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_MouseLeftClick;
     private readonly InputAction m_PlayerActions_MouseRightClick;
     private readonly InputAction m_PlayerActions_DevEarnMoney;
+    private readonly InputAction m_PlayerActions_Menu;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
@@ -267,6 +289,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @MouseLeftClick => m_Wrapper.m_PlayerActions_MouseLeftClick;
         public InputAction @MouseRightClick => m_Wrapper.m_PlayerActions_MouseRightClick;
         public InputAction @DevEarnMoney => m_Wrapper.m_PlayerActions_DevEarnMoney;
+        public InputAction @Menu => m_Wrapper.m_PlayerActions_Menu;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -294,6 +317,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @DevEarnMoney.started += instance.OnDevEarnMoney;
             @DevEarnMoney.performed += instance.OnDevEarnMoney;
             @DevEarnMoney.canceled += instance.OnDevEarnMoney;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -316,6 +342,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @DevEarnMoney.started -= instance.OnDevEarnMoney;
             @DevEarnMoney.performed -= instance.OnDevEarnMoney;
             @DevEarnMoney.canceled -= instance.OnDevEarnMoney;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -359,5 +388,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         void OnMouseLeftClick(InputAction.CallbackContext context);
         void OnMouseRightClick(InputAction.CallbackContext context);
         void OnDevEarnMoney(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
     }
 }

@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "MultiTap(tapCount=3)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "4fdd83b8-2d0f-4a14-ac67-1dd7c2d2d1c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -124,6 +133,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "DevEarnMoney",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6da69097-c40d-4f8d-ae69-17b7bceda9d5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

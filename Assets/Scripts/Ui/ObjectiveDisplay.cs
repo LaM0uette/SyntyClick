@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,13 +16,18 @@ namespace Ui
         
         private void FixedUpdate()
         {
-            if (_objectiveManager is null) return;
+            try
+            {
+                ImgObjectives.sprite = _objectiveManager.CurrentObjective.Image;
+                TmpObjectivesName.text = _objectiveManager.CurrentObjective.Name;
             
-            ImgObjectives.sprite = _objectiveManager.CurrentObjective.Image;
-            TmpObjectivesName.text = _objectiveManager.CurrentObjective.Name;
-            
-            var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
-            TmpObjectivesTotal.text = $"Assets : {total}";
+                var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
+                TmpObjectivesTotal.text = $"Assets : {total}";
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
         }
     }
 }

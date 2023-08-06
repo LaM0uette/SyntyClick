@@ -69,12 +69,6 @@ namespace Employee
             
             SetRandomSpriteAssetOnWorked();
         }
-
-        public void StartCoroutines()
-        {
-            StartCoroutine(IncrementFansAndMoneyAllTime());
-            StartCoroutine(InfiniteCoroutine());
-        }
         
         private void SetCurrentLevel()
         {
@@ -128,6 +122,12 @@ namespace Employee
         #endregion
         
         #region Coroutines
+        
+        private void StartCoroutines()
+        {
+            StartCoroutine(IncrementFansAndMoneyAllTime());
+            StartCoroutine(InfiniteCoroutine());
+        }
 
         private IEnumerator IncrementFansAndMoneyAllTime()
         {
@@ -197,7 +197,7 @@ namespace Employee
 
         private void OnClickAction()
         {
-            if (_isBug) return;
+            if (_isBug || InputReader.MenuValue) return;
             
             AnimatorSetSpeed(GameManager.SpeedBoost);
             PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
@@ -206,7 +206,7 @@ namespace Employee
         
         private void OnPdgClickAction()
         {
-            if (_isBug) return;
+            if (_isBug || InputReader.MenuValue) return;
             
             AddAssetsOnWorked();
         }
@@ -239,7 +239,7 @@ namespace Employee
         {
             if (_isPaused) return false;
             
-            return Random.value <= 0.9f;
+            return Random.value <= 0.3f;
         }
 
         private void CheckIsBugAnimation()

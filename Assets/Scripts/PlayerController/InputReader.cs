@@ -16,6 +16,9 @@ namespace PlayerController
         public Action MouseLeftClickAction { get; set; }
         public Action MouseRightClickAction { get; set; }
         
+        public static bool MenuValue { get; set; }
+        public Action MenuAction { get; set; }
+        
         public Action<GameObject> ClickGameObject { get; set; }
 
         #endregion
@@ -41,6 +44,12 @@ namespace PlayerController
             MouseRightClickAction?.Invoke();
         }
 
+        private void OnMenu()
+        {
+            MenuValue = !MenuValue;
+            MenuAction?.Invoke();
+        }
+
         #endregion
 
         #region Functions
@@ -59,7 +68,6 @@ namespace PlayerController
         #endregion
 
         #region Dev
-
         
         public Action DevEarnMoneyAction { get; set; }
         private void OnDevEarnMoney() => DevEarnMoneyAction?.Invoke();
