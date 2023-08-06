@@ -93,7 +93,7 @@ namespace Employee
 
         private void OnEnable()
         {
-            _playerInputs.ClickAction += OnClickAction;
+            InputReader.ClickAction += OnClickAction;
             InputReader.PdgClickAction += OnPdgClickAction;
             _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
@@ -104,7 +104,7 @@ namespace Employee
         
         private void OnDisable()
         {
-            _playerInputs.ClickAction -= OnClickAction;
+            InputReader.ClickAction -= OnClickAction;
             InputReader.PdgClickAction -= OnPdgClickAction;
             _playerInputs.ClickGameObject -= OnClickGameObject;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;

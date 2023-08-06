@@ -10,7 +10,7 @@ namespace PlayerController
 
         public Vector2 MousePositionValue { get; private set; }
         
-        public Action ClickAction { get; set; }
+        public static Action ClickAction { get; set; }
         public static Action PdgClickAction { get; set; }
         
         public Action MouseLeftClickAction { get; set; }
@@ -30,7 +30,7 @@ namespace PlayerController
             MousePositionValue = value.Get<Vector2>();
         }
         
-        private void OnClickAction() => ClickAction?.Invoke();
+        public static void OnClickAction() => ClickAction?.Invoke();
         public static void OnPdgClickAction() => PdgClickAction?.Invoke();
 
         private void OnMouseLeftClick()
