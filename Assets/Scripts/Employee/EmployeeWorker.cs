@@ -69,7 +69,6 @@ namespace Employee
             SetCurrentLevel();
             
             SetTmpCostLvlUp();
-            
             SetRandomSpriteAssetOnWorked();
         }
         
@@ -180,7 +179,7 @@ namespace Employee
         
         private void CheckMaxAssets()
         {
-            if (!_isPaused && !_isBug && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            if (!_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
             {
                 _employeeAnimator.SetTrigger(Stop);
             }

@@ -19,6 +19,9 @@ namespace Menu
             SceneManager.LoadScene("DesktopScene");
             _parentMenu.SetActive(false);
             GeneralInputReader.OnStaticMenu();
+
+            _gameManager.NewEmployeePrice = 1000;
+            GamePreferences.NewEmployeePrice = 1000;
             
             _gameManager.Initialize();
             _objectiveManager.Initialize();

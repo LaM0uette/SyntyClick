@@ -27,7 +27,6 @@ namespace Employee
         private void OnMouseDown()
         {
             CheckCostNewEmployee();
-            Debug.Log("New Employee");
         }
 
         private void CheckCostNewEmployee()
