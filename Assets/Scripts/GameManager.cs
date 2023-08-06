@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public int CurrentAssets;
     [HideInInspector] public int Fans;
     [HideInInspector] public int Money;
-    [HideInInspector] public int NewEmployeePrice = 5000;
+    private const int _newEmployeePrice = 1000;
+    [HideInInspector] public int NewEmployeePrice = _newEmployeePrice;
     
     [SerializeField] private TextMeshProUGUI[] _tmpPriceNewEmployee;
     
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTextPriceNewEmployee()
     {
-        if (NewEmployeePrice <= 0) NewEmployeePrice = 5000;
+        if (NewEmployeePrice <= 0) NewEmployeePrice = 1000;
         
         foreach (var tmpPriceNewEmployee in _tmpPriceNewEmployee)
         {

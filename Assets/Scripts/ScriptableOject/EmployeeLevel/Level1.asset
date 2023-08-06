@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Level1
   m_EditorClassIdentifier: 
   Level: 1
+  CostLevel: 0
   Material: {fileID: 2100000, guid: 53622e1f628fc71498fa16792d797cce, type: 2}
   IncrementAmount: 0.2
   IncrementClickAmount: 0.1
   MaxAssets: 10
   FansGainAmout: 1
-  MoneyGainAmout: 5
+  MoneyGainAmout: 10

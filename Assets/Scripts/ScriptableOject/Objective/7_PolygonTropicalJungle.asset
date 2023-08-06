@@ -15,9 +15,9 @@ MonoBehaviour:
   Id: 7
   Name: Polygon Tropical Jungle
   Image: {fileID: 21300000, guid: e2f4dd129ba297748ba4736df1be6446, type: 3}
-  AssetCount: 5
+  AssetCount: 500000
   isInfinite: 0
   IncrementDelay: 7
   FansGainAmout: 1000
-  MoneyGainAmout: 15000
+  MoneyGainAmout: 10000
   IconProps: {fileID: 11400000, guid: 12b80aed6b63341458937cbe84173355, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 4
   Name: Polygon Nature
   Image: {fileID: 21300000, guid: 938697bf035e71c49ada8563562f6f51, type: 3}
-  AssetCount: 5
+  AssetCount: 10000
   isInfinite: 0
   IncrementDelay: 4
   FansGainAmout: 100

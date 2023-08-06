@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 3
   Name: Polygon Western
   Image: {fileID: 21300000, guid: 2d293c3efafcd8044b22cb27081ca075, type: 3}
-  AssetCount: 5
+  AssetCount: 2500
   isInfinite: 0
   IncrementDelay: 3
   FansGainAmout: 50

@@ -93,7 +93,7 @@ namespace SaveData
             CurrentAssets = 0;
             Fans = 0;
             Money = 0;
-            NewEmployeePrice = 5000;
+            NewEmployeePrice = 1000;
             CurrentObjectiveId = 0;
 
             ResetNewEmployee();

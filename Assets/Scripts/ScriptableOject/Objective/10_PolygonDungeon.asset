@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 10
   Name: Polygon Dungeon
   Image: {fileID: 21300000, guid: a8317680ec35bfb40a38a742ac3fba54, type: 3}
-  AssetCount: 5
+  AssetCount: 500000000
   isInfinite: 0
   IncrementDelay: 10
   FansGainAmout: 5000

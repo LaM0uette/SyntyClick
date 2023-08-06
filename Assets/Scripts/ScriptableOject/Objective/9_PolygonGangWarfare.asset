@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 9
   Name: Polygon Gang Warfare
   Image: {fileID: 21300000, guid: 8b6504f417206454a98d5b563c2da390, type: 3}
-  AssetCount: 5
+  AssetCount: 10000000
   isInfinite: 0
   IncrementDelay: 9
   FansGainAmout: 3000

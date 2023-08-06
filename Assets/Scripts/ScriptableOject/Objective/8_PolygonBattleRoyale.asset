@@ -15,9 +15,9 @@ MonoBehaviour:
   Id: 8
   Name: Polygon Battle Royale
   Image: {fileID: 21300000, guid: 0d1e370280b92a647bab278d90e79e24, type: 3}
-  AssetCount: 5
+  AssetCount: 1000000
   isInfinite: 0
   IncrementDelay: 8
   FansGainAmout: 1500
-  MoneyGainAmout: 30000
+  MoneyGainAmout: 15000
   IconProps: {fileID: 11400000, guid: 10a775b7c044e204393f9625f3a3bd20, type: 2}

@@ -1,4 +1,5 @@
 using System.Collections;
+using EPOOutline;
 using JetBrains.Annotations;
 using PlayerController;
 using SaveData;
@@ -45,11 +46,16 @@ namespace Employee
         private bool _isPaused;
         private EmployeeWorker _employeeWorker;
         [CanBeNull] private EmployeeWorker _employeeWorkerClicked;
+        
+        [SerializeField] private GameObject _prefabBug;
+        private Outlinable _outlinable;
+        private bool _isBug;
 
         private void Awake()
         {
             _playerInputs = GetComponent<InputReader>();
             _employeeWorker = GetComponent<EmployeeWorker>();
+            _outlinable = GetComponent<Outlinable>();
         }
 
         private void Start()
@@ -58,7 +64,10 @@ namespace Employee
             SetCurrentLevel();
             
             SetTmpCostLvlUp();
+            
             StartCoroutine(IncrementFansAndMoneyAllTime());
+            StartCoroutine(InfiniteCoroutine());
+            
             SetRandomSpriteAssetOnWorked();
         }
         
@@ -106,12 +115,13 @@ namespace Employee
         private void FixedUpdate()
         {
             CheckMaxAssets();
+            CheckIsBugAnimation();
         }
 
         #endregion
-
-        #region Functions
         
+        #region Coroutines
+
         private IEnumerator IncrementFansAndMoneyAllTime()
         {
             while (true)
@@ -125,6 +135,25 @@ namespace Employee
             }
             
         }
+        
+        private IEnumerator InfiniteCoroutine()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(Random.Range(3, 6));
+                
+                if (_isBug) continue;
+                
+                if (ChanceFunction())
+                {
+                    SetBugActions();
+                }
+            }
+        }
+
+        #endregion
+        
+        #region Functions
         
         private void CheckMaxAssets()
         {
@@ -152,7 +181,7 @@ namespace Employee
                 return;
             }
             
-            if (_isPaused)
+            if (_isPaused && !_isBug)
             {
                 _isPaused = false;
                 _employeeAnimator.SetTrigger(Stop);
@@ -161,6 +190,8 @@ namespace Employee
 
         private void OnClickAction()
         {
+            if (_isBug) return;
+            
             AnimatorSetSpeed(GameManager.SpeedBoost);
             PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
             StartCoroutine(ResetSpeed());
@@ -168,6 +199,8 @@ namespace Employee
         
         private void OnPdgClickAction()
         {
+            if (_isBug) return;
+            
             AddAssetsOnWorked();
         }
         
@@ -186,7 +219,61 @@ namespace Employee
         private void OnMouseLeftClickAction()
         {
             if (_employeeWorkerClicked != _employeeWorker) return;
+            if (_isBug)
+            {
+                SetCorrectionBug();
+                return;
+            }
+            
             AddAssetsOnWorked();
+        }
+        
+        private bool ChanceFunction()
+        {
+            if (_isPaused) return false;
+            
+            return Random.value <= 0.9f;
+        }
+
+        private void CheckIsBugAnimation()
+        {
+            if (_isBug && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Pause"))
+            {
+                _employeeAnimator.SetTrigger(Pause);
+            }
+        }
+
+        private void SetBugActions()
+        {
+            _isBug = true;
+            _isPaused = true;
+            _prefabBug.SetActive(true);
+
+            SetOutlinableBugColor();
+            _employeeAnimator.SetTrigger(Pause);
+            _spriteProgressStop.fillAmount = 1;
+            _tmpMaxAssets.text = "BUG";
+        }
+
+        private void SetCorrectionBug()
+        {
+            _isBug = false;
+            _isPaused = false;
+            _prefabBug.SetActive(false);
+
+            SetOutlinableColor();
+            _employeeAnimator.SetTrigger(Stop);
+            _spriteProgressStop.fillAmount = 0;
+            _tmpMaxAssets.text = _currentAssetsOnWorked.ToString();
+        }
+
+        private void SetOutlinableColor()
+        {
+            _outlinable.OutlineParameters.Color = new Color(1f, 1f, 1f, 1f);
+        }
+        private void SetOutlinableBugColor()
+        {
+            _outlinable.OutlineParameters.Color = new Color(1f, 0.1f, 0.016f, 1f);
         }
         
         private void AddAssetsOnWorked()
@@ -205,7 +292,9 @@ namespace Employee
         private void IncrementFansAndMoney()
         {
             var amountFans = (int)((_currentAssetsOnWorked + (float)_gameManager.TotalAssets / 10) / 100 * _currentEmployeeLevel.FansGainAmout);
-            var amountMoney = amountFans * _currentEmployeeLevel.MoneyGainAmout;
+            if (amountFans <= 0) amountFans = 1;
+            
+            var amountMoney = _currentAssetsOnWorked * _currentEmployeeLevel.MoneyGainAmout;
             
             IncrementFansAndMoney(amountFans, amountMoney);
         }
@@ -321,7 +410,7 @@ namespace Employee
 
         private static void OnDevEarnMoneyAction()
         {
-            _gameManager.IncrementMoney(100000);
+            _gameManager.IncrementMoney(10000);
         }
 
         #endregion

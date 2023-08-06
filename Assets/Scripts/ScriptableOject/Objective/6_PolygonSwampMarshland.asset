@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: 6
   Name: Polygon Swamp Marshland
   Image: {fileID: 21300000, guid: f72e2b105bd94ac4a81721d30b24474d, type: 3}
-  AssetCount: 5
+  AssetCount: 200000
   isInfinite: 0
   IncrementDelay: 6
   FansGainAmout: 500
