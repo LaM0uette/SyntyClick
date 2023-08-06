@@ -46,7 +46,6 @@ namespace SaveData
         
         public static void Load()
         {
-            //GamePreferences.ResetAll(); //TODO: Remove this line
             LoadVariables();
         }
         

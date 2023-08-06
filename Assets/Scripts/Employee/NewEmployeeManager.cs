@@ -11,6 +11,7 @@ namespace Employee
         
         [SerializeField] private GameObject _buttonNewEmployee;
         [SerializeField] private GameObject _employee;
+        [SerializeField] private int _id;
 
         private bool _isBought;
 
@@ -54,7 +55,7 @@ namespace Employee
 
         private void Save()
         {
-            SaveLoadData.SaveNewEmployeeData(GetInstanceID(), _isBought);
+            SaveLoadData.SaveNewEmployeeData(_id, _isBought);
             SaveLoadData.Save();
         }
         
@@ -62,7 +63,7 @@ namespace Employee
         {
             SaveLoadData.Load();
             
-            var isBought = SaveLoadData.LoadNewEmployeeData(GetInstanceID());
+            var isBought = SaveLoadData.LoadNewEmployeeData(_id);
             _isBought = isBought;
             
             if (!_isBought) _employee.SetActive(false);

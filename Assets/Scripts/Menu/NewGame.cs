@@ -1,4 +1,6 @@
+using SaveData;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Menu
 {
@@ -6,7 +8,8 @@ namespace Menu
     {
         private void OnMouseDown()
         {
-            Debug.Log("New Game");
+            GamePreferences.ResetAll();
+            SceneManager.LoadScene("DesktopScene");
         }
     }
 }

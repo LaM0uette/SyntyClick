@@ -6,7 +6,6 @@ using SaveData;
 using ScriptableOject.EmployeeLevel;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
 namespace Employee
@@ -49,6 +48,7 @@ namespace Employee
         private EmployeeWorker _employeeWorker;
         [CanBeNull] private EmployeeWorker _employeeWorkerClicked;
         
+        [SerializeField] private int _id;
         [SerializeField] private GameObject _prefabBug;
         private Outlinable _outlinable;
         private bool _isBug;
@@ -75,12 +75,12 @@ namespace Employee
         
         private void SetCurrentLevel()
         {
-            var levelId = SaveLoadData.LoadEmployeeWorker(GetInstanceID());
+            var levelId = SaveLoadData.LoadEmployeeWorker(_id);
             _currentEmployeeLevel = _employeeLevels[levelId];
             _desktopRenderer.material = _currentEmployeeLevel.Material;
             SetTmpCostLvlUp();
             
-            _currentAssetsOnWorked = SaveLoadData.LoadCurrentAssetsOnWorkedKey(GetInstanceID());
+            _currentAssetsOnWorked = SaveLoadData.LoadCurrentAssetsOnWorkedKey(_id);
             _tmpMaxAssets.text = $"{_currentAssetsOnWorked}";
         }
 
@@ -323,7 +323,7 @@ namespace Employee
             
             SetTmpCostLvlUp();
             SaveLoadData.Save();
-            SaveLoadData.SaveEmployeeWorker(GetInstanceID(), _currentEmployeeLevel.Level);
+            SaveLoadData.SaveEmployeeWorker(_id, _currentEmployeeLevel.Level);
 
             if (_currentAssetsOnWorked >= 1) 
                 AddAssetsOnWorked();
@@ -369,7 +369,7 @@ namespace Employee
         private void IncrementCurrentAssetsOnWorked()
         {
             _tmpMaxAssets.text = $"{++_currentAssetsOnWorked}";
-            SaveLoadData.SaveCurrentAssetsOnWorkedKey(GetInstanceID(), _currentAssetsOnWorked);
+            SaveLoadData.SaveCurrentAssetsOnWorkedKey(_id, _currentAssetsOnWorked);
         }
 
         private void SetRandomSpriteAssetOnWorked()

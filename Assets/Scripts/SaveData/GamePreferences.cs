@@ -102,45 +102,19 @@ namespace SaveData
 
         private static void ResetNewEmployee()
         {
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-10460}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-9664}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-8888}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-8092}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-7322}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-6556}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-5760}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-4954}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-4158}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-2436}", "0");
-            PlayerPrefs.SetString($"{NewEmployeeDataKey}_{-1640}", "0");
+            for (var i = 0; i <= 11; i++)
+            {
+                PlayerPrefs.DeleteKey($"{NewEmployeeDataKey}_{i}");
+            }
         }
         
         private static void ResetEmployeeWorker()
         {
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-10522}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-10522}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-9726}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-9726}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-8950}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-8950}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-8154}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-8154}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-7384}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-7384}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-6618}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-6618}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-5822}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-5822}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-5016}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-5016}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-4220}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-4220}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-3288}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-3288}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-2498}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-2498}", "0");
-            PlayerPrefs.SetString($"{EmployeeWorkerKey}_{-1702}", "0");
-            PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{-1702}", "0");
+            for (var i = 0; i <= 12; i++)
+            {
+                PlayerPrefs.SetString($"{EmployeeWorkerKey}_{i}", "0");
+                PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{i}", "0");
+            }
         }
 
         #endregion
