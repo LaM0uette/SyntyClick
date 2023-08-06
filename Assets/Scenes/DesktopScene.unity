@@ -2603,6 +2603,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoNewEmployee (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3694798498698730884, guid: aa7f4fead51f9484ab986967a230cb16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5107549323708828243, guid: aa7f4fead51f9484ab986967a230cb16,
         type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
@@ -3283,6 +3288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwoNewEmployee (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3694798498698730884, guid: aa7f4fead51f9484ab986967a230cb16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5107549323708828243, guid: aa7f4fead51f9484ab986967a230cb16,
         type: 3}
       propertyPath: outlineTargets.Array.data[0].IsVisible
@@ -3724,6 +3734,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TwoNewEmployee (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694798498698730884, guid: aa7f4fead51f9484ab986967a230cb16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107549323708828243, guid: aa7f4fead51f9484ab986967a230cb16,
         type: 3}
@@ -5431,6 +5446,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TwoNewEmployee (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694798498698730884, guid: aa7f4fead51f9484ab986967a230cb16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107549323708828243, guid: aa7f4fead51f9484ab986967a230cb16,
         type: 3}
@@ -9222,6 +9242,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TwoNewEmployee
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694798498698730884, guid: aa7f4fead51f9484ab986967a230cb16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107549323708828243, guid: aa7f4fead51f9484ab986967a230cb16,
         type: 3}
