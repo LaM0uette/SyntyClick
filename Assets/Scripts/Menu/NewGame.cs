@@ -22,6 +22,7 @@ namespace Menu
             try
             {
                 GeneralInputReader.OnSaticMenu();
+                GeneralInputReader.MenuValue = false;
             }
             catch (Exception)
             {

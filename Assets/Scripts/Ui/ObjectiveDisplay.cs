@@ -10,6 +10,7 @@ namespace Ui
         public Image ImgObjectives;
         public TextMeshProUGUI TmpObjectivesName;
         public TextMeshProUGUI TmpObjectivesTotal;
+        [SerializeField] private Image _progressBar;
         
         private static GameManager _gameManager => GameManager.instance;
         private static ObjectiveManager _objectiveManager => ObjectiveManager.instance;
@@ -23,6 +24,8 @@ namespace Ui
             
                 var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
                 TmpObjectivesTotal.text = $"Assets : {total}";
+                
+                _progressBar.fillAmount = _objectiveManager.CurrentObjective.isInfinite ? 1 : (float) _gameManager.CurrentAssets / _objectiveManager.CurrentObjective.AssetCount;
             }
             catch (Exception e)
             {
