@@ -52,14 +52,15 @@ namespace Employee
         
         [SerializeField] private int _id;
         [SerializeField] private GameObject _prefabBug;
-        private Outlinable _outlinable;
+        [SerializeField] private GameObject _prefabBugButtonLvl;
+        [SerializeField] private Outlinable _outlinable;
+        [SerializeField] private Outlinable _outlinableBug;
         private bool _isBug;
 
         private void Awake()
         {
             _playerInputs = GetComponent<InputReader>();
             _employeeWorker = GetComponent<EmployeeWorker>();
-            _outlinable = GetComponent<Outlinable>();
         }
 
         private void Start()
@@ -270,8 +271,8 @@ namespace Employee
             _isBug = true;
             _isPaused = true;
             _prefabBug.SetActive(true);
-
-            SetOutlinableBugColor();
+            _prefabBugButtonLvl.SetActive(false);
+            _outlinableBug.enabled = true;
             
             _employeeAnimator.SetTrigger(Pause);
             _spriteProgressStop.fillAmount = 1;
@@ -283,20 +284,12 @@ namespace Employee
             _isBug = false;
             _isPaused = false;
             _prefabBug.SetActive(false);
+            _prefabBugButtonLvl.SetActive(true);
+            _outlinableBug.enabled = false;
 
-            SetOutlinableColor();
             _employeeAnimator.SetTrigger(Stop);
             _spriteProgressStop.fillAmount = 0;
             _tmpMaxAssets.text = _currentAssetsOnWorked.ToString();
-        }
-
-        private void SetOutlinableColor()
-        {
-            _outlinable.OutlineParameters.Color = new Color(1f, 1f, 1f, 1f);
-        }
-        private void SetOutlinableBugColor()
-        {
-            _outlinable.OutlineParameters.Color = new Color(1f, 0.1f, 0.016f, 1f);
         }
         
         private void AddAssetsOnWorked()
