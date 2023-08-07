@@ -10,7 +10,7 @@ namespace Bug.MiniGame
         [SerializeField] private Color[] _colors;
         [SerializeField] private Button[] _buttons;
         
-        private Dictionary<Button, int> _buttonColorIndices = new Dictionary<Button, int>();
+        private readonly Dictionary<Button, int> _buttonColorIndices = new();
         
         #region Events
 
