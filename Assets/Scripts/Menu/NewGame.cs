@@ -29,6 +29,15 @@ namespace Menu
                 // ignored
             }
             
+            try
+            {
+                GameManager.instance.Initialize();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+            
             SceneManager.LoadScene("DesktopScene");
         }
     }

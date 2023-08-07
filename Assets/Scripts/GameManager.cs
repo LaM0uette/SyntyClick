@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
     public void Initialize()
     {
         SaveLoadData.Load();
-        UpdateTextPriceNewEmployee();
+        instance.UpdateTextPriceNewEmployee();
     }
 
     #endregion

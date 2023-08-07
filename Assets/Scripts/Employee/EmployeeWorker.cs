@@ -110,13 +110,15 @@ namespace Employee
 
         private void Update()
         {
+            CheckIsPauseAnimation();
+            CheckIsBugAnimation();
+            
             if (_isPaused) return;
             
             PieceIncrement(_currentEmployeeLevel.IncrementAmount * Time.deltaTime);
             TryIncrementAssets();
             
             CheckMaxAssets();
-            CheckIsBugAnimation();
         }
 
         #endregion
@@ -162,7 +164,7 @@ namespace Employee
             {
                 yield return new WaitForSeconds(Random.Range(minTimeToBug, maxTimeToBug));
                 
-                if (_isBug) continue;
+                if (_isPaused || _isBug) continue;
                 
                 if (ChanceFunction())
                 {
@@ -177,18 +179,8 @@ namespace Employee
         
         private void CheckMaxAssets()
         {
-            if (!_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
-            {
-                _employeeAnimator.SetTrigger(Stop);
-            }
-            
             if (_currentAssetsOnWorked >= _currentEmployeeLevel.MaxAssets)
             {
-                if (_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Pause"))
-                {
-                    _employeeAnimator.SetTrigger(Pause);
-                }
-                
                 if (!_isPaused)
                 {
                     _isPaused = true;
@@ -205,6 +197,27 @@ namespace Employee
             {
                 _isPaused = false;
                 _employeeAnimator.SetTrigger(Stop);
+            }
+        }
+        
+        private void CheckIsPauseAnimation()
+        {
+            if (!_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                _employeeAnimator.SetTrigger(Stop);
+            }
+            
+            if (_isPaused && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Pause"))
+            {
+                _employeeAnimator.SetTrigger(Pause);
+            }
+        }
+        
+        private void CheckIsBugAnimation()
+        {
+            if (_isBug && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Pause"))
+            {
+                _employeeAnimator.SetTrigger(Pause);
             }
         }
 
@@ -231,11 +244,14 @@ namespace Employee
 
         private void OnMouseLeftClickAction()
         {
+            if (InputReader.ClickedGameObject == null) return;
+            
             _employeeWorkerClicked = InputReader.ClickedGameObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
                 ? employeeWorker
                 : null;
             
-            if (_employeeWorkerClicked != _employeeWorker) return;
+            if (_employeeWorkerClicked == null || _employeeWorkerClicked != _employeeWorker) return;
+            
             if (_isBug)
             {
                 SetCorrectionBug();
@@ -250,14 +266,6 @@ namespace Employee
             if (_isPaused) return false;
             
             return Random.value <= _currentEmployeeLevel.ChanceBug;
-        }
-
-        private void CheckIsBugAnimation()
-        {
-            if (_isBug && !_employeeAnimator.GetCurrentAnimatorStateInfo(0).IsName("Pause"))
-            {
-                _employeeAnimator.SetTrigger(Pause);
-            }
         }
 
         private void SetBugActions()
@@ -292,6 +300,7 @@ namespace Employee
         
         private void AddAssetsOnWorked()
         {
+            if (_isPaused) _isPaused = false;
             if (_currentAssetsOnWorked < 1) return;
             
             _gameManager.IncrementAssets(_currentAssetsOnWorked);

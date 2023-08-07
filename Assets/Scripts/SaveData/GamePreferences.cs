@@ -124,8 +124,9 @@ namespace SaveData
         {
             for (var i = 0; i <= 12; i++)
             {
-                PlayerPrefs.SetString($"{EmployeeWorkerKey}_{i}", "0");
-                PlayerPrefs.SetString($"{CurrentAssetsOnWorkedKey}_{i}", "0");
+                PlayerPrefs.DeleteKey($"{EmployeeWorkerKey}_{i}");
+                PlayerPrefs.DeleteKey($"{CurrentAssetsOnWorkedKey}_{i}");
+                PlayerPrefs.DeleteKey($"{CurrentIsBugKey}_{i}");
             }
         }
 
