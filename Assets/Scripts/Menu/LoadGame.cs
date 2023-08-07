@@ -1,3 +1,5 @@
+using System;
+using PlayerController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +13,16 @@ namespace Menu
         {
             _parentMenu.SetActive(false);
             Time.timeScale = 1f;
+            
+            try
+            {
+                GeneralInputReader.OnSaticMenu();
+                GeneralInputReader.MenuValue = false;
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
             
             SceneManager.LoadScene("DesktopScene");
         }

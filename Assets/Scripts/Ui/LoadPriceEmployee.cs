@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 
@@ -6,22 +5,20 @@ namespace Ui
 {
     public class LoadPriceEmployee : MonoBehaviour
     {
-        private TextMeshProUGUI _tmpPriceNewEmployee;
-        public static Action OnPriceEmployeeChanged;
+        [SerializeField] private TextMeshProUGUI _tmpPriceNewEmployee;
         
         private void OnEnable()
         {
-            OnPriceEmployeeChanged += UpdatePriceEmployee;
+            GameManager.OnPriceEmployeeChanged += UpdatePriceEmployee;
         }
         
         private void OnDisable()
         {
-            OnPriceEmployeeChanged -= UpdatePriceEmployee;
+            GameManager.OnPriceEmployeeChanged -= UpdatePriceEmployee;
         }
     
         private void Start()
         {
-            _tmpPriceNewEmployee = GetComponent<TextMeshProUGUI>();
             UpdatePriceEmployee();
         }
     

@@ -1,7 +1,5 @@
 using System;
 using SaveData;
-using TMPro;
-using Ui;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,13 +9,13 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public const float SpeedBoost = 6f;
     
+    public static Action OnPriceEmployeeChanged;
+    
     [NonSerialized] public int TotalAssets;
     [NonSerialized] public int CurrentAssets;
     [NonSerialized] public int Fans;
     [NonSerialized] public int Money;
     [NonSerialized] public int NewEmployeePrice;
-    
-    [SerializeField] private TextMeshProUGUI[] _tmpPriceNewEmployee;
     
     private float _fanInProgress;
 
@@ -68,7 +66,14 @@ public class GameManager : MonoBehaviour
 
     private static void UpdatePriceEmployee()
     {
-        LoadPriceEmployee.OnPriceEmployeeChanged?.Invoke();
+        try
+        {
+            OnPriceEmployeeChanged?.Invoke();
+        }
+        catch (Exception)
+        {
+            // ignored
+        }
     }
 
     #endregion

@@ -55,7 +55,7 @@ namespace Employee
 
         private void Save()
         {
-            LoadPriceEmployee.OnPriceEmployeeChanged?.Invoke();
+            GameManager.OnPriceEmployeeChanged?.Invoke();
             
             SaveLoadData.SaveNewEmployeeData(_id, _isBought);
             SaveLoadData.Save();
