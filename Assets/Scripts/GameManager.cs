@@ -1,6 +1,7 @@
 using System;
 using SaveData;
 using TMPro;
+using Ui;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -39,9 +40,10 @@ public class GameManager : MonoBehaviour
         Initialize();
     }
     
-    public void Initialize()
+    public static void Initialize()
     {
         SaveLoadData.Load();
+        UpdatePriceEmployee();
     }
 
     #endregion
@@ -62,6 +64,11 @@ public class GameManager : MonoBehaviour
     public void IncrementMoney(int amout)
     {
         Money += amout;
+    }
+
+    private static void UpdatePriceEmployee()
+    {
+        LoadPriceEmployee.OnPriceEmployeeChanged?.Invoke();
     }
 
     #endregion

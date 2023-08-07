@@ -1,4 +1,5 @@
 using SaveData;
+using Ui;
 using UnityEngine;
 
 namespace Employee
@@ -54,6 +55,8 @@ namespace Employee
 
         private void Save()
         {
+            LoadPriceEmployee.OnPriceEmployeeChanged?.Invoke();
+            
             SaveLoadData.SaveNewEmployeeData(_id, _isBought);
             SaveLoadData.Save();
         }

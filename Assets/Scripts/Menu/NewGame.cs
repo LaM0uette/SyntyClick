@@ -31,7 +31,7 @@ namespace Menu
             
             try
             {
-                GameManager.instance.Initialize();
+                GameManager.Initialize();
             }
             catch (Exception)
             {
