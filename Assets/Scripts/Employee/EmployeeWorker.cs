@@ -94,7 +94,6 @@ namespace Employee
         {
             GeneralInputReader.ClickAction += OnClickAction;
             GeneralInputReader.PdgClickAction += OnPdgClickAction;
-            _playerInputs.ClickGameObject += OnClickGameObject;
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
             GeneralInputReader.DevEarnMoneyAction += OnDevEarnMoneyAction;
             
@@ -105,7 +104,6 @@ namespace Employee
         {
             GeneralInputReader.ClickAction -= OnClickAction;
             GeneralInputReader.PdgClickAction -= OnPdgClickAction;
-            _playerInputs.ClickGameObject -= OnClickGameObject;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
             GeneralInputReader.DevEarnMoneyAction -= OnDevEarnMoneyAction;
         }
@@ -231,15 +229,12 @@ namespace Employee
             _employeeAnimator.SetFloat(Speed, speed);
         }
 
-        private void OnClickGameObject(GameObject clickedObject)
-        {
-            _employeeWorkerClicked = clickedObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
-                ? employeeWorker
-                : null;
-        }
-
         private void OnMouseLeftClickAction()
         {
+            _employeeWorkerClicked = InputReader.ClickedGameObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
+                ? employeeWorker
+                : null;
+            
             if (_employeeWorkerClicked != _employeeWorker) return;
             if (_isBug)
             {

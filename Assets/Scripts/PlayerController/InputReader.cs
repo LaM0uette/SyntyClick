@@ -14,6 +14,7 @@ namespace PlayerController
         public Action MouseRightClickAction { get; set; }
         
         public Action<GameObject> ClickGameObject { get; set; }
+        public static GameObject ClickedGameObject { get; private set; }
 
         #endregion
 
@@ -47,6 +48,7 @@ namespace PlayerController
             if (Physics.Raycast(ray, out var hit))
             {
                 ClickGameObject?.Invoke(hit.collider.gameObject);
+                ClickedGameObject = hit.collider.gameObject;
             }
         }
 
