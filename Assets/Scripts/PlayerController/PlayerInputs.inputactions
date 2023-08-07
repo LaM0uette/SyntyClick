@@ -6,24 +6,6 @@
             "id": "b7e8d15c-92ad-49de-b53b-c506cf57e416",
             "actions": [
                 {
-                    "name": "ClickAction",
-                    "type": "Button",
-                    "id": "8410f60e-fa6d-4008-b812-614d75fd1faa",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PdgClickAction",
-                    "type": "Button",
-                    "id": "b9646a50-1db2-45d0-80f7-a853e1bf9fe1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "MousePosition",
                     "type": "Value",
                     "id": "fe138d91-deae-4001-87c7-280cadfc5dce",
@@ -49,38 +31,9 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "DevEarnMoney",
-                    "type": "Button",
-                    "id": "88a99349-d056-475f-9d10-389c48a1a2d2",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "MultiTap(tapCount=3)",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Menu",
-                    "type": "Button",
-                    "id": "4fdd83b8-2d0f-4a14-ac67-1dd7c2d2d1c1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "90fc081d-b656-4299-afd2-dc19cc57b0e6",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "ClickAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "5134e529-39d8-4871-8cd8-6d6dcfd25c52",
@@ -111,39 +64,6 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "MouseRightClick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2661afbf-488c-4a1e-ad7c-8b6c08e3f183",
-                    "path": "<Keyboard>/enter",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "PdgClickAction",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "16279bb0-0510-4c9d-b1e8-63edd99ac80c",
-                    "path": "<Keyboard>/semicolon",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "DevEarnMoney",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6da69097-c40d-4f8d-ae69-17b7bceda9d5",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "PC",
-                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

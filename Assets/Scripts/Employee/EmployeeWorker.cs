@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Bug.MiniGame;
 using EPOOutline;
 using JetBrains.Annotations;
 using PlayerController;
@@ -97,6 +98,8 @@ namespace Employee
             _playerInputs.MouseLeftClickAction += OnMouseLeftClickAction;
             GeneralInputReader.DevEarnMoneyAction += OnDevEarnMoneyAction;
             
+            MiniGameManager.BugCorrectedAction += BugCorrected;
+            
             StartCoroutines();
         }
         
@@ -106,6 +109,8 @@ namespace Employee
             GeneralInputReader.PdgClickAction -= OnPdgClickAction;
             _playerInputs.MouseLeftClickAction -= OnMouseLeftClickAction;
             GeneralInputReader.DevEarnMoneyAction -= OnDevEarnMoneyAction;
+            
+            MiniGameManager.BugCorrectedAction -= BugCorrected;
         }
 
         private void Update()
@@ -285,6 +290,13 @@ namespace Employee
 
         private void SetCorrectionBug()
         {
+            MiniGameManager.BugAction?.Invoke(_employeeWorker);
+        }
+        
+        private void BugCorrected(EmployeeWorker employeeWorker)
+        {
+            if (employeeWorker != _employeeWorker) return;
+        
             _isBug = false;
             _isPaused = false;
             _prefabBug.SetActive(false);

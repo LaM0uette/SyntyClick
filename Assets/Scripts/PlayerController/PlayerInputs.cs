@@ -28,24 +28,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ""id"": ""b7e8d15c-92ad-49de-b53b-c506cf57e416"",
             ""actions"": [
                 {
-                    ""name"": ""ClickAction"",
-                    ""type"": ""Button"",
-                    ""id"": ""8410f60e-fa6d-4008-b812-614d75fd1faa"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""PdgClickAction"",
-                    ""type"": ""Button"",
-                    ""id"": ""b9646a50-1db2-45d0-80f7-a853e1bf9fe1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""MousePosition"",
                     ""type"": ""Value"",
                     ""id"": ""fe138d91-deae-4001-87c7-280cadfc5dce"",
@@ -71,38 +53,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""DevEarnMoney"",
-                    ""type"": ""Button"",
-                    ""id"": ""88a99349-d056-475f-9d10-389c48a1a2d2"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""MultiTap(tapCount=3)"",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Menu"",
-                    ""type"": ""Button"",
-                    ""id"": ""4fdd83b8-2d0f-4a14-ac67-1dd7c2d2d1c1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""90fc081d-b656-4299-afd2-dc19cc57b0e6"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""ClickAction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": """",
                     ""id"": ""5134e529-39d8-4871-8cd8-6d6dcfd25c52"",
@@ -133,39 +86,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""MouseRightClick"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2661afbf-488c-4a1e-ad7c-8b6c08e3f183"",
-                    ""path"": ""<Keyboard>/enter"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""PdgClickAction"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""16279bb0-0510-4c9d-b1e8-63edd99ac80c"",
-                    ""path"": ""<Keyboard>/semicolon"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""DevEarnMoney"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""6da69097-c40d-4f8d-ae69-17b7bceda9d5"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""PC"",
-                    ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -204,13 +124,9 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
 }");
         // PlayerActions
         m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
-        m_PlayerActions_ClickAction = m_PlayerActions.FindAction("ClickAction", throwIfNotFound: true);
-        m_PlayerActions_PdgClickAction = m_PlayerActions.FindAction("PdgClickAction", throwIfNotFound: true);
         m_PlayerActions_MousePosition = m_PlayerActions.FindAction("MousePosition", throwIfNotFound: true);
         m_PlayerActions_MouseLeftClick = m_PlayerActions.FindAction("MouseLeftClick", throwIfNotFound: true);
         m_PlayerActions_MouseRightClick = m_PlayerActions.FindAction("MouseRightClick", throwIfNotFound: true);
-        m_PlayerActions_DevEarnMoney = m_PlayerActions.FindAction("DevEarnMoney", throwIfNotFound: true);
-        m_PlayerActions_Menu = m_PlayerActions.FindAction("Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -272,24 +188,16 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     // PlayerActions
     private readonly InputActionMap m_PlayerActions;
     private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
-    private readonly InputAction m_PlayerActions_ClickAction;
-    private readonly InputAction m_PlayerActions_PdgClickAction;
     private readonly InputAction m_PlayerActions_MousePosition;
     private readonly InputAction m_PlayerActions_MouseLeftClick;
     private readonly InputAction m_PlayerActions_MouseRightClick;
-    private readonly InputAction m_PlayerActions_DevEarnMoney;
-    private readonly InputAction m_PlayerActions_Menu;
     public struct PlayerActionsActions
     {
         private @PlayerInputs m_Wrapper;
         public PlayerActionsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ClickAction => m_Wrapper.m_PlayerActions_ClickAction;
-        public InputAction @PdgClickAction => m_Wrapper.m_PlayerActions_PdgClickAction;
         public InputAction @MousePosition => m_Wrapper.m_PlayerActions_MousePosition;
         public InputAction @MouseLeftClick => m_Wrapper.m_PlayerActions_MouseLeftClick;
         public InputAction @MouseRightClick => m_Wrapper.m_PlayerActions_MouseRightClick;
-        public InputAction @DevEarnMoney => m_Wrapper.m_PlayerActions_DevEarnMoney;
-        public InputAction @Menu => m_Wrapper.m_PlayerActions_Menu;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -299,12 +207,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Add(instance);
-            @ClickAction.started += instance.OnClickAction;
-            @ClickAction.performed += instance.OnClickAction;
-            @ClickAction.canceled += instance.OnClickAction;
-            @PdgClickAction.started += instance.OnPdgClickAction;
-            @PdgClickAction.performed += instance.OnPdgClickAction;
-            @PdgClickAction.canceled += instance.OnPdgClickAction;
             @MousePosition.started += instance.OnMousePosition;
             @MousePosition.performed += instance.OnMousePosition;
             @MousePosition.canceled += instance.OnMousePosition;
@@ -314,22 +216,10 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseRightClick.started += instance.OnMouseRightClick;
             @MouseRightClick.performed += instance.OnMouseRightClick;
             @MouseRightClick.canceled += instance.OnMouseRightClick;
-            @DevEarnMoney.started += instance.OnDevEarnMoney;
-            @DevEarnMoney.performed += instance.OnDevEarnMoney;
-            @DevEarnMoney.canceled += instance.OnDevEarnMoney;
-            @Menu.started += instance.OnMenu;
-            @Menu.performed += instance.OnMenu;
-            @Menu.canceled += instance.OnMenu;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
         {
-            @ClickAction.started -= instance.OnClickAction;
-            @ClickAction.performed -= instance.OnClickAction;
-            @ClickAction.canceled -= instance.OnClickAction;
-            @PdgClickAction.started -= instance.OnPdgClickAction;
-            @PdgClickAction.performed -= instance.OnPdgClickAction;
-            @PdgClickAction.canceled -= instance.OnPdgClickAction;
             @MousePosition.started -= instance.OnMousePosition;
             @MousePosition.performed -= instance.OnMousePosition;
             @MousePosition.canceled -= instance.OnMousePosition;
@@ -339,12 +229,6 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             @MouseRightClick.started -= instance.OnMouseRightClick;
             @MouseRightClick.performed -= instance.OnMouseRightClick;
             @MouseRightClick.canceled -= instance.OnMouseRightClick;
-            @DevEarnMoney.started -= instance.OnDevEarnMoney;
-            @DevEarnMoney.performed -= instance.OnDevEarnMoney;
-            @DevEarnMoney.canceled -= instance.OnDevEarnMoney;
-            @Menu.started -= instance.OnMenu;
-            @Menu.performed -= instance.OnMenu;
-            @Menu.canceled -= instance.OnMenu;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -382,12 +266,8 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     }
     public interface IPlayerActionsActions
     {
-        void OnClickAction(InputAction.CallbackContext context);
-        void OnPdgClickAction(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnMouseLeftClick(InputAction.CallbackContext context);
         void OnMouseRightClick(InputAction.CallbackContext context);
-        void OnDevEarnMoney(InputAction.CallbackContext context);
-        void OnMenu(InputAction.CallbackContext context);
     }
 }

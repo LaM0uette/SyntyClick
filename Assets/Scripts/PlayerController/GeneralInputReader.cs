@@ -7,6 +7,7 @@ namespace PlayerController
     {
         public static Action ClickAction { get; set; }
         public static Action PdgClickAction { get; set; }
+        public static Action EnterAction { get; set; }
         
         public static bool MenuValue { get; set; }
         public static Action MenuAction { get; set; }
@@ -16,8 +17,11 @@ namespace PlayerController
             ClickAction?.Invoke();
         }
         public static void OnStaticClickAction() => ClickAction?.Invoke();
+        
         public void OnPdgClickAction() => PdgClickAction?.Invoke();
         public static void OnStaticPdgClickAction() => PdgClickAction?.Invoke();
+        
+        public void OnEnterAction() => EnterAction?.Invoke();
         
         public void OnMenu()
         {

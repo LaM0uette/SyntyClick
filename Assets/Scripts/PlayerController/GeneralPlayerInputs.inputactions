@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "EnterAction",
+                    "type": "Button",
+                    "id": "969392cf-200d-4cbc-864e-1c3c746f5c78",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -57,7 +66,7 @@
                 {
                     "name": "",
                     "id": "4e7b2c5c-c93b-4806-a2b9-c0eaa1057a39",
-                    "path": "<Keyboard>/enter",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
@@ -84,6 +93,17 @@
                     "processors": "",
                     "groups": "PC",
                     "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dc51ab66-0a64-42fc-ad91-c1192d71d976",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "EnterAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -62,6 +62,15 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EnterAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""969392cf-200d-4cbc-864e-1c3c746f5c78"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -79,7 +88,7 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4e7b2c5c-c93b-4806-a2b9-c0eaa1057a39"",
-                    ""path"": ""<Keyboard>/enter"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""PC"",
@@ -106,6 +115,17 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""PC"",
                     ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc51ab66-0a64-42fc-ad91-c1192d71d976"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""EnterAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -148,6 +168,7 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_PdgClickAction = m_PlayerActions.FindAction("PdgClickAction", throwIfNotFound: true);
         m_PlayerActions_DevEarnMoney = m_PlayerActions.FindAction("DevEarnMoney", throwIfNotFound: true);
         m_PlayerActions_Menu = m_PlayerActions.FindAction("Menu", throwIfNotFound: true);
+        m_PlayerActions_EnterAction = m_PlayerActions.FindAction("EnterAction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -213,6 +234,7 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_PdgClickAction;
     private readonly InputAction m_PlayerActions_DevEarnMoney;
     private readonly InputAction m_PlayerActions_Menu;
+    private readonly InputAction m_PlayerActions_EnterAction;
     public struct PlayerActionsActions
     {
         private @GeneralPlayerInputs m_Wrapper;
@@ -221,6 +243,7 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @PdgClickAction => m_Wrapper.m_PlayerActions_PdgClickAction;
         public InputAction @DevEarnMoney => m_Wrapper.m_PlayerActions_DevEarnMoney;
         public InputAction @Menu => m_Wrapper.m_PlayerActions_Menu;
+        public InputAction @EnterAction => m_Wrapper.m_PlayerActions_EnterAction;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -242,6 +265,9 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
+            @EnterAction.started += instance.OnEnterAction;
+            @EnterAction.performed += instance.OnEnterAction;
+            @EnterAction.canceled += instance.OnEnterAction;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -258,6 +284,9 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
+            @EnterAction.started -= instance.OnEnterAction;
+            @EnterAction.performed -= instance.OnEnterAction;
+            @EnterAction.canceled -= instance.OnEnterAction;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -299,5 +328,6 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         void OnPdgClickAction(InputAction.CallbackContext context);
         void OnDevEarnMoney(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
+        void OnEnterAction(InputAction.CallbackContext context);
     }
 }
