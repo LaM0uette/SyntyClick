@@ -41,6 +41,7 @@ namespace Bug.MiniGame
 
         private void RandomMiniGame()
         {
+            //_miniGameObjects[2].SetActive(true);
             _miniGameObjects[UnityEngine.Random.Range(0, _miniGameObjects.Length)].SetActive(true);
         }
         
