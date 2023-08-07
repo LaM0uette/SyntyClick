@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ namespace Bug.MiniGame
     {
         [SerializeField] private Color[] _colors;
         [SerializeField] private Button[] _buttons;
+        
+        private Dictionary<Button, int> _buttonColorIndices = new Dictionary<Button, int>();
         
         #region Events
 
@@ -24,19 +27,15 @@ namespace Bug.MiniGame
         {
             foreach (var button in _buttons)
             {
-                button.image.color = _colors[Random.Range(0, _colors.Length)];
+                _buttonColorIndices[button] = Random.Range(0, _colors.Length);
+                button.image.color = _colors[_buttonColorIndices[button]];
             }
         }
 
         public void SetButtonColor(Button button)
         {
-            var currentColor = button.image.color;
-
-            while (button.image.color == currentColor)
-            {
-                button.image.color = _colors[Random.Range(0, _colors.Length)];
-            }
-
+            _buttonColorIndices[button] = (_buttonColorIndices[button] + 1) % _colors.Length;
+            button.image.color = _colors[_buttonColorIndices[button]];
             CheckWin();
         }
 

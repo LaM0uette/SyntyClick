@@ -28,6 +28,8 @@ namespace Bug.MiniGame
             GeneralInputReader.EnterAction += CalculValidation;
             
             _screen.color = _screenColor;
+            _tmpResult.text = string.Empty;
+            
             SetInitialCalcul();
         }
 
