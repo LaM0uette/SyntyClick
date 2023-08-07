@@ -57,6 +57,7 @@ namespace Employee
         [SerializeField] private Outlinable _outlinable;
         [SerializeField] private Outlinable _outlinableBug;
         private bool _isBug;
+        private static bool _isAlreadyBug;
 
         private void Awake()
         {
@@ -249,6 +250,8 @@ namespace Employee
 
         private void OnMouseLeftClickAction()
         {
+            if (_isAlreadyBug) return;
+            
             if (InputReader.ClickedGameObject == null) return;
             
             _employeeWorkerClicked = InputReader.ClickedGameObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
@@ -290,6 +293,7 @@ namespace Employee
 
         private void SetCorrectionBug()
         {
+            _isAlreadyBug = true;
             MiniGameManager.BugAction?.Invoke(_employeeWorker);
         }
         
@@ -302,6 +306,7 @@ namespace Employee
             _prefabBug.SetActive(false);
             _prefabBugButtonLvl.SetActive(true);
             _outlinableBug.enabled = false;
+            _isAlreadyBug = false;
 
             _employeeAnimator.SetTrigger(Stop);
             _spriteProgressStop.fillAmount = 0;
