@@ -22,50 +22,50 @@ namespace Bug.MiniGame
         
         private readonly List<string> _messages = new()
         {
-            "BONJOUR",
-            "JE SUIS PERDU",
-            "AIMEZ VOUS JOUER",
-            "FPS OU RPG",
+            "HELLO",
+            "I AM LOST",
+            "DO YOU LIKE TO PLAY",
+            "FPS OR RPG",
             "SYNTY STUDIO RULES",
             "ASSET PACK",
             "POLYGON WORLD",
             "RETRO GAMING",
-            "ACHETE CE DLC",
-            "GAMER A VIE",
+            "BUY THIS DLC",
+            "GAMER FOR LIFE",
             "ARCADE CLASSICS",
             "SAVE YOUR GAME",
             "LEVEL UP",
             "MULTIPLAYER ONLINE",
             "SINGLE PLAYER",
-            "BRANCHE TA CONSOLE",
-            "EXPLORE LE MONDE",
+            "PLUG IN YOUR CONSOLE",
+            "EXPLORE THE WORLD",
             "AVATAR CUSTOM",
-            "REALITE VIRTUELLE",
+            "VIRTUAL REALITY",
             "SYNTY GRAPHICS",
-            "UNITY OU UNREAL",
+            "UNITY OR UNREAL",
             "PC MASTER RACE",
             "CONSOLE WARS",
-            "DESIGN PAR SYNTY",
+            "DESIGN BY SYNTY",
             "LOOT BOX",
             "BATTLE ROYALE",
-            "RESOLUTION HD",
+            "HD RESOLUTION",
             "GAME OVER",
-            "ESSAIE ENCORE",
+            "TRY AGAIN",
             "CREDIT ROLL",
             "EPIC QUEST",
             "DUNGEON RAID",
             "MOBILE GAMING",
             "COSMETIC SKIN",
-            "MONDE OUVERT",
+            "OPEN WORLD",
             "CHARACTER DESIGN",
             "PLAY AGAIN",
             "FREE TO PLAY",
-            "BOSS FINAL",
+            "FINAL BOSS",
             "ESPORTS READY",
             "MULTIPLAYER MATCH",
             "POLYGON HEROES",
             "SYNTY ADVENTURE",
-            "LEVELEDITOR",
+            "LEVEL EDITOR",
             "BUILD YOUR WORLD",
             "MOTION CAPTURE",
             "CHARACTER MODEL",
@@ -73,7 +73,7 @@ namespace Bug.MiniGame
             "RETRO REVIVAL",
             "VIRTUAL CHARACTER",
             "SYNTY FAN",
-            "TUTORIAL COMPLET",
+            "COMPLETE TUTORIAL",
             "ACHIEVEMENTS",
             "PLOT TWIST",
             "SPEED RUN",
@@ -426,17 +426,10 @@ namespace Bug.MiniGame
         
         private void FinishValid()
         {
-            AddFansAndMoney();
+            MiniGameManager.AddFansAndMoney();
             
             _screen.color = Color.green;
             Finish();
-        }
-
-        private static void AddFansAndMoney()
-        {
-            var _gameManager = GameManager.instance;
-            var amoutFansGain = (int)(_gameManager.Fans * 0.01f);
-            _gameManager.IncrementFans(amoutFansGain < 1 ? 1 : amoutFansGain);
         }
         
         private void Finish()

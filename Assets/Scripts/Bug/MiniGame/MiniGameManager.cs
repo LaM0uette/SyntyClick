@@ -43,6 +43,13 @@ namespace Bug.MiniGame
         {
             _miniGameObjects[UnityEngine.Random.Range(0, _miniGameObjects.Length)].SetActive(true);
         }
+        
+        public static void AddFansAndMoney()
+        {
+            var _gameManager = GameManager.instance;
+            var amoutFansGain = (int)(_gameManager.Fans * 0.01f);
+            _gameManager.IncrementFans(amoutFansGain < 1 ? 1 : amoutFansGain);
+        }
 
         #endregion
     }
