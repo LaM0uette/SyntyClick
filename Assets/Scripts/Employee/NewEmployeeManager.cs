@@ -50,7 +50,6 @@ namespace Employee
         private static void IncrementNewEmployeePrice()
         {
             _gameManager.NewEmployeePrice *= 2;
-            _gameManager.UpdateTextPriceNewEmployee();
         }
 
         private void Save()

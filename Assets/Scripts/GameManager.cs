@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     public void Initialize()
     {
         SaveLoadData.Load();
-        instance.UpdateTextPriceNewEmployee();
     }
 
     #endregion
@@ -63,16 +62,6 @@ public class GameManager : MonoBehaviour
     public void IncrementMoney(int amout)
     {
         Money += amout;
-    }
-
-    public void UpdateTextPriceNewEmployee()
-    {
-        if (NewEmployeePrice <= 0) NewEmployeePrice = 1000;
-        
-        foreach (var tmpPriceNewEmployee in _tmpPriceNewEmployee)
-        {
-            tmpPriceNewEmployee.text = NewEmployeePrice.ToString();
-        }
     }
 
     #endregion
