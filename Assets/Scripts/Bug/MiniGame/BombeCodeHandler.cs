@@ -87,7 +87,12 @@ namespace Bug.MiniGame
         public void CodeValidation()
         {
             MusicManager.instance.MmfClick.PlayFeedbacks();
-            
+
+            if (_tmpResult.text.Length <= 0)
+            {
+                FinishError();
+                return;
+            }
             if (int.Parse(_tmpResult.text) == _result)
             {
                 FinishValid();

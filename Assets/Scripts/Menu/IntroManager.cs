@@ -1,3 +1,4 @@
+using SaveData;
 using UnityEngine;
 
 namespace Menu
@@ -26,6 +27,14 @@ namespace Menu
             }
             
             _leftArrow.SetActive(false);
+        }
+
+        private void Start()
+        {
+            if (GamePreferences.Game == 1)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         #endregion

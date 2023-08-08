@@ -1,3 +1,4 @@
+using System;
 using SaveData;
 using UnityEngine;
 
@@ -6,10 +7,17 @@ namespace Menu
     public class MenuSetup : MonoBehaviour
     {
         [SerializeField] private GameObject _loadMenuPostIt;
-        
+
         private void Start()
         {
-            _loadMenuPostIt.SetActive(GamePreferences.Game == 1);
+            try
+            {
+                _loadMenuPostIt.SetActive(GamePreferences.Game == 1);
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
             
             if (GamePreferences.Game != 1)
             {
