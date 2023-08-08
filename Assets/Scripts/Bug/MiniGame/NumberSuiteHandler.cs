@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Audio;
+using PlayerController;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -26,6 +27,31 @@ namespace Bug.MiniGame
         private void OnEnable()
         {
             SetInitialNumbers();
+        
+            GeneralInputReader.Num0Action += () => OnNumButtonClick(_buttons[0]);
+            GeneralInputReader.Num1Action += () => OnNumButtonClick(_buttons[1]);
+            GeneralInputReader.Num2Action += () => OnNumButtonClick(_buttons[2]);
+            GeneralInputReader.Num3Action += () => OnNumButtonClick(_buttons[3]);
+            GeneralInputReader.Num4Action += () => OnNumButtonClick(_buttons[4]);
+            GeneralInputReader.Num5Action += () => OnNumButtonClick(_buttons[5]);
+            GeneralInputReader.Num6Action += () => OnNumButtonClick(_buttons[6]);
+            GeneralInputReader.Num7Action += () => OnNumButtonClick(_buttons[7]);
+            GeneralInputReader.Num8Action += () => OnNumButtonClick(_buttons[8]);
+            GeneralInputReader.Num9Action += () => OnNumButtonClick(_buttons[9]);
+        }
+        
+        private void OnDisable()
+        {
+            GeneralInputReader.Num0Action -= () => OnNumButtonClick(_buttons[0]);
+            GeneralInputReader.Num1Action -= () => OnNumButtonClick(_buttons[1]);
+            GeneralInputReader.Num2Action -= () => OnNumButtonClick(_buttons[2]);
+            GeneralInputReader.Num3Action -= () => OnNumButtonClick(_buttons[3]);
+            GeneralInputReader.Num4Action -= () => OnNumButtonClick(_buttons[4]);
+            GeneralInputReader.Num5Action -= () => OnNumButtonClick(_buttons[5]);
+            GeneralInputReader.Num6Action -= () => OnNumButtonClick(_buttons[6]);
+            GeneralInputReader.Num7Action -= () => OnNumButtonClick(_buttons[7]);
+            GeneralInputReader.Num8Action -= () => OnNumButtonClick(_buttons[8]);
+            GeneralInputReader.Num9Action -= () => OnNumButtonClick(_buttons[9]);
         }
 
         public void OnNumButtonClick(Button button)

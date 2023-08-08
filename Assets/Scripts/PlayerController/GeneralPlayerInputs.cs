@@ -71,6 +71,105 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num0"",
+                    ""type"": ""Button"",
+                    ""id"": ""a444cabb-83a7-4ac5-87ca-e9620bb467d8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b240f7a6-25ee-4a72-8c0a-3af09ca7a2cf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num2"",
+                    ""type"": ""Button"",
+                    ""id"": ""92ab7d0e-5d15-472a-b765-ba39faf44122"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num3"",
+                    ""type"": ""Button"",
+                    ""id"": ""6396c9e8-2132-4f6a-a094-e18ea3b010a1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num4"",
+                    ""type"": ""Button"",
+                    ""id"": ""39df81bd-3fa8-4cba-a7f3-6de693f0b72e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num5"",
+                    ""type"": ""Button"",
+                    ""id"": ""4cf1b726-b3fd-423f-94d9-d746b0555431"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num6"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5c164af-123d-4a97-8e43-0b18fec54bbb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num7"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ea2d62e-9eeb-4e2f-9f29-20912e938b08"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num8"",
+                    ""type"": ""Button"",
+                    ""id"": ""b07390db-a3c7-4ed0-b57b-c4f164f643ff"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num9"",
+                    ""type"": ""Button"",
+                    ""id"": ""44745b7e-49db-41f5-839b-ec10c92539a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Return"",
+                    ""type"": ""Button"",
+                    ""id"": ""ff20406a-cdd3-4c41-8bb1-daa9fb874a53"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -128,6 +227,655 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
                     ""action"": ""EnterAction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e2510169-ffed-44d1-b962-364d66b0796a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""444165c4-06d3-4428-848f-fc4740027a4f"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8421fd2-2db6-4f11-89a7-67779193d4b5"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""61319455-f863-4d8c-b12e-9d6e91887aa2"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1d32504-fade-4647-943a-279660ed5bb5"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2edfd874-c8f7-4bd0-bf52-2611cbd46b66"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0983ff24-4306-4c71-833f-ef6aeed8c729"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ff725d87-6189-4f01-bd8d-b79f822ac7ab"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f5f78d2-8eb6-4fba-846c-c94ec18c6522"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e7393448-bf99-4bc4-a24c-1e8b7a268f3a"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""85888dc5-8340-47b7-9533-f5b53dbb98e9"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dd4bf375-dd76-4b42-af2e-c4be72a69b68"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4c2b32b-2d10-42b0-b506-1ef105d69433"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a44f3ccf-f6e8-4282-8238-6ffc67890219"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9a344d18-8f14-491f-9cf8-041e2a0262de"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cc680fe-7f8d-4b0d-bfb0-170c79e29acc"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72ad3b2f-5ced-4456-9737-3cc40045ff12"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""698b4d0e-aa49-40a6-8983-d9114baf30b9"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c00825eb-04a7-4fca-b3ff-be02bf08afae"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""765bbbe3-ecfb-474f-9998-9d687ca8a711"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5af2ba48-141f-493f-a2b6-14b8fc63434c"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Return"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""PlayerActions1"",
+            ""id"": ""08a501f7-daaa-4e20-8134-b9d348997818"",
+            ""actions"": [
+                {
+                    ""name"": ""ClickAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""8abb201d-78ed-4831-92a8-c4dd545f9083"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PdgClickAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""b0804095-478f-465b-b996-530532eefc2c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""DevEarnMoney"",
+                    ""type"": ""Button"",
+                    ""id"": ""79b34eef-d954-4a80-b4f3-929c43325ad6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""3ec42d73-18ca-42b3-893e-b5319ae00531"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""EnterAction"",
+                    ""type"": ""Button"",
+                    ""id"": ""f4a0fec5-b0e6-40f3-949c-a432c847bd8a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num1"",
+                    ""type"": ""Button"",
+                    ""id"": ""3efee034-8531-4ae0-bdce-72e13b8445df"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num2"",
+                    ""type"": ""Button"",
+                    ""id"": ""5d76eb2a-200f-4f3b-9301-a7da2303b288"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num3"",
+                    ""type"": ""Button"",
+                    ""id"": ""e45fda9f-16b4-4207-8cb1-91ee6a969f8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num4"",
+                    ""type"": ""Button"",
+                    ""id"": ""8f8176ec-a237-4cca-b04a-04849d3c6f27"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num5"",
+                    ""type"": ""Button"",
+                    ""id"": ""ebfc9dec-c870-4569-931f-9fb4ee67351a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num6"",
+                    ""type"": ""Button"",
+                    ""id"": ""d26b9321-bebb-448a-bf11-c775285802a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num7"",
+                    ""type"": ""Button"",
+                    ""id"": ""19165fef-aff2-4227-bee7-2588b1130436"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num8"",
+                    ""type"": ""Button"",
+                    ""id"": ""cb437062-7da6-4134-ab61-43f40185fbfd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num9"",
+                    ""type"": ""Button"",
+                    ""id"": ""e80a38c0-b25f-48d6-97c9-6ea76fb2bc25"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Num0"",
+                    ""type"": ""Button"",
+                    ""id"": ""4278f49f-56f7-462a-8af0-69877e748312"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e3f93e4e-da75-434b-b4f6-48101e11e2fc"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""ClickAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c005ea51-e2a3-43ac-8741-f013a4c07f5a"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""PdgClickAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c14d1027-fd8b-4169-b38a-538fcd325cb9"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": ""MultiTap(tapCount=3)"",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""DevEarnMoney"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4fa8ddb1-5758-4793-acb3-a5c5f8479ab0"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6f57a9b-1ece-482a-accc-87d55f3cf0f7"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""EnterAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9f4da5a4-b158-44ba-bbd0-678462af3e7a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""00e3294d-6ccb-4e10-9c6f-f16ab0c325ea"",
+                    ""path"": ""<Keyboard>/numpad1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48eff1f1-f864-4599-9a3d-107319409a85"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ea56c8d-5354-4bea-acba-8a89038ec603"",
+                    ""path"": ""<Keyboard>/numpad2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ad73b23-f727-4582-8854-2fb4ae31a2c3"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""503b7afd-a9cd-4ad2-b0d8-6d99b7a6712b"",
+                    ""path"": ""<Keyboard>/numpad3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a6463e8-4428-499c-82b3-7aaa82f5da9e"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""906bad68-2932-47ab-8917-d8cc72d84f79"",
+                    ""path"": ""<Keyboard>/numpad4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0674cbaa-cd4c-4d33-854c-557212421152"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f824027-e848-4c85-b7fc-d6c52df68a07"",
+                    ""path"": ""<Keyboard>/numpad5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""059dbbb1-b51e-4edb-89a1-133a9e606d67"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d5562d0-c287-48c9-9b72-60c5ccb1aaff"",
+                    ""path"": ""<Keyboard>/numpad6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbf6ab89-d443-466b-acae-85b552427752"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1d935f27-29d8-4a44-8255-03c21679b6ac"",
+                    ""path"": ""<Keyboard>/numpad7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09c554a9-3b71-450f-8789-1ad8ef197129"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""57428214-f4b2-4a0f-be0f-c11ae3c9cc87"",
+                    ""path"": ""<Keyboard>/numpad8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc026ec1-bed2-4820-968b-318c7472094e"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4d8ddbe-daec-44cb-bcca-aed778b78266"",
+                    ""path"": ""<Keyboard>/numpad9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num9"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ea5aaefa-443f-44b1-af3c-690e3596769d"",
+                    ""path"": ""<Keyboard>/0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7e78f212-a14b-41c4-9316-ca69aae5e052"",
+                    ""path"": ""<Keyboard>/numpad0"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Num0"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -169,6 +917,34 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         m_PlayerActions_DevEarnMoney = m_PlayerActions.FindAction("DevEarnMoney", throwIfNotFound: true);
         m_PlayerActions_Menu = m_PlayerActions.FindAction("Menu", throwIfNotFound: true);
         m_PlayerActions_EnterAction = m_PlayerActions.FindAction("EnterAction", throwIfNotFound: true);
+        m_PlayerActions_Num0 = m_PlayerActions.FindAction("Num0", throwIfNotFound: true);
+        m_PlayerActions_Num1 = m_PlayerActions.FindAction("Num1", throwIfNotFound: true);
+        m_PlayerActions_Num2 = m_PlayerActions.FindAction("Num2", throwIfNotFound: true);
+        m_PlayerActions_Num3 = m_PlayerActions.FindAction("Num3", throwIfNotFound: true);
+        m_PlayerActions_Num4 = m_PlayerActions.FindAction("Num4", throwIfNotFound: true);
+        m_PlayerActions_Num5 = m_PlayerActions.FindAction("Num5", throwIfNotFound: true);
+        m_PlayerActions_Num6 = m_PlayerActions.FindAction("Num6", throwIfNotFound: true);
+        m_PlayerActions_Num7 = m_PlayerActions.FindAction("Num7", throwIfNotFound: true);
+        m_PlayerActions_Num8 = m_PlayerActions.FindAction("Num8", throwIfNotFound: true);
+        m_PlayerActions_Num9 = m_PlayerActions.FindAction("Num9", throwIfNotFound: true);
+        m_PlayerActions_Return = m_PlayerActions.FindAction("Return", throwIfNotFound: true);
+        // PlayerActions1
+        m_PlayerActions1 = asset.FindActionMap("PlayerActions1", throwIfNotFound: true);
+        m_PlayerActions1_ClickAction = m_PlayerActions1.FindAction("ClickAction", throwIfNotFound: true);
+        m_PlayerActions1_PdgClickAction = m_PlayerActions1.FindAction("PdgClickAction", throwIfNotFound: true);
+        m_PlayerActions1_DevEarnMoney = m_PlayerActions1.FindAction("DevEarnMoney", throwIfNotFound: true);
+        m_PlayerActions1_Menu = m_PlayerActions1.FindAction("Menu", throwIfNotFound: true);
+        m_PlayerActions1_EnterAction = m_PlayerActions1.FindAction("EnterAction", throwIfNotFound: true);
+        m_PlayerActions1_Num1 = m_PlayerActions1.FindAction("Num1", throwIfNotFound: true);
+        m_PlayerActions1_Num2 = m_PlayerActions1.FindAction("Num2", throwIfNotFound: true);
+        m_PlayerActions1_Num3 = m_PlayerActions1.FindAction("Num3", throwIfNotFound: true);
+        m_PlayerActions1_Num4 = m_PlayerActions1.FindAction("Num4", throwIfNotFound: true);
+        m_PlayerActions1_Num5 = m_PlayerActions1.FindAction("Num5", throwIfNotFound: true);
+        m_PlayerActions1_Num6 = m_PlayerActions1.FindAction("Num6", throwIfNotFound: true);
+        m_PlayerActions1_Num7 = m_PlayerActions1.FindAction("Num7", throwIfNotFound: true);
+        m_PlayerActions1_Num8 = m_PlayerActions1.FindAction("Num8", throwIfNotFound: true);
+        m_PlayerActions1_Num9 = m_PlayerActions1.FindAction("Num9", throwIfNotFound: true);
+        m_PlayerActions1_Num0 = m_PlayerActions1.FindAction("Num0", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -235,6 +1011,17 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_DevEarnMoney;
     private readonly InputAction m_PlayerActions_Menu;
     private readonly InputAction m_PlayerActions_EnterAction;
+    private readonly InputAction m_PlayerActions_Num0;
+    private readonly InputAction m_PlayerActions_Num1;
+    private readonly InputAction m_PlayerActions_Num2;
+    private readonly InputAction m_PlayerActions_Num3;
+    private readonly InputAction m_PlayerActions_Num4;
+    private readonly InputAction m_PlayerActions_Num5;
+    private readonly InputAction m_PlayerActions_Num6;
+    private readonly InputAction m_PlayerActions_Num7;
+    private readonly InputAction m_PlayerActions_Num8;
+    private readonly InputAction m_PlayerActions_Num9;
+    private readonly InputAction m_PlayerActions_Return;
     public struct PlayerActionsActions
     {
         private @GeneralPlayerInputs m_Wrapper;
@@ -244,6 +1031,17 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         public InputAction @DevEarnMoney => m_Wrapper.m_PlayerActions_DevEarnMoney;
         public InputAction @Menu => m_Wrapper.m_PlayerActions_Menu;
         public InputAction @EnterAction => m_Wrapper.m_PlayerActions_EnterAction;
+        public InputAction @Num0 => m_Wrapper.m_PlayerActions_Num0;
+        public InputAction @Num1 => m_Wrapper.m_PlayerActions_Num1;
+        public InputAction @Num2 => m_Wrapper.m_PlayerActions_Num2;
+        public InputAction @Num3 => m_Wrapper.m_PlayerActions_Num3;
+        public InputAction @Num4 => m_Wrapper.m_PlayerActions_Num4;
+        public InputAction @Num5 => m_Wrapper.m_PlayerActions_Num5;
+        public InputAction @Num6 => m_Wrapper.m_PlayerActions_Num6;
+        public InputAction @Num7 => m_Wrapper.m_PlayerActions_Num7;
+        public InputAction @Num8 => m_Wrapper.m_PlayerActions_Num8;
+        public InputAction @Num9 => m_Wrapper.m_PlayerActions_Num9;
+        public InputAction @Return => m_Wrapper.m_PlayerActions_Return;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -268,6 +1066,39 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
             @EnterAction.started += instance.OnEnterAction;
             @EnterAction.performed += instance.OnEnterAction;
             @EnterAction.canceled += instance.OnEnterAction;
+            @Num0.started += instance.OnNum0;
+            @Num0.performed += instance.OnNum0;
+            @Num0.canceled += instance.OnNum0;
+            @Num1.started += instance.OnNum1;
+            @Num1.performed += instance.OnNum1;
+            @Num1.canceled += instance.OnNum1;
+            @Num2.started += instance.OnNum2;
+            @Num2.performed += instance.OnNum2;
+            @Num2.canceled += instance.OnNum2;
+            @Num3.started += instance.OnNum3;
+            @Num3.performed += instance.OnNum3;
+            @Num3.canceled += instance.OnNum3;
+            @Num4.started += instance.OnNum4;
+            @Num4.performed += instance.OnNum4;
+            @Num4.canceled += instance.OnNum4;
+            @Num5.started += instance.OnNum5;
+            @Num5.performed += instance.OnNum5;
+            @Num5.canceled += instance.OnNum5;
+            @Num6.started += instance.OnNum6;
+            @Num6.performed += instance.OnNum6;
+            @Num6.canceled += instance.OnNum6;
+            @Num7.started += instance.OnNum7;
+            @Num7.performed += instance.OnNum7;
+            @Num7.canceled += instance.OnNum7;
+            @Num8.started += instance.OnNum8;
+            @Num8.performed += instance.OnNum8;
+            @Num8.canceled += instance.OnNum8;
+            @Num9.started += instance.OnNum9;
+            @Num9.performed += instance.OnNum9;
+            @Num9.canceled += instance.OnNum9;
+            @Return.started += instance.OnReturn;
+            @Return.performed += instance.OnReturn;
+            @Return.canceled += instance.OnReturn;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -287,6 +1118,39 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
             @EnterAction.started -= instance.OnEnterAction;
             @EnterAction.performed -= instance.OnEnterAction;
             @EnterAction.canceled -= instance.OnEnterAction;
+            @Num0.started -= instance.OnNum0;
+            @Num0.performed -= instance.OnNum0;
+            @Num0.canceled -= instance.OnNum0;
+            @Num1.started -= instance.OnNum1;
+            @Num1.performed -= instance.OnNum1;
+            @Num1.canceled -= instance.OnNum1;
+            @Num2.started -= instance.OnNum2;
+            @Num2.performed -= instance.OnNum2;
+            @Num2.canceled -= instance.OnNum2;
+            @Num3.started -= instance.OnNum3;
+            @Num3.performed -= instance.OnNum3;
+            @Num3.canceled -= instance.OnNum3;
+            @Num4.started -= instance.OnNum4;
+            @Num4.performed -= instance.OnNum4;
+            @Num4.canceled -= instance.OnNum4;
+            @Num5.started -= instance.OnNum5;
+            @Num5.performed -= instance.OnNum5;
+            @Num5.canceled -= instance.OnNum5;
+            @Num6.started -= instance.OnNum6;
+            @Num6.performed -= instance.OnNum6;
+            @Num6.canceled -= instance.OnNum6;
+            @Num7.started -= instance.OnNum7;
+            @Num7.performed -= instance.OnNum7;
+            @Num7.canceled -= instance.OnNum7;
+            @Num8.started -= instance.OnNum8;
+            @Num8.performed -= instance.OnNum8;
+            @Num8.canceled -= instance.OnNum8;
+            @Num9.started -= instance.OnNum9;
+            @Num9.performed -= instance.OnNum9;
+            @Num9.canceled -= instance.OnNum9;
+            @Return.started -= instance.OnReturn;
+            @Return.performed -= instance.OnReturn;
+            @Return.canceled -= instance.OnReturn;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -304,6 +1168,164 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+
+    // PlayerActions1
+    private readonly InputActionMap m_PlayerActions1;
+    private List<IPlayerActions1Actions> m_PlayerActions1ActionsCallbackInterfaces = new List<IPlayerActions1Actions>();
+    private readonly InputAction m_PlayerActions1_ClickAction;
+    private readonly InputAction m_PlayerActions1_PdgClickAction;
+    private readonly InputAction m_PlayerActions1_DevEarnMoney;
+    private readonly InputAction m_PlayerActions1_Menu;
+    private readonly InputAction m_PlayerActions1_EnterAction;
+    private readonly InputAction m_PlayerActions1_Num1;
+    private readonly InputAction m_PlayerActions1_Num2;
+    private readonly InputAction m_PlayerActions1_Num3;
+    private readonly InputAction m_PlayerActions1_Num4;
+    private readonly InputAction m_PlayerActions1_Num5;
+    private readonly InputAction m_PlayerActions1_Num6;
+    private readonly InputAction m_PlayerActions1_Num7;
+    private readonly InputAction m_PlayerActions1_Num8;
+    private readonly InputAction m_PlayerActions1_Num9;
+    private readonly InputAction m_PlayerActions1_Num0;
+    public struct PlayerActions1Actions
+    {
+        private @GeneralPlayerInputs m_Wrapper;
+        public PlayerActions1Actions(@GeneralPlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @ClickAction => m_Wrapper.m_PlayerActions1_ClickAction;
+        public InputAction @PdgClickAction => m_Wrapper.m_PlayerActions1_PdgClickAction;
+        public InputAction @DevEarnMoney => m_Wrapper.m_PlayerActions1_DevEarnMoney;
+        public InputAction @Menu => m_Wrapper.m_PlayerActions1_Menu;
+        public InputAction @EnterAction => m_Wrapper.m_PlayerActions1_EnterAction;
+        public InputAction @Num1 => m_Wrapper.m_PlayerActions1_Num1;
+        public InputAction @Num2 => m_Wrapper.m_PlayerActions1_Num2;
+        public InputAction @Num3 => m_Wrapper.m_PlayerActions1_Num3;
+        public InputAction @Num4 => m_Wrapper.m_PlayerActions1_Num4;
+        public InputAction @Num5 => m_Wrapper.m_PlayerActions1_Num5;
+        public InputAction @Num6 => m_Wrapper.m_PlayerActions1_Num6;
+        public InputAction @Num7 => m_Wrapper.m_PlayerActions1_Num7;
+        public InputAction @Num8 => m_Wrapper.m_PlayerActions1_Num8;
+        public InputAction @Num9 => m_Wrapper.m_PlayerActions1_Num9;
+        public InputAction @Num0 => m_Wrapper.m_PlayerActions1_Num0;
+        public InputActionMap Get() { return m_Wrapper.m_PlayerActions1; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(PlayerActions1Actions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerActions1Actions instance)
+        {
+            if (instance == null || m_Wrapper.m_PlayerActions1ActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerActions1ActionsCallbackInterfaces.Add(instance);
+            @ClickAction.started += instance.OnClickAction;
+            @ClickAction.performed += instance.OnClickAction;
+            @ClickAction.canceled += instance.OnClickAction;
+            @PdgClickAction.started += instance.OnPdgClickAction;
+            @PdgClickAction.performed += instance.OnPdgClickAction;
+            @PdgClickAction.canceled += instance.OnPdgClickAction;
+            @DevEarnMoney.started += instance.OnDevEarnMoney;
+            @DevEarnMoney.performed += instance.OnDevEarnMoney;
+            @DevEarnMoney.canceled += instance.OnDevEarnMoney;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
+            @EnterAction.started += instance.OnEnterAction;
+            @EnterAction.performed += instance.OnEnterAction;
+            @EnterAction.canceled += instance.OnEnterAction;
+            @Num1.started += instance.OnNum1;
+            @Num1.performed += instance.OnNum1;
+            @Num1.canceled += instance.OnNum1;
+            @Num2.started += instance.OnNum2;
+            @Num2.performed += instance.OnNum2;
+            @Num2.canceled += instance.OnNum2;
+            @Num3.started += instance.OnNum3;
+            @Num3.performed += instance.OnNum3;
+            @Num3.canceled += instance.OnNum3;
+            @Num4.started += instance.OnNum4;
+            @Num4.performed += instance.OnNum4;
+            @Num4.canceled += instance.OnNum4;
+            @Num5.started += instance.OnNum5;
+            @Num5.performed += instance.OnNum5;
+            @Num5.canceled += instance.OnNum5;
+            @Num6.started += instance.OnNum6;
+            @Num6.performed += instance.OnNum6;
+            @Num6.canceled += instance.OnNum6;
+            @Num7.started += instance.OnNum7;
+            @Num7.performed += instance.OnNum7;
+            @Num7.canceled += instance.OnNum7;
+            @Num8.started += instance.OnNum8;
+            @Num8.performed += instance.OnNum8;
+            @Num8.canceled += instance.OnNum8;
+            @Num9.started += instance.OnNum9;
+            @Num9.performed += instance.OnNum9;
+            @Num9.canceled += instance.OnNum9;
+            @Num0.started += instance.OnNum0;
+            @Num0.performed += instance.OnNum0;
+            @Num0.canceled += instance.OnNum0;
+        }
+
+        private void UnregisterCallbacks(IPlayerActions1Actions instance)
+        {
+            @ClickAction.started -= instance.OnClickAction;
+            @ClickAction.performed -= instance.OnClickAction;
+            @ClickAction.canceled -= instance.OnClickAction;
+            @PdgClickAction.started -= instance.OnPdgClickAction;
+            @PdgClickAction.performed -= instance.OnPdgClickAction;
+            @PdgClickAction.canceled -= instance.OnPdgClickAction;
+            @DevEarnMoney.started -= instance.OnDevEarnMoney;
+            @DevEarnMoney.performed -= instance.OnDevEarnMoney;
+            @DevEarnMoney.canceled -= instance.OnDevEarnMoney;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
+            @EnterAction.started -= instance.OnEnterAction;
+            @EnterAction.performed -= instance.OnEnterAction;
+            @EnterAction.canceled -= instance.OnEnterAction;
+            @Num1.started -= instance.OnNum1;
+            @Num1.performed -= instance.OnNum1;
+            @Num1.canceled -= instance.OnNum1;
+            @Num2.started -= instance.OnNum2;
+            @Num2.performed -= instance.OnNum2;
+            @Num2.canceled -= instance.OnNum2;
+            @Num3.started -= instance.OnNum3;
+            @Num3.performed -= instance.OnNum3;
+            @Num3.canceled -= instance.OnNum3;
+            @Num4.started -= instance.OnNum4;
+            @Num4.performed -= instance.OnNum4;
+            @Num4.canceled -= instance.OnNum4;
+            @Num5.started -= instance.OnNum5;
+            @Num5.performed -= instance.OnNum5;
+            @Num5.canceled -= instance.OnNum5;
+            @Num6.started -= instance.OnNum6;
+            @Num6.performed -= instance.OnNum6;
+            @Num6.canceled -= instance.OnNum6;
+            @Num7.started -= instance.OnNum7;
+            @Num7.performed -= instance.OnNum7;
+            @Num7.canceled -= instance.OnNum7;
+            @Num8.started -= instance.OnNum8;
+            @Num8.performed -= instance.OnNum8;
+            @Num8.canceled -= instance.OnNum8;
+            @Num9.started -= instance.OnNum9;
+            @Num9.performed -= instance.OnNum9;
+            @Num9.canceled -= instance.OnNum9;
+            @Num0.started -= instance.OnNum0;
+            @Num0.performed -= instance.OnNum0;
+            @Num0.canceled -= instance.OnNum0;
+        }
+
+        public void RemoveCallbacks(IPlayerActions1Actions instance)
+        {
+            if (m_Wrapper.m_PlayerActions1ActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IPlayerActions1Actions instance)
+        {
+            foreach (var item in m_Wrapper.m_PlayerActions1ActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_PlayerActions1ActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public PlayerActions1Actions @PlayerActions1 => new PlayerActions1Actions(this);
     private int m_PCSchemeIndex = -1;
     public InputControlScheme PCScheme
     {
@@ -329,5 +1351,34 @@ public partial class @GeneralPlayerInputs: IInputActionCollection2, IDisposable
         void OnDevEarnMoney(InputAction.CallbackContext context);
         void OnMenu(InputAction.CallbackContext context);
         void OnEnterAction(InputAction.CallbackContext context);
+        void OnNum0(InputAction.CallbackContext context);
+        void OnNum1(InputAction.CallbackContext context);
+        void OnNum2(InputAction.CallbackContext context);
+        void OnNum3(InputAction.CallbackContext context);
+        void OnNum4(InputAction.CallbackContext context);
+        void OnNum5(InputAction.CallbackContext context);
+        void OnNum6(InputAction.CallbackContext context);
+        void OnNum7(InputAction.CallbackContext context);
+        void OnNum8(InputAction.CallbackContext context);
+        void OnNum9(InputAction.CallbackContext context);
+        void OnReturn(InputAction.CallbackContext context);
+    }
+    public interface IPlayerActions1Actions
+    {
+        void OnClickAction(InputAction.CallbackContext context);
+        void OnPdgClickAction(InputAction.CallbackContext context);
+        void OnDevEarnMoney(InputAction.CallbackContext context);
+        void OnMenu(InputAction.CallbackContext context);
+        void OnEnterAction(InputAction.CallbackContext context);
+        void OnNum1(InputAction.CallbackContext context);
+        void OnNum2(InputAction.CallbackContext context);
+        void OnNum3(InputAction.CallbackContext context);
+        void OnNum4(InputAction.CallbackContext context);
+        void OnNum5(InputAction.CallbackContext context);
+        void OnNum6(InputAction.CallbackContext context);
+        void OnNum7(InputAction.CallbackContext context);
+        void OnNum8(InputAction.CallbackContext context);
+        void OnNum9(InputAction.CallbackContext context);
+        void OnNum0(InputAction.CallbackContext context);
     }
 }

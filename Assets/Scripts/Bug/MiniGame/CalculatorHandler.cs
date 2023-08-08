@@ -31,16 +31,40 @@ namespace Bug.MiniGame
             _tmpResult.text = string.Empty;
             
             SetInitialCalcul();
+            
+            GeneralInputReader.Num0Action += () => OnNumButtonClick(0);
+            GeneralInputReader.Num1Action += () => OnNumButtonClick(1);
+            GeneralInputReader.Num2Action += () => OnNumButtonClick(2);
+            GeneralInputReader.Num3Action += () => OnNumButtonClick(3);
+            GeneralInputReader.Num4Action += () => OnNumButtonClick(4);
+            GeneralInputReader.Num5Action += () => OnNumButtonClick(5);
+            GeneralInputReader.Num6Action += () => OnNumButtonClick(6);
+            GeneralInputReader.Num7Action += () => OnNumButtonClick(7);
+            GeneralInputReader.Num8Action += () => OnNumButtonClick(8);
+            GeneralInputReader.Num9Action += () => OnNumButtonClick(9);
         }
 
         private void OnDisable()
         {
             GeneralInputReader.EnterAction -= CalculValidation;
+            
+            GeneralInputReader.Num0Action -= () => OnNumButtonClick(0);
+            GeneralInputReader.Num1Action -= () => OnNumButtonClick(1);
+            GeneralInputReader.Num2Action -= () => OnNumButtonClick(2);
+            GeneralInputReader.Num3Action -= () => OnNumButtonClick(3);
+            GeneralInputReader.Num4Action -= () => OnNumButtonClick(4);
+            GeneralInputReader.Num5Action -= () => OnNumButtonClick(5);
+            GeneralInputReader.Num6Action -= () => OnNumButtonClick(6);
+            GeneralInputReader.Num7Action -= () => OnNumButtonClick(7);
+            GeneralInputReader.Num8Action -= () => OnNumButtonClick(8);
+            GeneralInputReader.Num9Action -= () => OnNumButtonClick(9);
         }
 
         public void OnNumButtonClick(int num)
         {
             MusicManager.instance.MmfClick.PlayFeedbacks();
+            
+            if (_tmpResult.text.Length >= 4) return;
             _tmpResult.text += num;
         }
 
@@ -50,8 +74,8 @@ namespace Bug.MiniGame
 
         private void SetInitialCalcul()
         {
-            var num1 = UnityEngine.Random.Range(1, 999);
-            var num2 = UnityEngine.Random.Range(1, 999);
+            var num1 = Random.Range(1, 999);
+            var num2 = Random.Range(1, 999);
             
             _result = num1 + num2;
             _tmpCalcul.text = $"{num1} + {num2} = ??";
