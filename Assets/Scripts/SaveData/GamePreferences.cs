@@ -115,6 +115,13 @@ namespace SaveData
             get => PlayerPrefs.GetFloat(VolumeSfxKey, 0);
             set => PlayerPrefs.SetFloat(VolumeSfxKey, value);
         }
+        
+        private const string QualityIndexKey = "QualityIndex";
+        public static int QualityIndex
+        {
+            get => PlayerPrefs.GetInt(QualityIndexKey, 0);
+            set => PlayerPrefs.SetInt(QualityIndexKey, value);
+        }
 
         #endregion
 
