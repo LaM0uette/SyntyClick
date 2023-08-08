@@ -1,6 +1,5 @@
-using SaveData;
+using PlayerController;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Menu
 {
@@ -34,10 +33,17 @@ namespace Menu
 
         private void OnEnable()
         {
+            GeneralInputReader.ExitAction += ExitAction;
+            
             SetArrowButton();
             
             _currentHintObject = 0;
             ShowUi();
+        }
+
+        private void OnDisable()
+        {
+            GeneralInputReader.ExitAction -= ExitAction;
         }
 
         #endregion
@@ -91,6 +97,11 @@ namespace Menu
             }
             
             _hintObjects[_currentHintObject].SetActive(true);
+        }
+
+        private void ExitAction()
+        {
+            gameObject.SetActive(false);
         }
 
         #endregion

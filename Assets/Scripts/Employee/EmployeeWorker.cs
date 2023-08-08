@@ -145,7 +145,7 @@ namespace Employee
                 var amountFans = (int)((float)_gameManager.TotalAssets / 100);
                 var amountMoney = amountFans * _currentEmployeeLevel.MoneyGainAmout;
                 
-                MusicManager.instance.MmfCash.PlayFeedbacks();
+                if (amountMoney > 0) MusicManager.instance.MmfCash.PlayFeedbacks();
                 
                 IncrementFansAndMoney(amountFans, amountMoney);
             }
