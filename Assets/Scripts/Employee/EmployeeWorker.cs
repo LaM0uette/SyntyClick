@@ -243,6 +243,8 @@ namespace Employee
         {
             if (_isBug || GeneralInputReader.MenuValue) return;
             
+            MusicManager.instance.MmfCash.PlayFeedbacks();
+            
             AddAssetsOnWorked();
         }
         
@@ -267,6 +269,8 @@ namespace Employee
                 SetCorrectionBug();
                 return;
             }
+            
+            MusicManager.instance.MmfCash.PlayFeedbacks();
             
             AddAssetsOnWorked();
         }
@@ -348,7 +352,6 @@ namespace Employee
         {
             _gameManager.IncrementFans(amountFans);
             _gameManager.IncrementMoney(amountMoney);
-            MusicManager.instance.MmfCash.PlayFeedbacks();
         }
         
         public void CheckLevelUp()
@@ -364,6 +367,8 @@ namespace Employee
             _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
             _desktopRenderer.material = _currentEmployeeLevel.Material;
             _gameManager.Money -= _currentEmployeeLevel.CostLevel;
+            
+            MusicManager.instance.MmfLvlUp.PlayFeedbacks();
             
             SetTmpCostLvlUp();
             SaveLoadData.Save();

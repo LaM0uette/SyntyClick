@@ -26,6 +26,7 @@ namespace Audio
         public MMF_Player MmfCash;
         public MMF_Player MmfBuy;
         public MMF_Player MmfComplete;
+        public MMF_Player MmfLvlUp;
 
         public static MusicManager instance;
         

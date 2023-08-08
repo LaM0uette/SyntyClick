@@ -14,10 +14,6 @@ namespace Menu
         private void OnMouseDown()
         {
             GamePreferences.ResetAll();
-            
-            _parentMenu.SetActive(false);
-            Time.timeScale = 1f;
-
             GamePreferences.NewEmployeePrice = 1000;
 
             try
@@ -40,7 +36,11 @@ namespace Menu
             }
             
             MusicManager.instance.MmfClick.PlayFeedbacks();
+            
+            Time.timeScale = 1f;
+            
             SceneManager.LoadScene("DesktopScene");
+            _parentMenu.SetActive(false);
         }
     }
 }

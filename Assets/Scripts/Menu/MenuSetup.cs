@@ -10,6 +10,11 @@ namespace Menu
         private void Start()
         {
             _loadMenuPostIt.SetActive(GamePreferences.Game == 1);
+            
+            if (GamePreferences.Game != 1)
+            {
+                GamePreferences.NewEmployeePrice = 1000;
+            }
         }
     }
 }
