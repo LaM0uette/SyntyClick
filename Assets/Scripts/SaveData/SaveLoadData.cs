@@ -21,6 +21,7 @@ namespace SaveData
         
         private static void SaveVariables()
         {
+            GamePreferences.Game = 1;
             GamePreferences.TotalAssets = _gameManager.TotalAssets;
             GamePreferences.CurrentAssets = _gameManager.CurrentAssets;
             GamePreferences.Fans = _gameManager.Fans;

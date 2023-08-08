@@ -7,6 +7,13 @@ namespace SaveData
     {
         #region Statements
 
+        private const string GameKey = "Game";
+        public static int Game
+        {
+            get => PlayerPrefs.GetInt(TotalAssetsKey, 0);
+            set => PlayerPrefs.SetInt(TotalAssetsKey, value);
+        }
+        
         private const string TotalAssetsKey = "TotalAssets";
         public static int TotalAssets
         {
@@ -115,12 +122,20 @@ namespace SaveData
 
         public static void ResetAll()
         {
+            Game = 0;
             TotalAssets = 0;
             CurrentAssets = 0;
             Fans = 0;
             Money = 0;
             NewEmployeePrice = 1000;
             CurrentObjectiveId = 0;
+            
+            PlayerPrefs.DeleteKey(GameKey);
+            PlayerPrefs.DeleteKey(TotalAssetsKey);
+            PlayerPrefs.DeleteKey(CurrentAssetsKey);
+            PlayerPrefs.DeleteKey(FansKey);
+            PlayerPrefs.DeleteKey(MoneyKey);
+            PlayerPrefs.DeleteKey(CurrentObjectiveIdKey);
 
             ResetNewEmployee();
             ResetEmployeeWorker();

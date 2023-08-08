@@ -1,19 +1,16 @@
+using SaveData;
 using UnityEngine;
 
 namespace Menu
 {
     public class MenuSetup : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        [SerializeField] private GameObject _loadMenuPostIt;
         
-        }
-
-        // Update is called once per frame
-        void Update()
+        private void Start()
         {
-        
+            Debug.Log("Game: " + GamePreferences.Game);
+            _loadMenuPostIt.SetActive(GamePreferences.Game == 1);
         }
     }
 }
