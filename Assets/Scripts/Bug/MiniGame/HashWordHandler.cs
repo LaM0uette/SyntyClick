@@ -410,6 +410,8 @@ namespace Bug.MiniGame
         
         public void DecodeValidation()
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             if (!string.Equals(Decode(_hashWord), _inputDecodeWord.text, StringComparison.CurrentCultureIgnoreCase))
             {
                 FinishError();

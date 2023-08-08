@@ -41,8 +41,8 @@ namespace Bug.MiniGame
 
         private void RandomMiniGame()
         {
-            _miniGameObjects[4].SetActive(true);
-            //_miniGameObjects[UnityEngine.Random.Range(0, _miniGameObjects.Length)].SetActive(true);
+            //_miniGameObjects[4].SetActive(true);
+            _miniGameObjects[UnityEngine.Random.Range(0, _miniGameObjects.Length)].SetActive(true);
         }
         
         public static void AddFansAndMoney()

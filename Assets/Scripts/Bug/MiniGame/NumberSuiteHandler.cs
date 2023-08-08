@@ -30,6 +30,8 @@ namespace Bug.MiniGame
 
         public void OnNumButtonClick(Button button)
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             var buttonId = _buttonIndices[button];
             
             if (buttonId == 10 && _currentButtonCount == 9)
@@ -84,11 +86,6 @@ namespace Bug.MiniGame
                     buttonText.text = numbers[i].ToString();
 
                 i++;
-            }
-
-            foreach (var buttonIndice in _buttonIndices)
-            {
-                Debug.Log($"{buttonIndice.Key} : {buttonIndice.Value}");
             }
         }
 

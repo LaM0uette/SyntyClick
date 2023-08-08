@@ -40,6 +40,7 @@ namespace Bug.MiniGame
 
         public void OnNumButtonClick(int num)
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
             _tmpResult.text += num;
         }
 
@@ -58,6 +59,8 @@ namespace Bug.MiniGame
 
         public void CalculValidation()
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             if (_tmpResult.text.Length is > 9999 or <= 0)
             {
                 FinishError();

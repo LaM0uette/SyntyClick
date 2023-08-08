@@ -40,6 +40,8 @@ namespace Bug.MiniGame
 
         public void OnNumButtonClick(int num)
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             if (_tmpResult.text.Length >= 4) return;
             _tmpResult.text += num;
         }
@@ -58,6 +60,8 @@ namespace Bug.MiniGame
 
         public void CodeValidation()
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             if (int.Parse(_tmpResult.text) == _result)
             {
                 FinishValid();
@@ -70,6 +74,8 @@ namespace Bug.MiniGame
         
         public void DeleteLastNumber()
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             if (_tmpResult.text.Length <= 0) return;
             _tmpResult.text = _tmpResult.text.Remove(_tmpResult.text.Length - 1);
         }
