@@ -36,6 +36,9 @@ namespace PlayerController
         {
             MenuValue = !MenuValue;
             MenuAction?.Invoke();
+            
+            if (!MenuValue)
+                SaveLoadData.Save();
         }
         
         #region Dev

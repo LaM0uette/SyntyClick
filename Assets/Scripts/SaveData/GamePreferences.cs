@@ -10,8 +10,8 @@ namespace SaveData
         private const string GameKey = "Game";
         public static int Game
         {
-            get => PlayerPrefs.GetInt(TotalAssetsKey, 0);
-            set => PlayerPrefs.SetInt(TotalAssetsKey, value);
+            get => PlayerPrefs.GetInt(GameKey, 0);
+            set => PlayerPrefs.SetInt(GameKey, value);
         }
         
         private const string TotalAssetsKey = "TotalAssets";

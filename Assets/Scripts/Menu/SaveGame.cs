@@ -12,6 +12,7 @@ namespace Menu
         private void OnMouseDown()
         {
             SaveLoadData.Save();
+            
             _parentMenu.SetActive(false);
             Time.timeScale = 1f;
             

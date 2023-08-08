@@ -9,7 +9,6 @@ namespace Menu
         
         private void Start()
         {
-            Debug.Log("Game: " + GamePreferences.Game);
             _loadMenuPostIt.SetActive(GamePreferences.Game == 1);
         }
     }
