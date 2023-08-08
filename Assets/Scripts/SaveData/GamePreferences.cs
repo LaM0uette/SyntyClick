@@ -94,6 +94,20 @@ namespace SaveData
             var currentIsBug = PlayerPrefs.GetString($"{CurrentIsBugKey}_{id}", "0");
             return currentIsBug == "1";
         }
+        
+        private const string VolumeMusicKey = "VolumeMusic";
+        public static float VolumeMusic
+        {
+            get => PlayerPrefs.GetFloat(VolumeMusicKey, 0);
+            set => PlayerPrefs.SetFloat(VolumeMusicKey, value);
+        }
+        
+        private const string VolumeSfxKey = "VolumeSfx";
+        public static float VolumeSfx
+        {
+            get => PlayerPrefs.GetFloat(VolumeSfxKey, 0);
+            set => PlayerPrefs.SetFloat(VolumeSfxKey, value);
+        }
 
         #endregion
 

@@ -1,4 +1,5 @@
 using System;
+using SaveData;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -16,11 +17,8 @@ namespace Ui
 
         private void Start()
         {
-            _audioMixerMaster.GetFloat("Volume", out var volumeMaster);
-            _audioMixerSfx.GetFloat("Volume", out var volumeSfx);
-            
-            _sliderMaster.value = volumeMaster;
-            _sliderSfx.value = volumeSfx;
+            _sliderMaster.value = GamePreferences.VolumeMusic;
+            _sliderSfx.value = GamePreferences.VolumeSfx;
         }
 
         #endregion
@@ -30,11 +28,13 @@ namespace Ui
         public void SetVolumeMaster(float volume)
         {
             _audioMixerMaster.SetFloat("Volume", volume);
+            GamePreferences.VolumeMusic = volume;
         }
         
         public void SetVolumeSfx(float volume)
         {
             _audioMixerSfx.SetFloat("Volume", volume);
+            GamePreferences.VolumeSfx = volume;
         }
         
         #endregion

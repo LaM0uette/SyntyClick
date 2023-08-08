@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using MoreMountains.Feedbacks;
+using SaveData;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace Audio
 {
@@ -9,6 +11,9 @@ namespace Audio
     public class MusicManager : MonoBehaviour
     {
         #region Statements
+        
+        [SerializeField] private AudioMixer _audioMixerMaster;
+        [SerializeField] private AudioMixer _audioMixerSfx;
 
         public MMF_Player MmfButtonHover;
         public MMF_Player MmfActionHover;
@@ -44,6 +49,9 @@ namespace Audio
         
         private void Start()
         {
+            _audioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
+            _audioMixerSfx.SetFloat("Volume", GamePreferences.VolumeSfx);
+            
             audioSource = GetComponent<AudioSource>();
             StartCoroutine(PlayTracksInLoop());
         }
