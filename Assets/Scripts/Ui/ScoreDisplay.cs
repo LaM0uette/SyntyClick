@@ -5,19 +5,39 @@ namespace Ui
 {
     public class ScoreDisplay : MonoBehaviour
     {
+        #region Statements
+
         private static GameManager _gameManager => GameManager.instance;
         
         public TextMeshProUGUI TmpTotalAssets;
-        public TextMeshProUGUI TmpCurrentAssets;
         public TextMeshProUGUI TmpFans;
         public TextMeshProUGUI TmpMoney;
 
-        private void Update()
+        #endregion
+
+        #region Events
+
+        private void OnEnable()
         {
-            TmpTotalAssets.text = _gameManager.TotalAssets.ToString();
-            TmpCurrentAssets.text = _gameManager.CurrentAssets.ToString();
-            TmpFans.text = _gameManager.Fans.ToString();
-            TmpMoney.text = _gameManager.Money.ToString();
+            GameManager.DashboardChanged += UpdateDashboard;
         }
+        
+        private void OnDisable()
+        {
+            GameManager.DashboardChanged -= UpdateDashboard;
+        }
+
+        #endregion
+
+        #region Functions
+
+        private void UpdateDashboard()
+        {
+            TmpTotalAssets.text = $"{_gameManager.TotalAssets:N0} Assets";
+            TmpFans.text = $"{_gameManager.Fans:N0} Fans";
+            TmpMoney.text = $"{_gameManager.Money:N0}$";
+        }
+
+        #endregion
     }
 }

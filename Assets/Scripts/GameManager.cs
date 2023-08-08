@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public const float SpeedBoost = 6f;
     
+    public static Action DashboardChanged;
     public static Action OnPriceEmployeeChanged;
     
     [NonSerialized] public int TotalAssets;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
     {
         SaveLoadData.Load();
         UpdatePriceEmployee();
+        UpdateDashboard();
     }
 
     #endregion
@@ -53,16 +55,34 @@ public class GameManager : MonoBehaviour
     {
         TotalAssets += amout;
         CurrentAssets += amout;
+
+        UpdateDashboard();
     }
     
     public void IncrementFans(int amout)
     {
         Fans += amout;
+        
+        UpdateDashboard();
     }
     
     public void IncrementMoney(int amout)
     {
         Money += amout;
+        
+        UpdateDashboard();
+    }
+
+    public static void UpdateDashboard()
+    {
+        try
+        {
+            DashboardChanged?.Invoke();
+        }
+        catch (Exception)
+        {
+            // ignored
+        }
     }
 
     private static void UpdatePriceEmployee()

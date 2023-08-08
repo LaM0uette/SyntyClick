@@ -102,6 +102,7 @@ namespace Bug.MiniGame
             foreach (var button in _buttons)
             {
                 button.interactable = false;
+                button.image.color = Color.red;
             }
             
             MusicManager.instance.MmfError.PlayFeedbacks();
