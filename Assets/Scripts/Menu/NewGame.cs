@@ -2,6 +2,7 @@ using System;
 using Audio;
 using PlayerController;
 using SaveData;
+using Ui;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +16,15 @@ namespace Menu
         {
             GamePreferences.ResetAll();
             GamePreferences.NewEmployeePrice = 1000;
+            
+            try
+            {
+                GameManager.Initialize();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
 
             try
             {
@@ -26,20 +36,11 @@ namespace Menu
                 // ignored
             }
             
-            try
-            {
-                GameManager.Initialize();
-            }
-            catch (Exception)
-            {
-                // ignored
-            }
-            
             MusicManager.instance.MmfClick.PlayFeedbacks();
             
             Time.timeScale = 1f;
             
-            SceneManager.LoadScene("DesktopScene");
+            LoadingScreen.instance.LaodScene(1);
             _parentMenu.SetActive(false);
         }
     }

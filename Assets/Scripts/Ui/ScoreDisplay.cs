@@ -19,6 +19,10 @@ namespace Ui
 
         private void OnEnable()
         {
+            TmpTotalAssets.text = "0 Assets";
+            TmpFans.text = "0 Fans";
+            TmpMoney.text = "0$";
+            
             GameManager.DashboardChanged += UpdateDashboard;
         }
         
@@ -33,6 +37,7 @@ namespace Ui
 
         private void UpdateDashboard()
         {
+            Debug.Log("UpdateDashboard");
             TmpTotalAssets.text = $"{_gameManager.TotalAssets:N0} Assets";
             TmpFans.text = $"{_gameManager.Fans:N0} Fans";
             TmpMoney.text = $"{_gameManager.Money:N0}$";

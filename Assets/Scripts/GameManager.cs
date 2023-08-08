@@ -75,6 +75,8 @@ public class GameManager : MonoBehaviour
 
     public static void UpdateDashboard()
     {
+        // TODO: BUG chargement des données sur le whiteboard au second load/new game
+        
         try
         {
             DashboardChanged?.Invoke();

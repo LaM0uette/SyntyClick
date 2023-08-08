@@ -1,6 +1,6 @@
 using Audio;
+using Ui;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Menu
 {
@@ -9,7 +9,8 @@ namespace Menu
         private void OnMouseDown()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene("MenuScene");
+            //SceneManager.LoadScene("MenuScene");
+            LoadingScreen.instance.LaodScene(0);
             
             MusicManager.instance.MmfClick.PlayFeedbacks();
         }
