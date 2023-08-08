@@ -748,7 +748,7 @@ MonoBehaviour:
     cutoutTextureName: 
     DilateRenderingMode: 0
     cutoutTextureIndex: 0
-  renderStyle: 1
+  renderStyle: 2
   outlineParameters:
     enabled: 1
     color: {r: 0, g: 0.29411766, b: 0.6745098, a: 1}
@@ -764,18 +764,18 @@ MonoBehaviour:
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 0
   backParameters:
-    enabled: 1
+    enabled: 0
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    color: {r: 0.002428216, g: 0.2086369, b: 0.45078585, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
@@ -1584,15 +1584,15 @@ MonoBehaviour:
     enabled: 0
     color: {r: 0.5377358, g: 0.5367253, b: 0.5250534, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 0, g: 0.29411766, b: 0.6745098, a: 0}
+    color: {r: 0.002428216, g: 0.2086369, b: 0.45078585, a: 0}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 4800000, guid: 213090e563021044c92d1c27258b93f0, type: 3}
       serializedProperties:
@@ -1667,7 +1667,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 23fbc6650a8a8c04c8b9f49c11c833a8, type: 2}
   - {fileID: 11400000, guid: d34c52155097a0b489b9aaea4f75fd01, type: 2}
   _desktopRenderer: {fileID: 6237231041726358083}
-  _employeeName: 
   _spriteProgress: {fileID: 1754573750949759773}
   _spriteProgressStop: {fileID: 3010222703306471004}
   _tmpMaxAssets: {fileID: 2149933208928458827}
@@ -1678,7 +1677,6 @@ MonoBehaviour:
   _id: 0
   _prefabBug: {fileID: 442309139473579384}
   _prefabBugButtonLvl: {fileID: 4729703808530303910}
-  _outlinable: {fileID: 1657003870389800130}
   _outlinableBug: {fileID: 3167517689990384701}
 --- !u!114 &7807791465755850108
 MonoBehaviour:

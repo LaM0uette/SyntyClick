@@ -23174,7 +23174,7 @@ MonoBehaviour:
     cutoutTextureName: 
     DilateRenderingMode: 0
     cutoutTextureIndex: 0
-  renderStyle: 1
+  renderStyle: 2
   outlineParameters:
     enabled: 1
     color: {r: 0, g: 0.5442721, b: 0.6698113, a: 1}
@@ -23190,21 +23190,27 @@ MonoBehaviour:
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 0
   backParameters:
-    enabled: 1
+    enabled: 0
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    color: {r: 0.040094346, g: 0.49563155, b: 0.5, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
-      shader: {fileID: 0}
-      serializedProperties: []
+      shader: {fileID: 4800000, guid: 213090e563021044c92d1c27258b93f0, type: 3}
+      serializedProperties:
+      - PropertyName: _PublicColor
+        Property:
+          ColorValue: {r: 0.10946172, g: 0.5209957, b: 0.47932023, a: 0.62352943}
+          FloatValue: 0
+          VectorValue: {x: 0, y: 0, z: 0, w: 0}
+          PropertyType: 0
 --- !u!114 &33421630896381315
 MonoBehaviour:
   m_ObjectHideFlags: 0

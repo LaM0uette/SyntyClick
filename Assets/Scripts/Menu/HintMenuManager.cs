@@ -7,26 +7,12 @@ namespace Menu
     public class HintMenuManager : MonoBehaviour
     {
         #region Statements
-
-        public static HintMenuManager instance;
         
         [SerializeField] private GameObject[] _hintObjects;
         [SerializeField] private GameObject _leftArrow;
         [SerializeField] private GameObject _rightArrow;
         
-        public static int _currentHintObject;
-        
-        private void Awake()
-        {
-            if (instance is null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
+        public int _currentHintObject;
 
         #endregion
 

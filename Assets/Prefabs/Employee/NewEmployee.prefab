@@ -727,7 +727,7 @@ MonoBehaviour:
     cutoutTextureName: 
     DilateRenderingMode: 0
     cutoutTextureIndex: 0
-  renderStyle: 1
+  renderStyle: 2
   outlineParameters:
     enabled: 1
     color: {r: 0.03666405, g: 0.5566038, b: 0, a: 1}
@@ -743,7 +743,7 @@ MonoBehaviour:
           VectorValue: {x: 0, y: 0, z: 0, w: 0}
           PropertyType: 0
   backParameters:
-    enabled: 1
+    enabled: 0
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     dilateShift: 1
     blurShift: 1
@@ -752,7 +752,7 @@ MonoBehaviour:
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    color: {r: 0.002428216, g: 0.2086369, b: 0.45078585, a: 1}
     dilateShift: 1
     blurShift: 1
     fillPass:
