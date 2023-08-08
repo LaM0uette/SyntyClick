@@ -1,5 +1,6 @@
 using System;
 using Employee;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace Bug.MiniGame
@@ -9,9 +10,9 @@ namespace Bug.MiniGame
         #region Statements
 
         public static Action<EmployeeWorker> BugAction { get; private set; }
-        public static Action<EmployeeWorker> BugCorrectedAction { get; set; }
-        
-        public static EmployeeWorker CurrentEmployeeWorker { get; set; }
+        [CanBeNull] public static Action<EmployeeWorker> BugCorrectedAction { get; set; }
+
+        [CanBeNull] public static EmployeeWorker CurrentEmployeeWorker { get; set; }
         public static bool IsOnMiniGame { get; set; }
         
         [SerializeField] private GameObject[] _miniGameObjects;

@@ -307,7 +307,7 @@ namespace Employee
         
         private void BugCorrected(EmployeeWorker employeeWorker)
         {
-            if (employeeWorker != _employeeWorker) return;
+            if (employeeWorker != _employeeWorker || employeeWorker is null) return;
         
             _isBug = false;
             _isPaused = false;

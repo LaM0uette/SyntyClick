@@ -1,21 +1,20 @@
-using System;
 using SaveData;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Menu
 {
-    public class IntroManager : MonoBehaviour
+    public class HintMenuManager : MonoBehaviour
     {
         #region Statements
 
-        public static IntroManager instance;
+        public static HintMenuManager instance;
         
-        [SerializeField] private GameObject[] _introObjects;
+        [SerializeField] private GameObject[] _hintObjects;
         [SerializeField] private GameObject _leftArrow;
         [SerializeField] private GameObject _rightArrow;
-        [SerializeField] private GameObject _startPostIt;
         
-        public static int _currentIntroObject;
+        public static int _currentHintObject;
         
         private void Awake()
         {
@@ -27,15 +26,6 @@ namespace Menu
             {
                 Destroy(gameObject);
             }
-            
-            if (GamePreferences.Intro == 1)
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                GamePreferences.Intro = 1;
-            }
         }
 
         #endregion
@@ -44,11 +34,9 @@ namespace Menu
 
         private void OnEnable()
         {
-            _leftArrow.SetActive(false);
-            _rightArrow.SetActive(true);
-            _startPostIt.SetActive(false);
+            SetArrowButton();
             
-            _currentIntroObject = 0;
+            _currentHintObject = 0;
             ShowUi();
         }
 
@@ -56,41 +44,53 @@ namespace Menu
 
         #region Functions
 
-        public void IncrementIntroObject(int value)
+        private void SetArrowButton()
         {
-            _currentIntroObject += value;
-
-            if (_currentIntroObject <= 0)
+            if (_hintObjects.Length <= 1)
             {
                 _leftArrow.SetActive(false);
-                _currentIntroObject = 0;
+                _rightArrow.SetActive(false);
+            }
+            else
+            {
+                _leftArrow.SetActive(false);
+                _rightArrow.SetActive(true);
+            }
+        }
+
+        public void IncrementIntroObject(int value)
+        {
+            _currentHintObject += value;
+
+            if (_currentHintObject <= 0)
+            {
+                _leftArrow.SetActive(false);
+                _currentHintObject = 0;
             }
             else
             {
                 _leftArrow.SetActive(true);
             }
 
-            if (_currentIntroObject >= _introObjects.Length - 1)
+            if (_currentHintObject >= _hintObjects.Length - 1)
             {
                 _rightArrow.SetActive(false);
-                _startPostIt.SetActive(true);
-                _currentIntroObject = _introObjects.Length - 1;
+                _currentHintObject = _hintObjects.Length - 1;
             }
             else
             {
                 _rightArrow.SetActive(true);
-                _startPostIt.SetActive(false);
             }
         }
 
         public void ShowUi()
         {
-            foreach (var introObject in _introObjects)
+            foreach (var introObject in _hintObjects)
             {
                 introObject.SetActive(false);
             }
             
-            _introObjects[_currentIntroObject].SetActive(true);
+            _hintObjects[_currentHintObject].SetActive(true);
         }
 
         #endregion
