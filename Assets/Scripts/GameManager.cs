@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
     public void IncrementMoney(int amout)
     {
         Money += amout;
-        MusicManager.instance.MmfCash.PlayFeedbacks();
     }
 
     private static void UpdatePriceEmployee()

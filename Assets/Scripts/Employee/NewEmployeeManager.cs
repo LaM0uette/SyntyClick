@@ -49,7 +49,7 @@ namespace Employee
             _employee.SetActive(true);
             _isBought = true;
 
-            MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.MmfBuy.PlayFeedbacks();
             
             IncrementNewEmployeePrice();
             Save();

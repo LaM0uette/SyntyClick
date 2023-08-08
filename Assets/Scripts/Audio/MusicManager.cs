@@ -24,6 +24,7 @@ namespace Audio
         public MMF_Player MmfError;
         public MMF_Player MmfBug;
         public MMF_Player MmfCash;
+        public MMF_Player MmfBuy;
         public MMF_Player MmfComplete;
 
         public static MusicManager instance;

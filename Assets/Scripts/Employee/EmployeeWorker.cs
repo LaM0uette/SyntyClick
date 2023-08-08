@@ -348,6 +348,7 @@ namespace Employee
         {
             _gameManager.IncrementFans(amountFans);
             _gameManager.IncrementMoney(amountMoney);
+            MusicManager.instance.MmfCash.PlayFeedbacks();
         }
         
         public void CheckLevelUp()
