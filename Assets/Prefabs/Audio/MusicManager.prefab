@@ -1922,7 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4597be3c896ba9449728b2253ca50d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioMixerMaster: {fileID: 24100000, guid: 8ea9b1a46e79eaf4a9f3fde285cdfd9a, type: 2}
+  AudioMixerMaster: {fileID: 24100000, guid: 8ea9b1a46e79eaf4a9f3fde285cdfd9a, type: 2}
   _audioMixerSfx: {fileID: 24100000, guid: 584db32b05e794049acd83367b5d3e6d, type: 2}
   MmfButtonHover: {fileID: 4138328125194537715}
   MmfActionHover: {fileID: 9079945185982266163}

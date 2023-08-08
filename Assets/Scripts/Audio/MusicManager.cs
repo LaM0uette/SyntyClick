@@ -12,7 +12,7 @@ namespace Audio
     {
         #region Statements
         
-        [SerializeField] private AudioMixer _audioMixerMaster;
+        public AudioMixer AudioMixerMaster;
         [SerializeField] private AudioMixer _audioMixerSfx;
 
         public MMF_Player MmfButtonHover;
@@ -51,7 +51,7 @@ namespace Audio
         
         private void Start()
         {
-            _audioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
+            AudioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
             _audioMixerSfx.SetFloat("Volume", GamePreferences.VolumeSfx);
             
             audioSource = GetComponent<AudioSource>();

@@ -11,6 +11,11 @@ namespace Menu
         #endregion
 
         #region Events
+        
+        private void OnEnable()
+        {
+            _gameObject.SetActive(false);
+        }
 
         private void OnMouseDown()
         {
