@@ -1,3 +1,4 @@
+using Audio;
 using PlayerController;
 using SaveData;
 using ScriptableOject.Objective;
@@ -62,6 +63,8 @@ public class ObjectiveManager : MonoBehaviour
     private void TryIncrementAssets()
     {
         if (_gameManager.CurrentAssets < CurrentObjective.AssetCount) return;
+        
+        MusicManager.instance.MmfComplete.PlayFeedbacks();
         
         _gameManager.CurrentAssets = 0;
         CurrentObjective = Objectives[CurrentObjective.Id];

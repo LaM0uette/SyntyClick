@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,6 +58,8 @@ namespace Bug.MiniGame
         
         private void SetInitialNumbers()
         {
+            _currentButtonCount = 0;
+                
             foreach (var button in _buttons)
             {
                 button.interactable = true;
@@ -96,6 +99,7 @@ namespace Bug.MiniGame
                 button.interactable = false;
             }
             
+            MusicManager.instance.MmfError.PlayFeedbacks();
             Finish();
         }
         
@@ -103,6 +107,7 @@ namespace Bug.MiniGame
         {
             MiniGameManager.AddFansAndMoney();
             
+            MusicManager.instance.MmfValidation.PlayFeedbacks();
             Finish();
         }
         

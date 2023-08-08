@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -27,6 +28,7 @@ namespace Bug.MiniGame
         {
             foreach (var button in _buttons)
             {
+                button.interactable = true;
                 _buttonColorIndices[button] = Random.Range(0, _colors.Length);
                 button.image.color = _colors[_buttonColorIndices[button]];
             }
@@ -58,6 +60,8 @@ namespace Bug.MiniGame
                 button.interactable = false;
                 button.image.color = Color.green;
             }
+            
+            MusicManager.instance.MmfValidation.PlayFeedbacks();
             
             StartCoroutine(FinishWin());
         }

@@ -1,3 +1,4 @@
+using Audio;
 using JetBrains.Annotations;
 using PlayerController;
 using UnityEngine;
@@ -50,6 +51,7 @@ namespace Pdg
         {
             if (_pdgWorkerClicked != _pdgWorker) return;
             
+            MusicManager.instance.MmfClick.PlayFeedbacks();
             GeneralInputReader.OnStaticPdgClickAction();
         }
 

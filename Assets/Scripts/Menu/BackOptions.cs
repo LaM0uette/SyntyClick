@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Menu
 {
-    public class PostItOptions : MonoBehaviour
+    public class BackOptions : MonoBehaviour
     {
         #region Statements
 
@@ -16,7 +16,7 @@ namespace Menu
         private void OnMouseDown()
         {
             MusicManager.instance.MmfClick.PlayFeedbacks();
-            _menuOption.SetActive(true);
+            _menuOption.SetActive(false);
         }
 
         #endregion

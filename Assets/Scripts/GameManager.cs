@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using SaveData;
 using UnityEngine;
 
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     public void IncrementMoney(int amout)
     {
         Money += amout;
+        MusicManager.instance.MmfCash.PlayFeedbacks();
     }
 
     private static void UpdatePriceEmployee()

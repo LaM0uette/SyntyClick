@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 
 namespace Menu
@@ -6,6 +7,8 @@ namespace Menu
     {
         private void OnMouseDown()
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
 #endif

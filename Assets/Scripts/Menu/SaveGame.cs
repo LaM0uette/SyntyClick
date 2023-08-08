@@ -1,3 +1,4 @@
+using Audio;
 using PlayerController;
 using SaveData;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace Menu
             SaveLoadData.Save();
             _parentMenu.SetActive(false);
             Time.timeScale = 1f;
+            
+            MusicManager.instance.MmfClick.PlayFeedbacks();
             
             GeneralInputReader.OnSaticMenu();
             GeneralInputReader.MenuValue = false;

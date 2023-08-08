@@ -1,3 +1,4 @@
+using Audio;
 using SaveData;
 using Ui;
 using UnityEngine;
@@ -32,7 +33,11 @@ namespace Employee
 
         private void CheckCostNewEmployee()
         {
-            if (_gameManager.Money < _gameManager.NewEmployeePrice || _isBought) return;
+            if (_gameManager.Money < _gameManager.NewEmployeePrice || _isBought)
+            {
+                MusicManager.instance.MmfError.PlayFeedbacks();
+                return;
+            }
 
             BuyNewEmployee();
         }
@@ -44,6 +49,8 @@ namespace Employee
             _employee.SetActive(true);
             _isBought = true;
 
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             IncrementNewEmployeePrice();
             Save();
         }

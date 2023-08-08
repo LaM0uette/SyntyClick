@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ namespace Menu
         {
             Time.timeScale = 1f;
             SceneManager.LoadScene("MenuScene");
+            
+            MusicManager.instance.MmfClick.PlayFeedbacks();
         }
     }
 }

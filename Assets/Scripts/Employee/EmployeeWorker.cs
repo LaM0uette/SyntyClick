@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Audio;
 using Bug.MiniGame;
 using EPOOutline;
 using JetBrains.Annotations;
@@ -231,6 +232,8 @@ namespace Employee
         {
             if (_isBug || GeneralInputReader.MenuValue) return;
             
+            MusicManager.instance.MmfPopAction.PlayFeedbacks();
+            
             AnimatorSetSpeed(GameManager.SpeedBoost);
             PieceIncrement(_currentEmployeeLevel.IncrementClickAmount);
             StartCoroutine(ResetSpeed());
@@ -251,7 +254,6 @@ namespace Employee
         private void OnMouseLeftClickAction()
         {
             if (_isAlreadyBug) return;
-            
             if (InputReader.ClickedGameObject == null) return;
             
             _employeeWorkerClicked = InputReader.ClickedGameObject.TryGetComponent<EmployeeWorker>(out var employeeWorker)
@@ -278,6 +280,8 @@ namespace Employee
 
         private void SetBugActions()
         {
+            MusicManager.instance.MmfBug.PlayFeedbacks();
+            
             _isBug = true;
             _isPaused = true;
             _prefabBug.SetActive(true);
@@ -319,6 +323,8 @@ namespace Employee
         {
             if (_isPaused) _isPaused = false;
             if (_currentAssetsOnWorked < 1) return;
+            
+            MusicManager.instance.MmfClick.PlayFeedbacks();
             
             _gameManager.IncrementAssets(_currentAssetsOnWorked);
             
@@ -407,6 +413,7 @@ namespace Employee
         {
             _tmpMaxAssets.text = $"{++_currentAssetsOnWorked}";
             SaveLoadData.SaveCurrentAssetsOnWorkedKey(_id, _currentAssetsOnWorked);
+            MusicManager.instance.MmfPop.PlayFeedbacks();
         }
 
         private void SetRandomSpriteAssetOnWorked()

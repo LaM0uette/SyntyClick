@@ -1,3 +1,4 @@
+using Audio;
 using JetBrains.Annotations;
 using PlayerController;
 using UnityEngine;
@@ -49,6 +50,9 @@ namespace Employee
         private void OnMouseLeftClickAction()
         {
             if (_buttonEmployeeLevelUpClicked != _buttonEmployeeLevelUp) return;
+            
+            MusicManager.instance.MmfClick.PlayFeedbacks();
+            
             _employeeWorker.CheckLevelUp();
             _buttonEmployeeLevelUpClicked = null;
         }

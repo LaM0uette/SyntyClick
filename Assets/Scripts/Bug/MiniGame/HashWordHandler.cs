@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Audio;
 using PlayerController;
 using TMPro;
 using UnityEngine;
@@ -421,6 +422,8 @@ namespace Bug.MiniGame
         private void FinishError()
         {
             _screen.color = Color.red;
+            
+            MusicManager.instance.MmfError.PlayFeedbacks();
             Finish();
         }
         
@@ -429,6 +432,8 @@ namespace Bug.MiniGame
             MiniGameManager.AddFansAndMoney();
             
             _screen.color = Color.green;
+            
+            MusicManager.instance.MmfValidation.PlayFeedbacks();
             Finish();
         }
         

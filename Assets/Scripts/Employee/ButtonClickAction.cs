@@ -1,3 +1,4 @@
+using Audio;
 using PlayerController;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace Employee
 
         private void OnMouseDown()
         {
+            MusicManager.instance.MmfPopAction.PlayFeedbacks();
             GeneralInputReader.OnStaticClickAction();
         }
 

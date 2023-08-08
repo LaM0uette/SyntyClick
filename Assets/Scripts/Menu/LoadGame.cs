@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using PlayerController;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,7 @@ namespace Menu
                 // ignored
             }
             
+            MusicManager.instance.MmfClick.PlayFeedbacks();
             SceneManager.LoadScene("DesktopScene");
         }
     }

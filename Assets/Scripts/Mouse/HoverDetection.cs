@@ -1,3 +1,4 @@
+using Audio;
 using EPOOutline;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace Mouse
 
         public void OnMouseEnter()
         {
+            MusicManager.instance.MmfActionHover.PlayFeedbacks();
             _outlinable.enabled = true;
         }
         
