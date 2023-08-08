@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Audio;
+using PlayerController;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,12 @@ namespace Bug.MiniGame
         private void OnEnable()
         {
             SetInitialColors();
+            GeneralInputReader.ExitAction += FinishError;
+        }
+
+        private void OnDisable()
+        {
+            GeneralInputReader.ExitAction -= FinishError;
         }
 
         #endregion
@@ -55,6 +62,19 @@ namespace Bug.MiniGame
             Finish();
         }
         
+        private void FinishError()
+        {
+            foreach (var button in _buttons)
+            {
+                button.interactable = false;
+                button.image.color = Color.red;
+            }
+            
+            MusicManager.instance.MmfError.PlayFeedbacks();
+            
+            StartCoroutine(FinishWin());
+        }
+        
         private void Finish()
         {
             foreach (var button in _buttons)
@@ -64,6 +84,7 @@ namespace Bug.MiniGame
             }
             
             MusicManager.instance.MmfValidation.PlayFeedbacks();
+            MiniGameManager.AddFansAndMoney();
             
             StartCoroutine(FinishWin());
         }
@@ -72,8 +93,8 @@ namespace Bug.MiniGame
         {
             yield return new WaitForSeconds(0.8f);
             
-            MiniGameManager.AddFansAndMoney();
             transform.gameObject.SetActive(false);
+            MiniGameManager.ResetIsOnMiniGame();
             MiniGameManager.BugCorrectedAction?.Invoke(MiniGameManager.CurrentEmployeeWorker);
         }
 

@@ -1,4 +1,5 @@
 using System;
+using Bug.MiniGame;
 using SaveData;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace PlayerController
         
         public static bool MenuValue { get; set; }
         public static Action MenuAction { get; set; }
+        public static Action ExitAction { get; set; }
         
         public static Action Num0Action { get; set; }
         public static Action Num1Action { get; set; }
@@ -38,13 +40,31 @@ namespace PlayerController
         
         public void OnMenu()
         {
-            MenuValue = !MenuValue;
-            MenuAction?.Invoke();
-            
-            if (!MenuValue)
-                SaveLoadData.Save();
+            if (MiniGameManager.IsOnMiniGame)
+            {
+                Exit();
+                return;
+            }
+
+            Menu();
         }
         public static void OnSaticMenu()
+        {
+            if (MiniGameManager.IsOnMiniGame)
+            {
+                Exit();
+                return;
+            }
+
+            Menu();
+        }
+
+        private static void Exit()
+        {
+            ExitAction?.Invoke();
+        }
+
+        private static void Menu()
         {
             MenuValue = !MenuValue;
             MenuAction?.Invoke();

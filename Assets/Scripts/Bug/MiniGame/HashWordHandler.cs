@@ -344,6 +344,7 @@ namespace Bug.MiniGame
         private void OnEnable()
         {
             GeneralInputReader.EnterAction += DecodeValidation;
+            GeneralInputReader.ExitAction += FinishError;
             
             _screen.color = _screenColor;
             _inputDecodeWord.text = "";
@@ -355,6 +356,7 @@ namespace Bug.MiniGame
         private void OnDisable()
         {
             GeneralInputReader.EnterAction -= DecodeValidation;
+            GeneralInputReader.ExitAction -= FinishError;
         }
 
         #endregion
@@ -449,6 +451,7 @@ namespace Bug.MiniGame
             yield return new WaitForSeconds(1.4f);
             
             transform.gameObject.SetActive(false);
+            MiniGameManager.ResetIsOnMiniGame();
             MiniGameManager.BugCorrectedAction?.Invoke(MiniGameManager.CurrentEmployeeWorker);
         }
 

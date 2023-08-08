@@ -12,6 +12,7 @@ namespace Bug.MiniGame
         public static Action<EmployeeWorker> BugCorrectedAction { get; set; }
         
         public static EmployeeWorker CurrentEmployeeWorker { get; set; }
+        public static bool IsOnMiniGame { get; set; }
         
         [SerializeField] private GameObject[] _miniGameObjects;
 
@@ -35,8 +36,14 @@ namespace Bug.MiniGame
 
         private void OnBugAction(EmployeeWorker employeeWorker)
         {
+            IsOnMiniGame = true;
             CurrentEmployeeWorker = employeeWorker;
             RandomMiniGame();
+        }
+
+        public static void ResetIsOnMiniGame()
+        {
+            IsOnMiniGame = false;
         }
 
         private void RandomMiniGame()

@@ -26,6 +26,7 @@ namespace Bug.MiniGame
         private void OnEnable()
         {
             GeneralInputReader.EnterAction += CalculValidation;
+            GeneralInputReader.ExitAction += FinishError;
             
             _screen.color = _screenColor;
             _tmpResult.text = string.Empty;
@@ -47,6 +48,7 @@ namespace Bug.MiniGame
         private void OnDisable()
         {
             GeneralInputReader.EnterAction -= CalculValidation;
+            GeneralInputReader.ExitAction -= FinishError;
             
             GeneralInputReader.Num0Action -= () => OnNumButtonClick(0);
             GeneralInputReader.Num1Action -= () => OnNumButtonClick(1);
@@ -129,6 +131,7 @@ namespace Bug.MiniGame
             yield return new WaitForSeconds(1.4f);
             
             transform.gameObject.SetActive(false);
+            MiniGameManager.ResetIsOnMiniGame();
             MiniGameManager.BugCorrectedAction?.Invoke(MiniGameManager.CurrentEmployeeWorker);
         }
 
