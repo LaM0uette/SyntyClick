@@ -386,7 +386,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TmpTotalAssets: {fileID: 662911564077119219}
-  TmpCurrentAssets: {fileID: 0}
   TmpFans: {fileID: 2736463007165877558}
   TmpMoney: {fileID: 2098925039051619288}
 --- !u!1 &7293029912692059448

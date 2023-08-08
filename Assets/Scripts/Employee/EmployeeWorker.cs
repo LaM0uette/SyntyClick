@@ -35,7 +35,6 @@ namespace Employee
         
         [Header("EmployeeAssets")]
         [SerializeField] private Renderer _desktopRenderer;
-        [SerializeField] private string _employeeName;
         
         [Header("RadialSprite")]
         [SerializeField] private Image _spriteProgress;
@@ -55,7 +54,6 @@ namespace Employee
         [SerializeField] private int _id;
         [SerializeField] private GameObject _prefabBug;
         [SerializeField] private GameObject _prefabBugButtonLvl;
-        [SerializeField] private Outlinable _outlinable;
         [SerializeField] private Outlinable _outlinableBug;
         private bool _isBug;
         private static bool _isAlreadyBug;
@@ -146,6 +144,8 @@ namespace Employee
                 
                 var amountFans = (int)((float)_gameManager.TotalAssets / 100);
                 var amountMoney = amountFans * _currentEmployeeLevel.MoneyGainAmout;
+                
+                MusicManager.instance.MmfCash.PlayFeedbacks();
                 
                 IncrementFansAndMoney(amountFans, amountMoney);
             }
@@ -318,7 +318,7 @@ namespace Employee
 
             _employeeAnimator.SetTrigger(Stop);
             _spriteProgressStop.fillAmount = 0;
-            _tmpMaxAssets.text = _currentAssetsOnWorked.ToString();
+            _tmpMaxAssets.text = $"{_currentAssetsOnWorked:N0}";
             
             SaveLoadData.SaveCurrentIsBug(_id, false);
         }
@@ -390,7 +390,7 @@ namespace Employee
             }
             
             var id = _currentEmployeeLevel.Level;
-            _tmpCostLvlUp.text = $"{_employeeLevels[id].CostLevel}";
+            _tmpCostLvlUp.text = $"{_employeeLevels[id].CostLevel:N0}";
         }
         
         private void PieceIncrement(float incrementAmount)
@@ -417,7 +417,7 @@ namespace Employee
 
         private void IncrementCurrentAssetsOnWorked()
         {
-            _tmpMaxAssets.text = $"{++_currentAssetsOnWorked}";
+            _tmpMaxAssets.text = $"{++_currentAssetsOnWorked:N0}";
             SaveLoadData.SaveCurrentAssetsOnWorkedKey(_id, _currentAssetsOnWorked);
             MusicManager.instance.MmfPop.PlayFeedbacks();
         }

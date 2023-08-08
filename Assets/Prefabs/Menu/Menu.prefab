@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 4815644774781195399}
   - component: {fileID: 6875957877806803750}
   - component: {fileID: 815417833048094579}
+  - component: {fileID: 8984255226137914297}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -267,6 +268,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8984255226137914297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643048444537798785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fc8fcbb46bac414b8ead7559ad98bdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loadMenuPostIt: {fileID: 7452123460098943929}
 --- !u!1 &6829737270045276521
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +346,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: SyntyClick
+  m_text: Synty Click
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -679,6 +693,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PostItMenuLoadGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3640681975587032953, guid: 6c6c98705535e734da12b1395e62aa97,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4138027144393251833, guid: 6c6c98705535e734da12b1395e62aa97,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,6 +758,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c6c98705535e734da12b1395e62aa97, type: 3}
+--- !u!1 &7452123460098943929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3640681975587032953, guid: 6c6c98705535e734da12b1395e62aa97,
+    type: 3}
+  m_PrefabInstance: {fileID: 6191620707030738112}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7818310495818940217 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4138027144393251833, guid: 6c6c98705535e734da12b1395e62aa97,
@@ -807,6 +832,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PostItMenuClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 5537784065403367066, guid: 8c8ab3ad3f3a3f54386cc2a8e9c3ea6e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -22,7 +22,7 @@ namespace Ui
                 ImgObjectives.sprite = _objectiveManager.CurrentObjective.Image;
                 TmpObjectivesName.text = _objectiveManager.CurrentObjective.Name;
             
-                var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString() : $"{_gameManager.CurrentAssets} / {_objectiveManager.CurrentObjective.AssetCount}";
+                var total = _objectiveManager.CurrentObjective.isInfinite ? _gameManager.CurrentAssets.ToString("N0") : $"{_gameManager.CurrentAssets:N0} / {_objectiveManager.CurrentObjective.AssetCount:N0}";
                 TmpObjectivesTotal.text = $"Assets : {total}";
                 
                 _progressBar.fillAmount = _objectiveManager.CurrentObjective.isInfinite ? 1 : (float) _gameManager.CurrentAssets / _objectiveManager.CurrentObjective.AssetCount;

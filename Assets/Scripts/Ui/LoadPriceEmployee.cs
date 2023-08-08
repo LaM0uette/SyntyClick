@@ -24,7 +24,7 @@ namespace Ui
     
         private void UpdatePriceEmployee()
         {
-            var newEmployeePrice = GameManager.instance.NewEmployeePrice.ToString();
+            var newEmployeePrice = GameManager.instance.NewEmployeePrice.ToString("N0");
             _tmpPriceNewEmployee.text = newEmployeePrice;
         }
     }
