@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using Audio;
 using PlayerController;
 using TMPro;
@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Bug.MiniGame
 {
-    public class CalculatorHandler : MonoBehaviour
+    public class BombeCodeHandler : MonoBehaviour
     {
         #region Statements
 
@@ -20,12 +20,12 @@ namespace Bug.MiniGame
         private int _result;
 
         #endregion
-
+        
         #region Events
 
         private void OnEnable()
         {
-            GeneralInputReader.EnterAction += CalculValidation;
+            GeneralInputReader.EnterAction += CodeValidation;
             
             _screen.color = _screenColor;
             _tmpResult.text = string.Empty;
@@ -35,35 +35,29 @@ namespace Bug.MiniGame
 
         private void OnDisable()
         {
-            GeneralInputReader.EnterAction -= CalculValidation;
+            GeneralInputReader.EnterAction -= CodeValidation;
         }
 
         public void OnNumButtonClick(int num)
         {
+            if (_tmpResult.text.Length >= 4) return;
             _tmpResult.text += num;
         }
 
         #endregion
-
+        
         #region Functions
 
         private void SetInitialCalcul()
         {
-            var num1 = UnityEngine.Random.Range(1, 999);
-            var num2 = UnityEngine.Random.Range(1, 999);
+            var randomCode = Random.Range(1000, 9999);
             
-            _result = num1 + num2;
-            _tmpCalcul.text = $"{num1} + {num2} = ??";
+            _tmpCalcul.text = randomCode.ToString();
+            _result = randomCode;
         }
 
-        public void CalculValidation()
+        public void CodeValidation()
         {
-            if (_tmpResult.text.Length is > 9999 or <= 0)
-            {
-                FinishError();
-                return;
-            }
-            
             if (int.Parse(_tmpResult.text) == _result)
             {
                 FinishValid();
@@ -72,6 +66,12 @@ namespace Bug.MiniGame
             {
                 FinishError();
             }
+        }
+        
+        public void DeleteLastNumber()
+        {
+            if (_tmpResult.text.Length <= 0) return;
+            _tmpResult.text = _tmpResult.text.Remove(_tmpResult.text.Length - 1);
         }
         
         private void FinishError()
