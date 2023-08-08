@@ -1,4 +1,5 @@
 using System;
+using SaveData;
 using UnityEngine;
 
 namespace PlayerController
@@ -27,6 +28,9 @@ namespace PlayerController
         {
             MenuValue = !MenuValue;
             MenuAction?.Invoke();
+            
+            if (!MenuValue)
+                SaveLoadData.Save();
         }
         public static void OnSaticMenu()
         {

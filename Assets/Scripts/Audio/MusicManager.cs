@@ -46,9 +46,6 @@ namespace Audio
         {
             audioSource = GetComponent<AudioSource>();
             StartCoroutine(PlayTracksInLoop());
-            
-            //_audioMixerMaster.SetFloat("Volume", -10f);
-            //_audioMixerSfx.SetFloat("Volume", -20f);
         }
 
         #endregion
