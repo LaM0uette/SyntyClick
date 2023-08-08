@@ -14,6 +14,7 @@ namespace Bug.MiniGame
 
         [CanBeNull] public static EmployeeWorker CurrentEmployeeWorker { get; set; }
         public static bool IsOnMiniGame { get; set; }
+        public static bool IsOnHint { get; set; }
         
         [SerializeField] private GameObject[] _miniGameObjects;
 

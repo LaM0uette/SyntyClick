@@ -99,6 +99,8 @@ namespace Bug.MiniGame
 
         private void FinishError()
         {
+            if (MiniGameManager.IsOnHint) return;
+            
             foreach (var button in _buttons)
             {
                 button.interactable = false;

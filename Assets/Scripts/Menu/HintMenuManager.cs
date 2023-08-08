@@ -1,3 +1,4 @@
+using Bug.MiniGame;
 using PlayerController;
 using UnityEngine;
 
@@ -34,6 +35,7 @@ namespace Menu
         private void OnEnable()
         {
             GeneralInputReader.ExitAction += ExitAction;
+            MiniGameManager.IsOnHint = true;
             
             SetArrowButton();
             
@@ -44,6 +46,7 @@ namespace Menu
         private void OnDisable()
         {
             GeneralInputReader.ExitAction -= ExitAction;
+            MiniGameManager.IsOnHint = false;
         }
 
         #endregion

@@ -113,6 +113,8 @@ namespace Bug.MiniGame
         
         private void FinishError()
         {
+            if (MiniGameManager.IsOnHint) return;
+            
             _screen.color = Color.red;
             
             MusicManager.instance.MmfError.PlayFeedbacks();
