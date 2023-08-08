@@ -6,6 +6,13 @@ namespace SaveData
     public static class GamePreferences
     {
         #region Statements
+        
+        private const string IntroKey = "Intro";
+        public static int Intro
+        {
+            get => PlayerPrefs.GetInt(IntroKey, 0);
+            set => PlayerPrefs.SetInt(IntroKey, value);
+        }
 
         private const string GameKey = "Game";
         public static int Game

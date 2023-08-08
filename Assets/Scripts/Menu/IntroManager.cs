@@ -12,6 +12,7 @@ namespace Menu
         [SerializeField] private GameObject[] _introObjects;
         [SerializeField] private GameObject _leftArrow;
         [SerializeField] private GameObject _rightArrow;
+        [SerializeField] private GameObject _startPostIt;
         
         public static int _currentIntroObject;
         
@@ -27,14 +28,22 @@ namespace Menu
             }
             
             _leftArrow.SetActive(false);
+            _startPostIt.SetActive(false);
         }
 
         private void Start()
         {
-            if (GamePreferences.Game == 1)
+            if (GamePreferences.Intro == 1)
             {
                 gameObject.SetActive(false);
             }
+            else
+            {
+                GamePreferences.Intro = 1;
+            }
+            
+            // TODO Supprimer cette ligne
+            GamePreferences.Intro = 0;
         }
 
         #endregion
@@ -58,11 +67,13 @@ namespace Menu
             if (_currentIntroObject >= _introObjects.Length - 1)
             {
                 _rightArrow.SetActive(false);
+                _startPostIt.SetActive(true);
                 _currentIntroObject = _introObjects.Length - 1;
             }
             else
             {
                 _rightArrow.SetActive(true);
+                _startPostIt.SetActive(false);
             }
         }
 
