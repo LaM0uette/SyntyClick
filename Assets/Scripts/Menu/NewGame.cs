@@ -37,6 +37,7 @@ namespace Menu
             }
             
             MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.AudioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
             
             Time.timeScale = 1f;
             

@@ -10,6 +10,7 @@ namespace PlayerController
         #region Statements
 
         [SerializeField] private GameObject _menu;
+        [SerializeField] private GameObject _menuOption;
         
         private void Start()
         {
@@ -45,6 +46,7 @@ namespace PlayerController
         {
             var menuValue = GeneralInputReader.MenuValue;
             _menu.SetActive(menuValue);
+            _menuOption.SetActive(false);
 
             if (menuValue)
             {

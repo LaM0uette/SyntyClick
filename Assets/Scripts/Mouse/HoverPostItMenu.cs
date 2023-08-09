@@ -28,6 +28,7 @@ namespace Mouse
 
         public void OnMouseEnter()
         {
+            CursorManager.SetHandCursor("clic");
             MusicManager.instance.MmfButtonHover.PlayFeedbacks();
             _renderer.material = _materialHover;
             _outlinable.enabled = true;
@@ -35,6 +36,7 @@ namespace Mouse
         
         public void OnMouseExit()
         {
+            CursorManager.ResetCursor();
             _renderer.material = _materialNormal;
             _outlinable.enabled = false;
         }

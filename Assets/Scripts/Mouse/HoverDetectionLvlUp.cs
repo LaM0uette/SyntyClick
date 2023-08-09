@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Mouse
 {
-    public class HoverDetection : MonoBehaviour
+    public class HoverDetectionLvlUp : MonoBehaviour
     {
         #region Statements
 
@@ -21,7 +21,7 @@ namespace Mouse
 
         public void OnMouseEnter()
         {
-            CursorManager.SetHandCursor("clic");
+            CursorManager.SetHandCursor("lvlup");
             MusicManager.instance.MmfActionHover.PlayFeedbacks();
             _outlinable.enabled = true;
         }

@@ -1,6 +1,7 @@
 using System;
 using Audio;
 using PlayerController;
+using SaveData;
 using UnityEngine;
 
 namespace Menu
@@ -25,6 +26,7 @@ namespace Menu
             }
             
             MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.AudioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
         }
     }
 }

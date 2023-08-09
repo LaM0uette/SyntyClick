@@ -43,7 +43,7 @@ namespace Bug.MiniGame
 
         public void SetButtonColor(Button button)
         {
-            MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.MmfSwitch.PlayFeedbacks();
             
             _buttonColorIndices[button] = (_buttonColorIndices[button] + 1) % _colors.Length;
             button.image.color = _colors[_buttonColorIndices[button]];

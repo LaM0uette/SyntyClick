@@ -17,6 +17,7 @@ namespace Menu
             Time.timeScale = 1f;
             
             MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.AudioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
             
             GeneralInputReader.OnSaticMenu();
             GeneralInputReader.MenuValue = false;

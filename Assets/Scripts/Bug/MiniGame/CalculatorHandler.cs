@@ -64,7 +64,7 @@ namespace Bug.MiniGame
 
         public void OnNumButtonClick(int num)
         {
-            MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.MmfBeepCalculator.PlayFeedbacks();
             
             if (_tmpResult.text.Length >= 4) return;
             _tmpResult.text += num;
@@ -85,7 +85,7 @@ namespace Bug.MiniGame
 
         public void CalculValidation()
         {
-            MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.MmfBeepCalculator.PlayFeedbacks();
             
             if (_tmpResult.text.Length is > 9999 or <= 0)
             {

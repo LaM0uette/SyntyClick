@@ -16,6 +16,7 @@ namespace Menu
         private void OnMouseDown()
         {
             MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.AudioMixerMaster.SetFloat("Volume", -80);
             _menuOption.SetActive(true);
         }
 

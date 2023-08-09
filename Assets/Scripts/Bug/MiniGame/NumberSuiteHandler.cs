@@ -38,7 +38,7 @@ namespace Bug.MiniGame
 
         public void OnNumButtonClick(Button button)
         {
-            MusicManager.instance.MmfClick.PlayFeedbacks();
+            MusicManager.instance.MmfBeepCalculator.PlayFeedbacks();
             
             var buttonId = _buttonIndices[button];
             

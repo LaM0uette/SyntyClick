@@ -27,6 +27,9 @@ namespace Audio
         public MMF_Player MmfBuy;
         public MMF_Player MmfComplete;
         public MMF_Player MmfLvlUp;
+        public MMF_Player MmfBeep;
+        public MMF_Player MmfBeepCalculator;
+        public MMF_Player MmfSwitch;
 
         public static MusicManager instance;
         
@@ -51,6 +54,8 @@ namespace Audio
         
         private void Start()
         {
+            CursorManager.SetHandCursor("mouse");
+            
             AudioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
             _audioMixerSfx.SetFloat("Volume", GamePreferences.VolumeSfx);
             
