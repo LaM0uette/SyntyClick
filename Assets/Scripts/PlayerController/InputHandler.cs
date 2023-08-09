@@ -50,7 +50,6 @@ namespace PlayerController
 
             if (menuValue)
             {
-                MusicManager.instance.AudioMixerMaster.SetFloat("Volume", -80);
                 Time.timeScale = 0;
             }
             else

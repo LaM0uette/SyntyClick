@@ -76,7 +76,6 @@ namespace Bug.MiniGame
 
         private void RandomMiniGame()
         {
-            //_miniGameObjects[2].SetActive(true);
             _miniGameObjects[UnityEngine.Random.Range(0, _miniGameObjects.Length)].SetActive(true);
             MusicManager.instance.MmfSwip.PlayFeedbacks();
         }
@@ -85,7 +84,24 @@ namespace Bug.MiniGame
         {
             var _gameManager = GameManager.instance;
             var amoutFansGain = (int)(_gameManager.Fans * 0.01f);
-            _gameManager.IncrementFans(amoutFansGain < 1 ? 1 : amoutFansGain);
+            var amoutMoneyGain = amoutFansGain < 1 ? 1 : amoutFansGain;
+            
+            MusicManager.instance.MmfCash.PlayFeedbacks();
+            
+            _gameManager.IncrementFans(amoutMoneyGain);
+            _gameManager.IncrementMoney(amoutMoneyGain * 40);
+        }
+        
+        public static void LooseFansAndMoney()
+        {
+            var _gameManager = GameManager.instance;
+            if (_gameManager.Fans <= 0) return;
+            
+            var amoutFansGain = (int)(_gameManager.Fans * 0.01f);
+            var amoutMoneyGain = amoutFansGain < 0 ? -1 : -amoutFansGain;
+            
+            _gameManager.IncrementFans(amoutMoneyGain);
+            _gameManager.IncrementMoney(amoutMoneyGain * 40);
         }
 
         #endregion

@@ -19,14 +19,7 @@ namespace Menu
         
         private void Awake()
         {
-            if (instance is null)
-            {
-                instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            instance ??= this;
             
             if (GamePreferences.Intro == 1)
             {

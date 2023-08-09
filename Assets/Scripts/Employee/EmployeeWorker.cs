@@ -32,7 +32,7 @@ namespace Employee
         
         [Header("EmployeeLevel")]
         [SerializeField] private EmployeeLevel[] _employeeLevels;
-        private EmployeeLevel _currentEmployeeLevel;
+        public EmployeeLevel _currentEmployeeLevel;
         
         [Header("EmployeeAssets")]
         [SerializeField] private Renderer _desktopRenderer;

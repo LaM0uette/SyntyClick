@@ -1,5 +1,8 @@
 using System;
+using MMF;
+using MoreMountains.Feedbacks;
 using SaveData;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +20,9 @@ public class GameManager : MonoBehaviour
     [NonSerialized] public int Fans;
     [NonSerialized] public int Money;
     [NonSerialized] public int NewEmployeePrice;
+    
+    [SerializeField] private MMF_Player _mmfCurrentAssetsInc;
+    [SerializeField] private TextMeshProUGUI _totalCurrentAssetsInc;
     
     private float _fanInProgress;
 
@@ -54,8 +60,16 @@ public class GameManager : MonoBehaviour
     {
         TotalAssets += amout;
         CurrentAssets += amout;
-
+        
         UpdateDashboard();
+        
+        if (amout <= 0) return;
+        
+        MmfDashboard.instance.TotalAssetsTextInc.text = $"+{amout:N0}";
+        MmfDashboard.instance.MmfTotalAssetInc.PlayFeedbacks();
+        
+        _totalCurrentAssetsInc.text = $"+{amout:N0}";
+        _mmfCurrentAssetsInc.PlayFeedbacks();
     }
     
     public void IncrementFans(int amout)
@@ -63,6 +77,20 @@ public class GameManager : MonoBehaviour
         Fans += amout;
         
         UpdateDashboard();
+        
+        switch (amout)
+        {
+            case 0:
+                return;
+            case > 0:
+                MmfDashboard.instance.FansTextInc.text = $"+{amout:N0}";
+                MmfDashboard.instance.MmfFansInc.PlayFeedbacks();
+                break;
+            default:
+                MmfDashboard.instance.FansTextDesc.text = $"{amout:N0}";
+                MmfDashboard.instance.MmfFansDesc.PlayFeedbacks();
+                break;
+        }
     }
     
     public void IncrementMoney(int amout)
@@ -70,6 +98,20 @@ public class GameManager : MonoBehaviour
         Money += amout;
         
         UpdateDashboard();
+        
+        switch (amout)
+        {
+            case 0:
+                return;
+            case > 0:
+                MmfDashboard.instance.MoneyTextInc.text = $"+{amout:N0}";
+                MmfDashboard.instance.MmfMoneyInc.PlayFeedbacks();
+                break;
+            default:
+                MmfDashboard.instance.MoneyTextDesc.text = $"{amout:N0}";
+                MmfDashboard.instance.MmfMoneyDesc.PlayFeedbacks();
+                break;
+        }
     }
 
     public static void UpdateDashboard()

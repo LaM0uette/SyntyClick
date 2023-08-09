@@ -243,9 +243,9 @@ MonoBehaviour:
     cutoutTextureName: 
     DilateRenderingMode: 0
     cutoutTextureIndex: 0
-  renderStyle: 1
+  renderStyle: 2
   outlineParameters:
-    enabled: 1
+    enabled: 0
     color: {r: 0.08677466, g: 0.15218943, b: 0.2830189, a: 1}
     dilateShift: 1
     blurShift: 0
@@ -253,18 +253,18 @@ MonoBehaviour:
       shader: {fileID: 0}
       serializedProperties: []
   backParameters:
-    enabled: 1
+    enabled: 0
     color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
   frontParameters:
     enabled: 1
-    color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    color: {r: 0, g: 0.18453911, b: 0.3679245, a: 1}
     dilateShift: 1
-    blurShift: 1
+    blurShift: 0
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []

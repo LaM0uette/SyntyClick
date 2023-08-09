@@ -78,6 +78,7 @@ namespace Bug.MiniGame
             MiniGameManager.BugError?.Invoke();
             MusicManager.instance.MmfError.PlayFeedbacks();
             
+            MiniGameManager.LooseFansAndMoney();
             StartCoroutine(FinishWin());
         }
         
