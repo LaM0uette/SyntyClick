@@ -11,6 +11,7 @@ namespace Bug.MiniGame
     {
         [SerializeField] private Color[] _colors;
         [SerializeField] private Button[] _buttons;
+        [SerializeField] private GameObject _menuHint;
         
         private readonly Dictionary<Button, int> _buttonColorIndices = new();
         
@@ -18,6 +19,8 @@ namespace Bug.MiniGame
 
         private void OnEnable()
         {
+            _menuHint.SetActive(false);
+            
             SetInitialColors();
             GeneralInputReader.ExitAction += FinishError;
         }

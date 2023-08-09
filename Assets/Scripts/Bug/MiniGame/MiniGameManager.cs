@@ -1,4 +1,5 @@
 using System;
+using Audio;
 using Employee;
 using JetBrains.Annotations;
 using MoreMountains.Feedbacks;
@@ -77,6 +78,7 @@ namespace Bug.MiniGame
         {
             //_miniGameObjects[2].SetActive(true);
             _miniGameObjects[UnityEngine.Random.Range(0, _miniGameObjects.Length)].SetActive(true);
+            MusicManager.instance.MmfSwip.PlayFeedbacks();
         }
         
         public static void AddFansAndMoney()

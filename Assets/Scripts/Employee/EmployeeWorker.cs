@@ -313,7 +313,12 @@ namespace Employee
             _isBug = false;
             _isPaused = false;
             _prefabBug.SetActive(false);
-            _prefabBugButtonLvl.SetActive(true);
+
+            if (!(_currentEmployeeLevel.Level >= _employeeLevels.Length))
+            {
+                _prefabBugButtonLvl.SetActive(true);
+            }
+            
             _outlinableBug.enabled = false;
             _isAlreadyBug = false;
 
@@ -368,6 +373,8 @@ namespace Employee
             _currentEmployeeLevel = _employeeLevels[_currentEmployeeLevel.Level];
             _desktopRenderer.material = _currentEmployeeLevel.Material;
             _gameManager.Money -= _currentEmployeeLevel.CostLevel;
+
+            GameManager.UpdateDashboard();
             
             MusicManager.instance.MmfLvlUp.PlayFeedbacks();
             

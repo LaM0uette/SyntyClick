@@ -30,6 +30,7 @@ namespace Audio
         public MMF_Player MmfBeep;
         public MMF_Player MmfBeepCalculator;
         public MMF_Player MmfSwitch;
+        public MMF_Player MmfSwip;
 
         public static MusicManager instance;
         

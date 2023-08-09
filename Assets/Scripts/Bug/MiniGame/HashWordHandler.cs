@@ -17,6 +17,7 @@ namespace Bug.MiniGame
         [SerializeField] private TextMeshProUGUI _inputHashWord;
         [SerializeField] private TMP_InputField _inputDecodeWord;
         private string _hashWord;
+        [SerializeField] private GameObject _menuHint;
         
         [SerializeField] private Image _screen;
         [SerializeField] private Color _screenColor;
@@ -343,6 +344,7 @@ namespace Bug.MiniGame
 
         private void OnEnable()
         {
+            _menuHint.SetActive(false);
             GeneralInputReader.EnterAction += DecodeValidation;
             GeneralInputReader.ExitAction += FinishError;
             

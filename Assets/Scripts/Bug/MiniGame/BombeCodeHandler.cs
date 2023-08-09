@@ -16,6 +16,7 @@ namespace Bug.MiniGame
         
         [SerializeField] private Image _screen;
         [SerializeField] private Color _screenColor;
+        [SerializeField] private GameObject _menuHint;
 
         private int _result;
 
@@ -25,6 +26,7 @@ namespace Bug.MiniGame
 
         private void OnEnable()
         {
+            _menuHint.SetActive(false);
             GeneralInputReader.EnterAction += CodeValidation;
             GeneralInputReader.ExitAction += FinishError;
             
