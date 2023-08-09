@@ -47,11 +47,33 @@
                 },
                 {
                     "name": "",
+                    "id": "084a89d8-6d7c-4e2d-a01f-fe312d9b217a",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d98e9b3c-782e-44fc-9d1d-68839c9594b2",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "PC",
+                    "action": "MouseLeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4a7c1b9-95d7-4157-99ca-6e5aaac63d11",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "MouseLeftClick",
                     "isComposite": false,
                     "isPartOfComposite": false

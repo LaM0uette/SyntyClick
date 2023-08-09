@@ -1,15 +1,23 @@
 using System;
 using Employee;
 using JetBrains.Annotations;
+using MoreMountains.Feedbacks;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Bug.MiniGame
 {
     public class MiniGameManager : MonoBehaviour
     {
         #region Statements
+        
+        [FormerlySerializedAs("_mmfPlayer")]
+        [Header("Feel")]
+        [SerializeField] private MMF_Player _mmfPlayerInit;
+        [SerializeField] private MMF_Player _mmfPlayerError;
 
         public static Action<EmployeeWorker> BugAction { get; private set; }
+        public static Action BugError { get; private set; }
         [CanBeNull] public static Action<EmployeeWorker> BugCorrectedAction { get; set; }
 
         [CanBeNull] public static EmployeeWorker CurrentEmployeeWorker { get; set; }
@@ -25,11 +33,13 @@ namespace Bug.MiniGame
         private void OnEnable()
         {
             BugAction += OnBugAction;
+            BugError += OnBugError;
         }
         
         private void OnDisable()
         {
             BugAction -= OnBugAction;
+            BugError -= OnBugError;
         }
 
         #endregion
@@ -38,9 +48,15 @@ namespace Bug.MiniGame
 
         private void OnBugAction(EmployeeWorker employeeWorker)
         {
+            _mmfPlayerInit.PlayFeedbacks();
             IsOnMiniGame = true;
             CurrentEmployeeWorker = employeeWorker;
             RandomMiniGame();
+        }
+        
+        private void OnBugError()
+        {
+            _mmfPlayerError.PlayFeedbacks();
         }
 
         public static void ResetIsOnMiniGame()

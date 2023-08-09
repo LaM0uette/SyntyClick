@@ -1,5 +1,6 @@
 using System;
 using Bug.MiniGame;
+using MoreMountains.Feedbacks;
 using SaveData;
 using UnityEngine;
 
@@ -26,10 +27,14 @@ namespace PlayerController
         public static Action Num8Action { get; set; }
         public static Action Num9Action { get; set; }
         public static Action ReturnAction { get; set; }
+        
+        [Header("Feel")]
+        [SerializeField] private MMF_Player _mmfPlayer;
 
         public void OnClickAction()
         {
             ClickAction?.Invoke();
+            _mmfPlayer.PlayFeedbacks();
         }
         public static void OnStaticClickAction() => ClickAction?.Invoke();
         

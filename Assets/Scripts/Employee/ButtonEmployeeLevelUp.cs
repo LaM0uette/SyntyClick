@@ -1,5 +1,6 @@
 using Audio;
 using JetBrains.Annotations;
+using MoreMountains.Feedbacks;
 using PlayerController;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace Employee
     {
         #region Statements
 
+        [Header("Feel")]
+        [SerializeField] private MMF_Player _mmfPlayer;
+        
         [SerializeField] private InputReader _playerInputs;
         [SerializeField] private EmployeeWorker _employeeWorker;
         
@@ -51,6 +55,7 @@ namespace Employee
         {
             if (_buttonEmployeeLevelUpClicked != _buttonEmployeeLevelUp) return;
             
+            _mmfPlayer.PlayFeedbacks();
             MusicManager.instance.MmfClick.PlayFeedbacks();
             
             _employeeWorker.CheckLevelUp();

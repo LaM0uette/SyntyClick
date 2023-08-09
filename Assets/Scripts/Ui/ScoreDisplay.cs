@@ -37,7 +37,6 @@ namespace Ui
 
         private void UpdateDashboard()
         {
-            Debug.Log("UpdateDashboard");
             TmpTotalAssets.text = $"{_gameManager.TotalAssets:N0} Assets";
             TmpFans.text = $"{_gameManager.Fans:N0} Fans";
             TmpMoney.text = $"{_gameManager.Money:N0}$";

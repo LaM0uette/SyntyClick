@@ -429,6 +429,7 @@ namespace Bug.MiniGame
             
             _screen.color = Color.red;
             
+            MiniGameManager.BugError?.Invoke();
             MusicManager.instance.MmfError.PlayFeedbacks();
             Finish();
         }

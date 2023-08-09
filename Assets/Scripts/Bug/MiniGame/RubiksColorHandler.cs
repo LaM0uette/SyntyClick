@@ -72,6 +72,7 @@ namespace Bug.MiniGame
                 button.image.color = Color.red;
             }
             
+            MiniGameManager.BugError?.Invoke();
             MusicManager.instance.MmfError.PlayFeedbacks();
             
             StartCoroutine(FinishWin());
