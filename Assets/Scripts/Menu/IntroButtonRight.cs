@@ -1,3 +1,4 @@
+using Audio;
 using UnityEngine;
 
 namespace Menu
@@ -8,6 +9,7 @@ namespace Menu
 
         private void OnMouseDown()
         {
+            MusicManager.instance.MmfClick.PlayFeedbacks();
             IntroManager.instance.IncrementIntroObject(1);
             IntroManager.instance.ShowUi();
         }

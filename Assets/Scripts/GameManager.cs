@@ -64,12 +64,19 @@ public class GameManager : MonoBehaviour
         UpdateDashboard();
         
         if (amout <= 0) return;
+
+        try
+        {
+            MmfDashboard.instance.TotalAssetsTextInc.text = $"+{amout:N0}";
+            MmfDashboard.instance.MmfTotalAssetInc.PlayFeedbacks();
         
-        MmfDashboard.instance.TotalAssetsTextInc.text = $"+{amout:N0}";
-        MmfDashboard.instance.MmfTotalAssetInc.PlayFeedbacks();
-        
-        _totalCurrentAssetsInc.text = $"+{amout:N0}";
-        _mmfCurrentAssetsInc.PlayFeedbacks();
+            _totalCurrentAssetsInc.text = $"+{amout:N0}";
+            _mmfCurrentAssetsInc.PlayFeedbacks();
+        }
+        catch (Exception)
+        {
+            // ignored
+        }
     }
     
     public void IncrementFans(int amout)
@@ -77,19 +84,26 @@ public class GameManager : MonoBehaviour
         Fans += amout;
         
         UpdateDashboard();
-        
-        switch (amout)
+
+        try
         {
-            case 0:
-                return;
-            case > 0:
-                MmfDashboard.instance.FansTextInc.text = $"+{amout:N0}";
-                MmfDashboard.instance.MmfFansInc.PlayFeedbacks();
-                break;
-            default:
-                MmfDashboard.instance.FansTextDesc.text = $"{amout:N0}";
-                MmfDashboard.instance.MmfFansDesc.PlayFeedbacks();
-                break;
+            switch (amout)
+            {
+                case 0:
+                    return;
+                case > 0:
+                    MmfDashboard.instance.FansTextInc.text = $"+{amout:N0}";
+                    MmfDashboard.instance.MmfFansInc.PlayFeedbacks();
+                    break;
+                default:
+                    MmfDashboard.instance.FansTextDesc.text = $"{amout:N0}";
+                    MmfDashboard.instance.MmfFansDesc.PlayFeedbacks();
+                    break;
+            }
+        }
+        catch (Exception)
+        {
+            // ignored
         }
     }
     
@@ -98,19 +112,26 @@ public class GameManager : MonoBehaviour
         Money += amout;
         
         UpdateDashboard();
-        
-        switch (amout)
+
+        try
         {
-            case 0:
-                return;
-            case > 0:
-                MmfDashboard.instance.MoneyTextInc.text = $"+{amout:N0}";
-                MmfDashboard.instance.MmfMoneyInc.PlayFeedbacks();
-                break;
-            default:
-                MmfDashboard.instance.MoneyTextDesc.text = $"{amout:N0}";
-                MmfDashboard.instance.MmfMoneyDesc.PlayFeedbacks();
-                break;
+            switch (amout)
+            {
+                case 0:
+                    return;
+                case > 0:
+                    MmfDashboard.instance.MoneyTextInc.text = $"+{amout:N0}";
+                    MmfDashboard.instance.MmfMoneyInc.PlayFeedbacks();
+                    break;
+                default:
+                    MmfDashboard.instance.MoneyTextDesc.text = $"{amout:N0}";
+                    MmfDashboard.instance.MmfMoneyDesc.PlayFeedbacks();
+                    break;
+            }
+        }
+        catch (Exception)
+        {
+            // ignored
         }
     }
 

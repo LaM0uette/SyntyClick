@@ -270,8 +270,11 @@ namespace Employee
                 SetCorrectionBug();
                 return;
             }
-            
-            MusicManager.instance.MmfCash.PlayFeedbacks();
+
+            if (_currentAssetsOnWorked >= 1 && !_isBug)
+            {
+                MusicManager.instance.MmfCash.PlayFeedbacks();
+            }
             
             AddAssetsOnWorked();
         }
@@ -446,7 +449,6 @@ namespace Employee
 
         private void ResetAll()
         {
-            
             ResetPieceInProgress();
             ResetSpriteProgress();
             ResetSpriteProgressStop();
