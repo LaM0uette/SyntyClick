@@ -1,3 +1,4 @@
+using System;
 using Audio;
 using SaveData;
 using UnityEngine;
@@ -9,6 +10,18 @@ namespace PlayerController
         #region Statements
 
         [SerializeField] private GameObject _menu;
+        
+        private void Start()
+        {
+            try
+            {
+                GameManager.Initialize();
+            }
+            catch (Exception)
+            {
+                // ignored
+            }
+        }
 
         #endregion
         
