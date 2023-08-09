@@ -57,6 +57,9 @@ namespace Audio
         {
             CursorManager.SetHandCursor("mouse");
             
+            AudioMixerMaster.SetFloat("Volume", 0);
+            _audioMixerSfx.SetFloat("Volume", 0);
+            
             AudioMixerMaster.SetFloat("Volume", GamePreferences.VolumeMusic);
             _audioMixerSfx.SetFloat("Volume", GamePreferences.VolumeSfx);
             
