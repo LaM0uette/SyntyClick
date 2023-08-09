@@ -116,6 +116,7 @@ namespace Bug.MiniGame
         {
             MiniGameManager.AddFansAndMoney();
             
+            MiniGameManager.BugValid?.Invoke();
             MusicManager.instance.MmfValidation.PlayFeedbacks();
             Finish();
         }

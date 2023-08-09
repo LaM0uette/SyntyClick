@@ -15,9 +15,11 @@ namespace Bug.MiniGame
         [Header("Feel")]
         [SerializeField] private MMF_Player _mmfPlayerInit;
         [SerializeField] private MMF_Player _mmfPlayerError;
+        [SerializeField] private MMF_Player _mmfPlayerValid;
 
         public static Action<EmployeeWorker> BugAction { get; private set; }
         public static Action BugError { get; private set; }
+        public static Action BugValid { get; private set; }
         [CanBeNull] public static Action<EmployeeWorker> BugCorrectedAction { get; set; }
 
         [CanBeNull] public static EmployeeWorker CurrentEmployeeWorker { get; set; }
@@ -34,12 +36,14 @@ namespace Bug.MiniGame
         {
             BugAction += OnBugAction;
             BugError += OnBugError;
+            BugValid += OnBugValid;
         }
         
         private void OnDisable()
         {
             BugAction -= OnBugAction;
             BugError -= OnBugError;
+            BugValid -= OnBugValid;
         }
 
         #endregion
@@ -57,6 +61,11 @@ namespace Bug.MiniGame
         private void OnBugError()
         {
             _mmfPlayerError.PlayFeedbacks();
+        }
+        
+        private void OnBugValid()
+        {
+            _mmfPlayerValid.PlayFeedbacks();
         }
 
         public static void ResetIsOnMiniGame()

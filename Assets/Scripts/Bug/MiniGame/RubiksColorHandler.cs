@@ -86,6 +86,7 @@ namespace Bug.MiniGame
                 button.image.color = Color.green;
             }
             
+            MiniGameManager.BugValid?.Invoke();
             MusicManager.instance.MmfValidation.PlayFeedbacks();
             MiniGameManager.AddFansAndMoney();
             

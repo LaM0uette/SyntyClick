@@ -440,6 +440,7 @@ namespace Bug.MiniGame
             
             _screen.color = Color.green;
             
+            MiniGameManager.BugValid?.Invoke();
             MusicManager.instance.MmfValidation.PlayFeedbacks();
             Finish();
         }
